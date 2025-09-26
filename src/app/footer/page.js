@@ -1,73 +1,264 @@
+// "use client";
+
+// import Link from "next/link";
+// import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+
+// export default function Footer() {
+//   return (
+//     <footer className="bg-black text-white py-16 ">
+//       <div className="container mx-auto px-4">
+//         {/* Top Section */}
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+//           {/* Column 1 */}
+//           <div>
+//             <h4 className="text-xl font-semibold mb-4">We're on a mission.</h4>
+//             <p className="mb-6 text-gray-300">
+//               Your go-to source for retail and business loans, empowering
+//               financial growth with trust, simplicity, and excellence.
+//             </p>
+//             <div className="flex space-x-4">
+//               <Link href="https://www.facebook.com/secureedgesolution/">
+//                 <FaFacebookF className="text-white hover:text-blue-500 text-lg" />
+//               </Link>
+//               <Link href="https://www.instagram.com/secureedgesolution.pvt.ltd/">
+//                 <FaInstagram className="text-white hover:text-pink-500 text-lg" />
+//               </Link>
+//               <Link href="https://www.linkedin.com/company/secure-edge-solution-pvt-ltd/?originalSubdomain=in">
+//                 <FaLinkedinIn className="text-white hover:text-blue-400 text-lg" />
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* Column 2 */}
+//           <div>
+//             <h5 className="text-lg font-semibold mb-4">Loan</h5>
+//             <ul className="grid grid-cols-2 gap-3 text-gray-300">
+//               <li>
+//                 <Link href="/loan/home-loan" className="hover:text-white">
+//                   Home Loan
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link href="/loan/mortgage-loan" className="hover:text-white">
+//                   Mortgage Loan
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link href="/loan/personal-loan" className="hover:text-white">
+//                   Personal Loan
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link
+//                   href="/loan/unsecured-business-loan"
+//                   className="hover:text-white"
+//                 >
+//                   Unsecured Business Loan
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link href="/loan/working-capital" className="hover:text-white">
+//                   Working Capital
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link
+//                   href="/loan/balance-transfer"
+//                   className="hover:text-white"
+//                 >
+//                   Balance Transfer
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link href="/loan/car-loans" className="hover:text-white">
+//                   Car Loans
+//                 </Link>
+//               </li>
+//             </ul>
+//           </div>
+
+//           {/* Column 3 */}
+//           <div>
+//             <h5 className="text-lg font-semibold mb-4">Company</h5>
+//             <ul className="space-y-2 text-gray-300">
+//               <li>
+//                 <Link href="/about" className="hover:text-white">
+//                   About Us
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link href="/properties" className="hover:text-white">
+//                   Properties
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link href="/career" className="hover:text-white">
+//                   Careers
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link href="/privacy-policy" className="hover:text-white">
+//                   Privacy Policy
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link href="/terms/conditions" className="hover:text-white">
+//                   Terms &amp; Conditions
+//                 </Link>
+//               </li>
+//             </ul>
+//           </div>
+//         </div>
+
+//         {/* Bottom Section */}
+//         <div className="mt-10 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+//           <p>
+//             Copyright © Secure TheLoan Compass Pvt Ltd. 2025.
+//             <br className="md:hidden" /> Designed by{" "}
+//             <Link
+//               href="https://shopnoecommerce.com/"
+//               className="text-blue-400 hover:underline"
+//             >
+//               Abhay jagodana.
+//             </Link>
+//           </p>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// }
 "use client";
 
 import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer
-      className="pt-[110px] lg:pt-[130px] pb-[100px] lg:pb-[125px] bg-cover bg-center"
-      style={{ backgroundImage: "url('/front/img/footer/footer-bg-2.png')" }}
-    >
-      {/* Top Section */}
-      <div className="footer-top">
-        <div className="container mx-auto">
-          <div className="flex flex-wrap -mx-4">
-
-            {/* Mission */}
-            <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8 sm:mb-0 text-center sm:text-left">
-              <div className="mb-6">
-                <h4 className="mb-5 text-lg font-semibold">We're on a mission.</h4>
-                <p className="text-gray-200">
-                  Your go-to source for retail and business loans, empowering financial growth with trust, simplicity, and excellence.
-                </p>
-              </div>
-              <div className="flex justify-center sm:justify-start space-x-3 mt-4">
-                <a href="https://www.facebook.com/secureedgesolution/" className="text-white hover:text-blue-500"><i className="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/secureedgesolution.pvt.ltd/" className="text-white hover:text-pink-500"><i className="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/secure-edge-solution-pvt-ltd/?originalSubdomain=in" className="text-white hover:text-blue-700"><i className="fab fa-linkedin-in"></i></a>
-              </div>
+    <footer className="bg-black text-white py-16">
+      <div className="container mx-auto px-4">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center md:text-left">
+          {/* Column 1 */}
+          <div>
+            <h4 className="text-xl font-semibold mb-4">We're on a mission.</h4>
+            <p className="mb-6 text-gray-300 leading-relaxed">
+              Your go-to source for retail and business loans, empowering
+              financial growth with trust, simplicity, and excellence.
+            </p>
+            <div className="flex justify-center md:justify-start space-x-4">
+              <Link
+                href="https://www.facebook.com/secureedgesolution/"
+                target="_blank"
+              >
+                <FaFacebookF className="text-white hover:text-blue-500 text-lg transition-colors duration-300" />
+              </Link>
+              <Link
+                href="https://www.instagram.com/secureedgesolution.pvt.ltd/"
+                target="_blank"
+              >
+                <FaInstagram className="text-white hover:text-pink-500 text-lg transition-colors duration-300" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/secure-edge-solution-pvt-ltd/?originalSubdomain=in"
+                target="_blank"
+              >
+                <FaLinkedinIn className="text-white hover:text-blue-400 text-lg transition-colors duration-300" />
+              </Link>
             </div>
+          </div>
 
-            {/* Loan Links */}
-            <div className="w-full sm:w-1/2 lg:w-1/2 lg:ml-4 px-4 mb-8 sm:mb-0 text-center sm:text-left">
-              <div>
-                <h5 className="text-lg font-semibold mb-4">Loan</h5>
-                <ul className="grid grid-cols-2 gap-2 text-gray-200">
-                  <li><Link href="https://secureedgesolution.com/loan/home-loan" className="hover:text-white">Home Loan</Link></li>
-                  <li><Link href="https://secureedgesolution.com/loan/mortgage-loan" className="hover:text-white">Mortgage Loan</Link></li>
-                  <li><Link href="https://secureedgesolution.com/loan/personal-loan" className="hover:text-white">Personal Loan</Link></li>
-                  <li><Link href="https://secureedgesolution.com/loan/unsecured-business-loan" className="hover:text-white">Unsecured Business Loan</Link></li>
-                  <li><Link href="https://secureedgesolution.com/loan/working-capital" className="hover:text-white">Working Capital</Link></li>
-                  <li><Link href="https://secureedgesolution.com/loan/balance-transfer" className="hover:text-white">Balance Transfer</Link></li>
-                  <li><Link href="https://secureedgesolution.com/loan/car-loans" className="hover:text-white">Car Loans</Link></li>
-                </ul>
-              </div>
-            </div>
+          {/* Column 2 */}
+          <div>
+            <h5 className="text-lg font-semibold mb-4">Loan</h5>
+            <ul className="grid grid-cols-2 gap-3 text-gray-300">
+              <li>
+                <Link href="/loan/home-loan" className="hover:text-white">
+                  Home Loan
+                </Link>
+              </li>
+              <li>
+                <Link href="/loan/mortgage-loan" className="hover:text-white">
+                  Mortgage Loan
+                </Link>
+              </li>
+              <li>
+                <Link href="/loan/personal-loan" className="hover:text-white">
+                  Personal Loan
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/loan/unsecured-business-loan"
+                  className="hover:text-white"
+                >
+                  Unsecured Business Loan
+                </Link>
+              </li>
+              <li>
+                <Link href="/loan/working-capital" className="hover:text-white">
+                  Working Capital
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/loan/balance-transfer"
+                  className="hover:text-white"
+                >
+                  Balance Transfer
+                </Link>
+              </li>
+              <li>
+                <Link href="/loan/car-loans" className="hover:text-white">
+                  Car Loans
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-            {/* Company Links */}
-            <div className="w-full sm:w-1/2 lg:w-1/4 px-4 text-center sm:text-left">
-              <div>
-                <h5 className="text-lg font-semibold mb-4">Company</h5>
-                <ul className="space-y-2 text-gray-200">
-                  <li><Link href="https://secureedgesolution.com/about" className="hover:text-white">About Us</Link></li>
-                  <li><Link href="https://secureedgesolution.com/properties" className="hover:text-white">Properties</Link></li>
-                  <li><Link href="https://secureedgesolution.com/career" className="hover:text-white">Careers</Link></li>
-                  <li><Link href="https://secureedgesolution.com/privacy-policy" className="hover:text-white">Privacy policy</Link></li>
-                  <li><Link href="https://secureedgesolution.com/terms/conditions" className="hover:text-white">Terms & Conditions</Link></li>
-                </ul>
-              </div>
-            </div>
-
+          {/* Column 3 */}
+          <div>
+            <h5 className="text-lg font-semibold mb-4">Company</h5>
+            <ul className="space-y-2 text-gray-300">
+              <li>
+                <Link href="/about" className="hover:text-white">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/properties" className="hover:text-white">
+                  Properties
+                </Link>
+              </li>
+              <li>
+                <Link href="/career" className="hover:text-white">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="hover:text-white">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms/conditions" className="hover:text-white">
+                  Terms &amp; Conditions
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Section */}
-      <div className="pt-12">
-        <div className="container mx-auto text-center text-gray-400 text-sm">
+        {/* Bottom Section */}
+        <div className="mt-10 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
           <p>
-            Copyright© Secure Edge Pvt Ltd. 2025. <br className="sm:hidden" />
-            Designed by <a href="https://shopnoecommerce.com/" className="text-white hover:underline">Shopno Ecommerce Pvt Ltd.</a>
+            Copyright © Secure TheLoan Compass Pvt Ltd. 2025.
+            <br className="sm:hidden" /> Designed by{" "}
+            <Link
+              href="https://shopnoecommerce.com/"
+              className="text-blue-400 hover:underline"
+            >
+              Abhay Jagodana
+            </Link>
           </p>
         </div>
       </div>

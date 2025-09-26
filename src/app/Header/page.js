@@ -9,44 +9,74 @@ export default function Header() {
     const [loanOpen, setLoanOpen] = useState(false);
 
     return (
-        <header className="bg-white shadow-md sticky top-0 z-50 font-sans">
+        <header className="absolute top-0 left-0 w-full font-sans z-10 bg-white">
             <div className="container mx-auto flex items-center justify-between px-4 py-3">
                 {/* Logo */}
                 <Link href="/" className="flex items-center">
                     <Image
-                        src="/Logo.webp"
+                        src="/logo-1.png"
                         alt="Secure Edge"
-                        width={180}
+                        width={80}
                         height={50}
                         className="object-contain"
                     />
                 </Link>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex space-x-8 items-center font-medium text-blue-900 uppercase text-lg font-sans">
-                    <li><Link href="/" className="hover:text-blue-600">Home</Link></li>
-                    <li><Link href="/about" className="hover:text-blue-600">About Us</Link></li>
-                    <li><Link href="/properties" className="hover:text-blue-600">Properties</Link></li>
+                <ul className="hidden md:flex space-x-8 items-center font-medium text-blue-500 uppercase text-lg">
+                    <li><Link href="/" className="hover:text-blue-300">Home</Link></li>
+                    <li><Link href="/about" className="hover:text-blue-300">About Us</Link></li>
+                    <li><Link href="/properties" className="hover:text-blue-300">Properties</Link></li>
 
                     {/* Apply Loan Dropdown */}
                     <li className="relative group">
-                        <button className="flex items-center hover:text-blue-600">
+                        <button className="flex items-center hover:text-blue-300 cursor-pointer">
                             Apply Loan <span className="ml-1">▾</span>
                         </button>
-                        <ul className="absolute left-0 mt-2 w-56 bg-white border rounded-lg shadow-lg opacity-0 visible group-hover:opacity-100 group-hover:visible transition-opacity text-sm font-sans">
-                            <li><Link href="/loan/home-loan" className="block px-4 py-2 hover:bg-gray-100">Home Loan</Link></li>
-                            <li><Link href="/loan/mortgage-loan" className="block px-4 py-2 hover:bg-gray-100">Mortgage Loan</Link></li>
-                            <li><Link href="/loan/personal-loan" className="block px-4 py-2 hover:bg-gray-100">Personal Loan</Link></li>
-                            <li><Link href="/loan/unsecured-business-loan" className="block px-4 py-2 hover:bg-gray-100">Unsecured Business Loan</Link></li>
-                            <li><Link href="/loan/working-capital" className="block px-4 py-2 hover:bg-gray-100">Working Capital</Link></li>
-                            <li><Link href="/loan/balance-transfer" className="block px-4 py-2 hover:bg-gray-100">Balance Transfer</Link></li>
-                            <li><Link href="/loan/car-loans" className="block px-4 py-2 hover:bg-gray-100">Car Loans</Link></li>
+
+                        <ul className="absolute left-0 mt-2 w-56 bg-white text-black border rounded-lg shadow-lg hidden group-hover:block z-50" >
+                            <li>
+                                <Link href="/loan/home-loan" className="block px-4 py-2 hover:bg-gray-100">
+                                    Home Loan
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/loan/mortgage-loan" className="block px-4 py-2 hover:bg-gray-100">
+                                    Mortgage Loan
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/loan/personal-loan" className="block px-4 py-2 hover:bg-gray-100">
+                                    Personal Loan
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/loan/unsecured-business-loan" className="block px-4 py-2 hover:bg-gray-100">
+                                    Unsecured Business Loan
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/loan/working-capital" className="block px-4 py-2 hover:bg-gray-100">
+                                    Working Capital
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/loan/balance-transfer" className="block px-4 py-2 hover:bg-gray-100">
+                                    Balance Transfer
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/loan/car-loans" className="block px-4 py-2 hover:bg-gray-100">
+                                    Car Loans
+                                </Link>
+                            </li>
                         </ul>
                     </li>
 
-                    <li><Link href="/career" className="hover:text-blue-600">Careers</Link></li>
 
-                    {/* Apply Button */}
+
+                    <li><Link href="/career" className="hover:text-gray-300">Careers</Link></li>
+
                     <li>
                         <Link
                             href="/contact"
@@ -59,11 +89,11 @@ export default function Header() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden flex items-center"
+                    className="md:hidden flex items-center text-white"
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
                     <svg
-                        className="w-7 h-7 text-blue-700"
+                        className="w-7 h-7"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -79,16 +109,15 @@ export default function Header() {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="md:hidden bg-white border-t shadow-lg font-bold text-blue uppercase text-lg font-sans">
-                    <Link href="/" className="block px-4 py-2 hover:bg-gray-100 font-bold ">Home</Link>
+                <div className="md:hidden bg-white border-t shadow-lg text-black font-bold text-lg">
+                    <Link href="/" className="block px-4 py-2 hover:bg-gray-100">Home</Link>
                     <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">About Us</Link>
                     <Link href="/properties" className="block px-4 py-2 hover:bg-gray-100">Properties</Link>
 
-                    {/* Apply Loan Collapsible */}
                     <div className="px-4 py-2">
                         <button
                             onClick={() => setLoanOpen(!loanOpen)}
-                            className="w-full flex justify-between items-center hover:text-blue-800 text-sm font-sans"
+                            className="w-full flex justify-between items-center hover:text-blue-800 text-sm"
                         >
                             Apply Loan
                             <span>{loanOpen ? "▴" : "▾"}</span>

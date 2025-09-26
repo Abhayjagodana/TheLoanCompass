@@ -361,27 +361,30 @@ export default function Banner() {
   };
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
 
       {/* Banner Section */}
       <section
-  className="relative pt-[90px] overflow-hidden bg-gray-50 bg-cover bg-center bg-no-repeat"
-  // style={{ backgroundImage: "url(https://plus.unsplash.com/premium_photo-1754909706415-7a822fa037b5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fGJhbmslMjB3aXRoJTIwY2xpZW50JTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D)" }}
->
-  <div className="container mx-auto flex flex-col lg:flex-row items-end pt-[100px] lg:pt-[200px] pb-[100px] lg:pb-[200px]">
-    <div className="lg:w-1/2">
-      <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-snug text-black">
-        Compare loans from several banks and find the best offer!
-      </h1>
-      <Link
-        href="/contact"
-        className="inline-block mt-6 px-8 py-4 rounded-full bg-blue-700 text-white hover:bg-blue-800 transition-colors text-lg"
-      >
-        Apply Now
-      </Link>
-    </div>
-  </div>
-</section>
+      className="relative pt-[90px] overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/banner-12.png')" }}
+    >
+      {/* Optional overlay */}
+      <div className="absolute inset-0 bg-black opacity-20"></div>
+
+      <div className="container mx-auto flex flex-col lg:flex-row items-end pt-[100px] lg:pt-[200px] pb-[100px] lg:pb-[200px] relative z-10">
+        <div className="lg:w-1/2 text-center lg:text-left">
+          <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-snug text-white drop-shadow-lg">
+            Compare loans from several banks and find the best offer!
+          </h1>
+          <Link
+            href="/contact"
+            className="inline-block mt-6 px-8 py-4 rounded-full bg-blue-700 text-white hover:bg-blue-800 transition-colors text-lg"
+          >
+            Apply Now
+          </Link>
+        </div>
+      </div>
+    </section>
 
       {/* Loan Slider Section */}
       <section className="py-16 bg-gray-50">
@@ -883,42 +886,44 @@ export default function Banner() {
           backgroundImage: `url('https://secureedgesolution.com/public/front/img/help-ad/bg-shape.png')`,
         }}
       >
-        <div className="container mx-auto px-4 text-center">
-          <div className="section-title mb-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              We help with both new loan and balance transfer
-            </h2>
-          </div>
-          <div className="max-w-xl mx-auto">
-            <p className="text-gray-700 text-lg md:text-xl">
-              Whether you need to borrow for buying a home, car, holiday or want to combine your loans into
-              one single loan, we will help you
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-              <a
-                href="/contact"
-                className="relative inline-block px-6 py-3 rounded-full font-semibold text-white bg-blue-600 overflow-hidden group"
-              >
-                <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
-                <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
-                  New Loan
-                </span>
-              </a>
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto bg-white/90 backdrop-blur-md shadow-xl rounded-2xl p-10 text-center">
+            <div className="section-title mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                We help with both new loan and balance transfer
+              </h2>
+            </div>
+            <div className="max-w-xl mx-auto">
+              <p className="text-gray-700 text-lg md:text-xl">
+                Whether you need to borrow for buying a home, car, holiday or want to
+                combine your loans into one single loan, we will help you
+              </p>
+              <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a
+                  href="/contact"
+                  className="relative inline-block px-6 py-3 rounded-full font-semibold text-white bg-blue-600 overflow-hidden group"
+                >
+                  <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
+                  <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
+                    New Loan
+                  </span>
+                </a>
 
-              <a
-                href="/contact"
-                className="relative inline-block px-6 py-3 rounded-full font-semibold text-blue-600 border border-blue-600 overflow-hidden group"
-              >
-                <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
-                <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
-                  Balance Transfer
-                </span>
-              </a>
+                <a
+                  href="/contact"
+                  className="relative inline-block px-6 py-3 rounded-full font-semibold text-blue-600 border border-blue-600 overflow-hidden group"
+                >
+                  <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
+                  <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
+                    Balance Transfer
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
-   <Footer/>
+      {/* <Footer /> */}
     </div>
   );
 }
