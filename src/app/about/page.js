@@ -69,7 +69,7 @@ Different`}
                             </div>
                             <div className="lg:w-5/12">
                                 <img
-                                    src="https://secureedgesolution.com/public/front/img/statistics/img-1.png"
+                                    src="https://media.istockphoto.com/id/1332358775/photo/young-couple-shaking-hands-deal-contract-real-estate-investment-business-agreement-agent.webp?a=1&b=1&s=612x612&w=0&k=20&c=gFtxy5dE4doeHAs_crzmgl-efeRUBLgJhRaO1J4-yxQ="
                                     alt="Statistics"
                                     className="w-full h-48 object-contain"
                                 />
