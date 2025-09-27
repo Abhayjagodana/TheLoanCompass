@@ -90,7 +90,7 @@ export default function ContactPage() {
                                     <Phone className="w-6 h-6 text-blue-600" />
                                     <div>
                                         <p className="text-blue-900 font-bold">Call the helpline:</p>
-                                        <span className="font-medium">83205 39885</span>
+                                        <span className="font-medium">+91-9624459515</span>
                                     </div>
                                 </div>
                             </div>
@@ -99,17 +99,17 @@ export default function ContactPage() {
                                     <Mail className="w-6 h-6 text-blue-600" />
                                     <div>
                                         <p className="text-blue-900 font-bold">Email us:</p>
-                                        <span className="font-medium">info@secureedgesolution.com</span>
+                                        <span className="font-medium">bj@theloancompass.in</span>
                                     </div>
                                 </div>
                             </div>
                             <div className="get-touch-box mt-6">
                                 <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">
-                                    <MapPin className="w-8 h-8 text-blue-600" />
+                                    <MapPin size={32} className="w-20 h-20 text-blue-600" />
                                     <div>
                                         <p className="text-blue-900 font-bold">Location</p>
                                         <span className="font-medium text-sm">
-                                            143, Raj Victoria, Opp Raj Arcade, Pal, Adajan, Surat, Gujarat - 395009
+                                            201, Balaji Enclave, Nr Nanpura old , Police Chowki , Nanpura ,Surat, Gujarat - 395009
                                         </span>
                                     </div>
                                 </div>
