@@ -70,7 +70,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Mail, Phone, ArrowRight, MapPin } from "lucide-react"; // Correct icon names
+import { Mail, Phone, ArrowRight, MapPin, X } from "lucide-react"; // Correct icon names
 
 export default function PropertyBox() {
     const slides = [
@@ -101,7 +101,43 @@ export default function PropertyBox() {
     ];
 
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [showInquiry, setShowInquiry] = useState(false);
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+    });
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState("");
 
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        try {
+            const res = await fetch("/api/inquiry", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            if (res.ok) {
+                setSuccess("Inquiry submitted successfully!");
+                setFormData({ name: "", email: "", phone: "", message: "" });
+            } else {
+                setSuccess("Failed to submit. Please try again.");
+            }
+        } catch (error) {
+            console.error(error);
+            setSuccess("Something went wrong. Please try again.");
+        } finally {
+            setLoading(false);
+        }
+    };
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -228,19 +264,87 @@ export default function PropertyBox() {
 
                                 {/* Action Buttons */}
                                 <div className="flex gap-4 mt-4">
-                                    <a
-                                        href="https://wa.me/8320539885?text=hello i want to more this properties details."
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-2 rounded-full font-semibold hover:bg-green-700"
+                                    <button
+                                        onClick={() => setShowInquiry(true)}
+                                        className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-2 rounded-full font-semibold hover:bg-blue-700 transition"
                                     >
                                         <Mail size={20} /> Inquiry
-                                    </a>
+                                    </button>
+
+                                    {/* Modal */}
+                                    {showInquiry && (
+                                        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+                                            <div className="bg-white rounded-lg p-6 w-full max-w-md relative">
+                                                <button
+                                                    onClick={() => setShowInquiry(false)}
+                                                    className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+                                                >
+                                                    <X size={24} />
+                                                </button>
+                                                <h2 className="text-2xl font-bold mb-4 text-blue-700">Send Inquiry</h2>
+                                                {success && <p className="text-green-600 mb-2">{success}</p>}
+                                                <form onSubmit={handleSubmit} className="space-y-4">
+                                                    <div>
+                                                        <label className="block font-bold text-blue-900 mb-1">Full Name</label>
+                                                        <input
+                                                            type="text"
+                                                            name="name"
+                                                            value={formData.name}
+                                                            onChange={handleChange}
+                                                            required
+                                                            className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-500"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label className="block font-bold text-blue-900 mb-1">Email</label>
+                                                        <input
+                                                            type="email"
+                                                            name="email"
+                                                            value={formData.email}
+                                                            onChange={handleChange}
+                                                            required
+                                                            className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-500"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label className="block font-bold text-blue-900 mb-1">Phone Number</label>
+                                                        <input
+                                                            type="tel"
+                                                            name="phone"
+                                                            value={formData.phone}
+                                                            onChange={handleChange}
+                                                            required
+                                                            className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-500"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label className="block font-bold text-blue-900 mb-1">Message</label>
+                                                        <textarea
+                                                            name="message"
+                                                            value={formData.message}
+                                                            onChange={handleChange}
+                                                            required
+                                                            rows={4}
+                                                            className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-500"
+                                                        ></textarea>
+                                                    </div>
+                                                    <button
+                                                        type="submit"
+                                                        disabled={loading}
+                                                        className={`w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 ${loading ? "opacity-70 cursor-not-allowed" : ""
+                                                            }`}
+                                                    >
+                                                        {loading ? "Submitting..." : "Submit"}
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    )}
                                     <a
                                         href="https://wa.me/8320539885?text=hello i want to more this properties details."
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex-1 flex items-center justify-center gap-2 bg-green-600 text-white py-2 rounded-full font-semibold hover:bg-green-700"
+                                        className="flex-1  flex items-center w-48 justify-center gap-2 bg-green-600 text-white py-2 rounded-full font-semibold hover:bg-green-700"
                                     >
                                         <Phone size={20} /> WhatsApp
                                     </a>
@@ -383,7 +487,7 @@ export default function PropertyBox() {
 
 
                 </div>
-   <style jsx>{`
+                <style jsx>{`
     @keyframes slideRight {
       0% {
         transform: translateX(-50px);

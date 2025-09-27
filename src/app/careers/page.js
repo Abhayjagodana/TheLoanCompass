@@ -56,6 +56,7 @@ function Career() {
     };
 
     return (
+        
         <div className="min-h-screen bg-gray-50">
             {/* Toast container */}
             <Toaster position="top-right" reverseOrder={false} />

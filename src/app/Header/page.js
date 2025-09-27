@@ -197,7 +197,7 @@ export default function Header() {
             <ul className="absolute left-0 mt-2 w-56 bg-white border rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
               <li>
                 <Link
-                  href="/loan/home-loan"
+                  href="/loan/Homeloan"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Home Loan
@@ -205,7 +205,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/loan/mortgage-loan"
+                  href="/loan/mortage"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Mortgage Loan
@@ -334,7 +334,7 @@ export default function Header() {
               <ul className="mt-2 pl-4 space-y-2">
                 <li>
                   <Link
-                    href="/loan/home-loan"
+                    href="/loan/Homeloan"
                     className="block hover:text-blue-700"
                   >
                     Home Loan

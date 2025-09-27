@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock, Mail  , MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -45,7 +45,7 @@ export default function ContactPage() {
 
     return (
         <div>
-             <section className="relative w-full bg-gradient-to-r from-blue-800 to-blue-700 min-h-[25vh] flex items-center justify-center my-24 animate-slide-right delay-300">
+            <section className="relative w-full bg-gradient-to-r from-blue-800 to-blue-700 min-h-[25vh] flex items-center justify-center my-24 animate-slide-right delay-300">
                 <div className="absolute inset-0 bg-black/10"></div>
                 <div className="relative z-10 text-center px-4">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
@@ -75,6 +75,7 @@ export default function ContactPage() {
     }
   `}</style>
             </section>
+            
             <div className="bg-gray-50 min-h-screen py-16 my-20">
                 <Toaster position="top-right" />
                 <div className="container mx-auto px-4 lg:flex lg:gap-16">
@@ -276,6 +277,7 @@ export default function ContactPage() {
                     </div>
                 </div>
             </div>
+            
         </div>
     );
 }
