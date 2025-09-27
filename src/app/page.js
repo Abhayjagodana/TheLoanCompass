@@ -386,69 +386,69 @@ export default function Banner() {
       </div>
     </section> */}
 
-<section className="relative pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-blue-700">
-  {/* Background animated shapes */}
-  <div className="absolute inset-0 pointer-events-none">
-    {/* Slide Shape 1 */}
-    <div className="absolute top-0 left-[10%] animate-slide-right">
+      <section className="relative pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-blue-700">
+        {/* Background animated shapes */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Slide Shape 1 */}
+          <div className="absolute top-0 left-[10%] animate-slide-right">
+            <Image
+              src="/banner-12.png"
+              width={150}
+              height={150}
+              alt="shape"
+            />
+          </div>
+          {/* Slide Shape 2 */}
+          {/* <div className="absolute top-20 left-[60%] animate-slide-right delay-300">
       <Image
-        src="/banner-12.png"
-        width={150}
-        height={150}
-        alt="shape"
-      />
-    </div>
-    {/* Slide Shape 2 */}
-    <div className="absolute top-20 left-[60%] animate-slide-right delay-300">
-      <Image
-        src="/menposter.png"
+        src="/men.png"
         width={180}
         height={180}
         alt="shape"
       />
-    </div>
-    {/* Slide Shape 3 */}
+    </div> */}
+          {/* Slide Shape 3 */}
 
-     <div className="absolute top-20 left-[80%] animate-slide-right delay-300">
-      <Image
-        src="/menposter.png"
-        width={180}
-        height={180}
-        alt="shape"
-      />
-    </div>
-   
-  </div>
+          <div className="absolute top-10 left-[60%] animate-slide-right delay-300">
+            <Image
+              src="/1.jpg"
+              width={450}
+              height={180}
+              alt="shape"
+            />
+          </div>
 
-  {/* Banner Content */}
-  <div className="container mx-auto relative z-10 px-4">
-    <div className="flex flex-col lg:flex-row items-start lg:items-end">
-      <div className="lg:w-1/2 pt-24 lg:pt-48 pb-24 lg:pb-48 text-white">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 lg:mb-8 leading-snug drop-shadow-lg">
-          Compare loans from several banks and find the <br /> best offer!
-        </h1>
-        <Link
-          href="/contact"
-          className="inline-block mt-4 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
-        >
-          Apply Now
-        </Link>
-      </div>
-      {/* Optional right side image */}
-      <div className="lg:w-1/2 hidden lg:flex justify-end">
-        {/* <Image
+        </div>
+
+        {/* Banner Content */}
+        <div className="container mx-auto relative z-10 px-4">
+          <div className="flex flex-col lg:flex-row items-start lg:items-end">
+            <div className="lg:w-1/2 pt-24 lg:pt-48 pb-24 lg:pb-48 text-white">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 lg:mb-8 leading-snug drop-shadow-lg">
+                Compare loans from several banks and find the <br /> best offer!
+              </h1>
+              <Link
+                href="/apply"
+                className="inline-block mt-4 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
+              >
+                Apply Now
+              </Link>
+            </div>
+            {/* Optional right side image */}
+            <div className="lg:w-1/2 hidden lg:flex justify-end">
+              {/* <Image
           src="/silder.png"
           width={400}
           height={400}
           alt="banner"
           className="object-contain"
         /> */}
-      </div>
-    </div>
-  </div>
+            </div>
+          </div>
+        </div>
 
-  {/* Tailwind animations */}
-  <style jsx>{`
+        {/* Tailwind animations */}
+        <style jsx>{`
     @keyframes slideRight {
       0% {
         transform: translateX(-50px);
@@ -469,10 +469,10 @@ export default function Banner() {
       animation-delay: 0.7s;
     }
   `}</style>
-</section>
+      </section>
 
       {/* Loan Slider Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50  animate-slide-right delay-300">
         <div className="container mx-auto">
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -490,7 +490,7 @@ export default function Banner() {
           >
             {features.map((feature, idx) => (
               <SwiperSlide key={idx}>
-                <div className="bg-blue-600 rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-2xl transition-all h-full flex flex-col justify-between">
+                <div className="bg-blue-600 rounded-xl  shadow-lg p-6 relative overflow-hidden group hover:shadow-2xl transition-all h-full flex flex-col justify-between">
                   <div className="text-white mb-4">
                     <feature.icon className="w-12 h-12" />
                   </div>
@@ -501,8 +501,8 @@ export default function Banner() {
                     {feature.description}
                   </p>
                   <Link
-                    href="/contact"
-                    className="mt-auto inline-block bg-white text-blue-700 px-4 py-2 rounded-full hover:bg-blue-800 hover:text-white transition text-sm"
+                    href="/apply"
+                    className="mt-auto w-32 inline-block bg-white text-blue-700 px-4 py-2 rounded-full hover:bg-blue-800 hover:text-white transition text-sm text-center"
                   >
                     Apply Now
                   </Link>
@@ -511,10 +511,31 @@ export default function Banner() {
             ))}
           </Swiper>
         </div>
+        <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
       </section>
 
       {/* Calculator */}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4  animate-slide-right delay-300">
         <div className="flex justify-center mb-12">
           <div className="text-center max-w-xl">
             <h2 className="text-3xl font-bold mb-4">Calculator</h2>
@@ -706,7 +727,7 @@ export default function Banner() {
                   ₹ 76,511*
                 </h1>
                 <a
-                  href="/contact"
+                  href="/apply"
                   className="inline-block mt-8 px-8 py-3 rounded-full bg-blue-600 text-white text-lg font-medium hover:bg-blue-700 transition"
                 >
                   Apply Now
@@ -726,9 +747,30 @@ export default function Banner() {
           </div>
 
         </div>
+        <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
       </div>
 
-      <section className="py-20 overflow-hidden bg-white">
+      <section className="py-20 overflow-hidden bg-white animate-slide-right delay-300">
         <div className="container mx-auto px-4">
           {/* Title */}
           <div className="text-center mb-10">
@@ -797,10 +839,31 @@ export default function Banner() {
             </div>
           </div>
         </div>
+        <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
       </section>
 
       {/* //banking name  */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-20 animate-slide-right delay-300">
         <div className="container mx-auto px-4">
           {/* Section Title */}
           <div className="text-center mb-10 max-w-3xl mx-auto">
@@ -833,11 +896,32 @@ export default function Banner() {
             ))}
           </div>
         </div>
+        <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
       </section>
 
 
       {/* //Client review */}
-      <section className="bg-gray-50 py-16 px-4">
+      <section className="bg-gray-50 py-16 px-4 animate-slide-right delay-300">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">
@@ -892,10 +976,31 @@ export default function Banner() {
             </div>
           </div>
         </div>
+        <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
       </section>
 
       {/* //Help you  */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-white animate-slide-right delay-300">
         <div className="container mx-auto flex flex-col lg:flex-row gap-12">
           {/* Left: Advisor Section */}
           <div className="lg:w-1/2 flex flex-col gap-6">
@@ -960,13 +1065,34 @@ export default function Banner() {
             ))}
           </div>
         </div>
+        <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
       </section>
 
       {/* //balance transfer */}
 
 
       <section
-        className="help-cta pt-20 mt-9 pb-24 bg-cover bg-center"
+        className="help-cta pt-20 mt-9 pb-24 bg-cover bg-center animate-slide-right delay-300"
         style={{
           backgroundImage: `url('https://secureedgesolution.com/public/front/img/help-ad/bg-shape.png')`,
         }}
@@ -985,7 +1111,7 @@ export default function Banner() {
               </p>
               <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
                 <a
-                  href="/contact"
+                  href="/apply"
                   className="relative inline-block px-6 py-3 rounded-full font-semibold text-white bg-blue-600 overflow-hidden group"
                 >
                   <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
@@ -995,7 +1121,7 @@ export default function Banner() {
                 </a>
 
                 <a
-                  href="/contact"
+                  href="/apply"
                   className="relative inline-block px-6 py-3 rounded-full font-semibold text-blue-600 border border-blue-600 overflow-hidden group"
                 >
                   <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
@@ -1007,6 +1133,27 @@ export default function Banner() {
             </div>
           </div>
         </div>
+        <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
       </section>
       {/* <Footer /> */}
     </div>

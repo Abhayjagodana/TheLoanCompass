@@ -1,11 +1,10 @@
 "use client";
 
-import Header from "../Header/page";
 
 export default function AboutBanner() {
     return (
         <div>
-            <section className="relative w-full bg-gradient-to-r from-blue-800 to-blue-700 min-h-[25vh] flex items-center my-28">
+            <section className="relative w-full bg-gradient-to-r from-blue-800 to-blue-700 min-h-[25vh] flex items-center my-28 animate-slide-right delay-300">
                 {/* Overlay optional for text shadow */}
                 <div className="absolute inset-0 bg-black opacity-10"></div>
 
@@ -17,15 +16,36 @@ export default function AboutBanner() {
 
                 {/* Optional bottom gradient for smooth transition */}
                 <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-blue-800 to-transparent"></div>
+                <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
             </section>
 
             {/* Add About containe */}
-            <section className="bg-white pt-12 pb-10">
+            <section className="bg-white pt-12 pb-10 animate-slide-right delay-300">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row lg:items-start">
                         {/* Left Column */}
-                        <div className="lg:w-1/3 flex justify-start mb-4 lg:mb-0">
-                            <div className="bg-blue-700 p-4 text-white rounded-lg text-right h-48 w-80 lg:w-64 flex items-center justify-end">
+                        <div className="lg:w-1/3 flex justify-start mb-4 lg:mb-0 ">
+                            <div className="bg-blue-700 p-4 text-white rounded-lg text-right h-48 w-80 lg:w-84 flex items-center justify-end">
                                 <h2 className="text-xl lg:text-2xl font-semibold leading-snug whitespace-pre-line">
                                     {`A journey that
 started with a
@@ -54,10 +74,31 @@ Different`}
                         </div>
                     </div>
                 </div>
+                <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
             </section>
 
             {/* box for counter */}
-            <section className="bg-gray-100 pt-24 pb-24">
+            <section className="bg-gray-100 pt-24 pb-24  animate-slide-right delay-300">
                 <div className="container mx-auto px-4">
                     {/* First Row */}
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-0">
@@ -107,7 +148,131 @@ Different`}
                         </div>
                     </div>
                 </div>
+                <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
             </section>
+
+            {/* leadership tems */}
+            <section className="leadership-area pt-12 pb-12 bg-gray-50 animate-slide-right delay-300">
+                <div className="container mx-auto px-4">
+                    {/* Section Title */}
+                    <div className="flex flex-col md:flex-row items-start md:items-end mb-16">
+                        <div className="md:w-2/3">
+                            <span className="text-blue-700 font-semibold uppercase text-sm">Leadership</span>
+                            <h2 className="text-3xl md:text-4xl font-bold mt-2">Meet our leadership team</h2>
+                        </div>
+                    </div>
+
+                    {/* Leadership Profiles */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Hiren Sejpal */}
+                        <div className="p-6 bg-white shadow-lg rounded-2xl flex flex-col md:flex-row gap-4">
+                            <div className="md:w-1/3">
+                                <div className="overflow-hidden rounded-lg shadow-lg">
+                                    <img
+                                        src="https://media.istockphoto.com/id/1489671297/photo/portrait-satisfied-businessman-showing-to-camera-thumbs-up.webp?a=1&b=1&s=612x612&w=0&k=20&c=KaBPwuabdbqPaz7yDt7FalfbilBykUiXb_ZPHpuW1Lo="
+                                        alt="Hiren Sejpal"
+                                        width={200}
+                                        height={200}
+                                        className="w-full h-auto object-cover"
+                                    />
+                                </div>
+                            </div>
+                            <div className="md:w-2/3 flex flex-col justify-center">
+                                <div className="flex items-center justify-between">
+                                    <h5 className="text-xl font-semibold">Hiren Sejpal</h5>
+                                    <a
+                                        href="https://in.linkedin.com/in/hiren-sejpal"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-700 hover:text-blue-900 text-lg"
+                                    >
+                                        <i className="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                                <p className="font-semibold mt-2 mb-2">Founder & CEO</p>
+                                <p className="text-gray-600 text-sm">
+                                    Hiren Sejpal is a visionary entrepreneur and CEO with expertise in startups, lending, loans, and financial services. As a founder and leader, he is dedicated to driving innovation and growth in the finance sector.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Mona Sejpal */}
+                        <div className="p-6 bg-white shadow-lg rounded-2xl flex flex-col md:flex-row gap-4">
+                            <div className="md:w-1/3">
+                                <div className="overflow-hidden rounded-lg shadow-lg">
+                                    <img
+                                        src="https://media.istockphoto.com/id/1489671297/photo/portrait-satisfied-businessman-showing-to-camera-thumbs-up.webp?a=1&b=1&s=612x612&w=0&k=20&c=KaBPwuabdbqPaz7yDt7FalfbilBykUiXb_ZPHpuW1Lo="
+                                        alt="Mona Sejpal"
+                                        width={200}
+                                        height={200}
+                                        className="w-full h-auto object-cover"
+                                    />
+                                </div>
+                            </div>
+                            <div className="md:w-2/3 flex flex-col justify-center">
+                                <div className="flex items-center justify-between">
+                                    <h5 className="text-xl font-semibold">Mona Sejpal</h5>
+                                    <a
+                                        href="https://in.linkedin.com/in/mona-sejpal-9861952b5"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-700 hover:text-blue-900 text-lg"
+                                    >
+                                        <i className="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                                <p className="font-semibold mt-2 mb-2">Co-Founder & CFO</p>
+                                <p className="text-gray-600 text-sm">
+                                    Mona Sejpal is a visionary entrepreneur and CFO with expertise in startups, lending, loans, and financial services. As a Co-founder and leader, she is dedicated to driving innovation and growth in the finance sector.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
+            </section>
+
+
         </div>
     );
 }

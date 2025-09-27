@@ -134,7 +134,8 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-16">
+    <footer className="bg-gray-800 text-white py-16  animate-slide-right delay-300">
+      
       <div className="container mx-auto px-4">
         {/* Top Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center md:text-left">
@@ -262,6 +263,27 @@ export default function Footer() {
           </p>
         </div>
       </div>
+       <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
     </footer>
   );
 }

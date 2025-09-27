@@ -184,7 +184,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/properties" className="hover:text-blue-400">
+            <Link href="/propertie" className="hover:text-blue-400">
               Properties
             </Link>
           </li>
@@ -255,14 +255,14 @@ export default function Header() {
           </li>
 
           <li>
-            <Link href="/career" className="hover:text-blue-400">
+            <Link href="/careers" className="hover:text-blue-400">
               Careers
             </Link>
           </li>
 
           <li>
             <Link
-              href="/contact"
+              href="/apply"
               className="bg-blue-700 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition text-sm"
             >
               Apply
