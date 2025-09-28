@@ -213,7 +213,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/loan/personal-loan"
+                  href="/loan/personal"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Personal Loan
@@ -221,7 +221,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/loan/unsecured-business-loan"
+                  href="/loan/unsecureloan"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Unsecured Business Loan
@@ -229,7 +229,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/loan/working-capital"
+                  href="/loan/workingcapital"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Working Capital
@@ -237,7 +237,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/loan/balance-transfer"
+                  href="/loan/balancetransfer"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Balance Transfer
@@ -245,7 +245,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/loan/car-loans"
+                  href="/loan/carloan"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Car Loans
@@ -316,7 +316,7 @@ export default function Header() {
             About Us
           </Link>
           <Link
-            href="/properties"
+            href="/propertie"
             className="block px-4 py-3 hover:bg-gray-100 text-blue-700 font-medium"
           >
             Properties
@@ -342,7 +342,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="/loan/mortgage-loan"
+                    href="/loan/mortage"
                     className="block hover:text-blue-700"
                   >
                     Mortgage Loan
@@ -350,7 +350,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="/loan/personal-loan"
+                    href="/loan/personal"
                     className="block hover:text-blue-700"
                   >
                     Personal Loan
@@ -358,7 +358,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="/loan/unsecured-business-loan"
+                    href="/loan/unsecureloan"
                     className="block hover:text-blue-700"
                   >
                     Unsecured Business Loan
@@ -366,7 +366,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="/loan/working-capital"
+                    href="/loan/workingcapital"
                     className="block hover:text-blue-700"
                   >
                     Working Capital
@@ -374,7 +374,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="/loan/balance-transfer"
+                    href="/loan/balancetransfer"
                     className="block hover:text-blue-700"
                   >
                     Balance Transfer
@@ -382,7 +382,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="/loan/car-loans"
+                    href="/loan/carloan"
                     className="block hover:text-blue-700"
                   >
                     Car Loans

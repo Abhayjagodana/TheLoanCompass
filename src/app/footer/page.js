@@ -178,7 +178,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/loan/mortgage-loan" className="hover:text-white">
+                <Link href="/loan/mortage" className="hover:text-white">
                   Mortgage Loan
                 </Link>
               </li>

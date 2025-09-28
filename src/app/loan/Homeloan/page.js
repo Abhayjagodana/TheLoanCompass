@@ -52,7 +52,7 @@ export default function HomeLoanSection() {
 
                     {/* Right Content */}
                     <div className="lg:w-2/3 w-full flex flex-col gap-4">
-                        <button className=" text-gray text-start px-4 py-1  mb-2">
+                        <button className=" text-gray font-bold text-start px-4 py-1  mb-2">
                             Home Loan
                         </button>
 
