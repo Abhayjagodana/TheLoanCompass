@@ -166,6 +166,7 @@ import Header from "./Header/page";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -391,12 +392,12 @@ export default function Banner() {
         <div className="absolute inset-0 pointer-events-none">
           {/* Slide Shape 1 */}
           <div className="absolute top-0 left-[10%] animate-slide-right">
-            <Image
+            {/* <Image
               src="/banner-12.png"
               width={150}
               height={150}
               alt="shape"
-            />
+            /> */}
           </div>
           {/* Slide Shape 2 */}
           {/* <div className="absolute top-20 left-[60%] animate-slide-right delay-300">
@@ -409,13 +410,21 @@ export default function Banner() {
     </div> */}
           {/* Slide Shape 3 */}
 
-          <div className="absolute top-10 left-[60%] animate-slide-right delay-300">
-            <Image
-              src="/1.jpg"
-              width={450}
-              height={180}
-              alt="shape"
-            />
+          <div className="absolute top-10 left-[50%]">
+            <motion.div
+              initial={{ x: 200, opacity: 0 }} // Start from right & hidden
+              whileInView={{ x: 0, opacity: 1 }} // Slide into place
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }} // Runs only once per scroll
+            >
+              <Image
+                src="/full.jpg"
+                width={450}
+                height={180}
+                alt="shape"
+                className="rounded-lg"
+              />
+            </motion.div>
           </div>
 
         </div>
@@ -423,9 +432,9 @@ export default function Banner() {
         {/* Banner Content */}
         <div className="container mx-auto relative z-10 px-4">
           <div className="flex flex-col lg:flex-row items-start lg:items-end">
-            <div className="lg:w-1/2 pt-24 lg:pt-48 pb-24 lg:pb-48 text-white">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 lg:mb-8 leading-snug drop-shadow-lg">
-                Compare loans from several banks and find the <br /> best offer!
+            <div className="lg:w-1/2 pt-24 lg:pt-48 pb-24 lg:pb-48 text-white ">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 my-[-110] lg:mb-8 leading-snug drop-shadow-lg">
+                Compare loans <br/>from several <br/>banks and find <br/>the best offer!
               </h1>
               <Link
                 href="/apply"

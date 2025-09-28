@@ -161,7 +161,8 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       <div className="container mx-auto flex justify-between items-center px-4 py-3">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+
+        <Link href="/" className="flex items-center space-x-2">
           <Image
             src="/logo-1.png"
             alt="Secure Edge"
@@ -169,7 +170,11 @@ export default function Header() {
             height={50}
             className="object-contain"
           />
+          <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-blue-700">
+            The Loan Compass
+          </span>
         </Link>
+        
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 items-center font-medium text-blue-600 uppercase text-lg font-sans	">
@@ -393,13 +398,13 @@ export default function Header() {
           </div>
 
           <Link
-            href="/career"
+            href="/careers"
             className="block px-4 py-3 hover:bg-gray-100 text-blue-700 font-medium"
           >
             Careers
           </Link>
           <Link
-            href="/contact"
+            href="/apply"
             className="block bg-blue-700 text-white m-4 px-4 py-2 rounded-full text-center hover:bg-blue-800 transition text-sm"
           >
             Apply

@@ -173,7 +173,7 @@ export default function Footer() {
             <h5 className="text-lg font-semibold mb-4">Loan</h5>
             <ul className="grid grid-cols-2 gap-3 text-gray-300">
               <li>
-                <Link href="/loan/home-loan" className="hover:text-white">
+                <Link href="/loan/Homeloan" className="hover:text-white">
                   Home Loan
                 </Link>
               </li>
@@ -183,33 +183,33 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/loan/personal-loan" className="hover:text-white">
+                <Link href="/loan/personal" className="hover:text-white">
                   Personal Loan
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/loan/unsecured-business-loan"
+                  href="/loan/unsecureloan"
                   className="hover:text-white"
                 >
                   Unsecured Business Loan
                 </Link>
               </li>
               <li>
-                <Link href="/loan/working-capital" className="hover:text-white">
+                <Link href="/loan/workingcapital" className="hover:text-white">
                   Working Capital
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/loan/balance-transfer"
+                  href="/loan/balancetransfer"
                   className="hover:text-white"
                 >
                   Balance Transfer
                 </Link>
               </li>
               <li>
-                <Link href="/loan/car-loans" className="hover:text-white">
+                <Link href="/loan/carloan" className="hover:text-white">
                   Car Loans
                 </Link>
               </li>
@@ -236,12 +236,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/privacy-policy" className="hover:text-white">
+                <Link href="/privacy-police" className="hover:text-white">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms/conditions" className="hover:text-white">
+                <Link href="/Tems&condistion" className="hover:text-white">
                   Terms &amp; Conditions
                 </Link>
               </li>

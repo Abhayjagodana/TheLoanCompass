@@ -36,7 +36,7 @@ export default function MortgageLoanSection() {
     }
   `}</style>
             </section>
-            <section className="py-[135px] my-[-100]">
+            <section className="py-[135px] my-[-100] animate-slide-right delay-300">
                 <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start gap-8">
                     {/* Left Image */}
                     <div className="lg:w-1/3 w-full">
@@ -95,6 +95,27 @@ export default function MortgageLoanSection() {
                         </a>
                     </div>
                 </div>
+                  <style jsx>{`
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-right {
+      animation: slideRight 1s ease-out forwards;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+  `}</style>
             </section>
         </div>
     );
