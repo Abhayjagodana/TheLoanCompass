@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image"; // ✅ Correct import
 
 
 export default function AboutBanner() {
@@ -109,10 +110,12 @@ Different`}
                                 <p className="mt-2">Trusted partner for 5000+ Channel Partners</p>
                             </div>
                             <div className="lg:w-5/12">
-                                <img
+                                <Image
                                     src="https://media.istockphoto.com/id/1332358775/photo/young-couple-shaking-hands-deal-contract-real-estate-investment-business-agreement-agent.webp?a=1&b=1&s=612x612&w=0&k=20&c=gFtxy5dE4doeHAs_crzmgl-efeRUBLgJhRaO1J4-yxQ="
                                     alt="Statistics"
-                                    className="w-full h-48 object-contain"
+                                    width={612}   // specify width
+                                    height={300}  // specify height
+                                    className="object-contain w-full h-48"
                                 />
                             </div>
                         </div>
@@ -188,7 +191,7 @@ Different`}
                         <div className="p-6 bg-white shadow-lg rounded-2xl flex flex-col md:flex-row gap-4">
                             <div className="md:w-1/3">
                                 <div className="overflow-hidden rounded-lg shadow-lg">
-                                    <img
+                                    <Image
                                         src="https://media.istockphoto.com/id/1489671297/photo/portrait-satisfied-businessman-showing-to-camera-thumbs-up.webp?a=1&b=1&s=612x612&w=0&k=20&c=KaBPwuabdbqPaz7yDt7FalfbilBykUiXb_ZPHpuW1Lo="
                                         alt="Hiren Sejpal"
                                         width={200}
@@ -220,7 +223,7 @@ Different`}
                         <div className="p-6 bg-white shadow-lg rounded-2xl flex flex-col md:flex-row gap-4">
                             <div className="md:w-1/3">
                                 <div className="overflow-hidden rounded-lg shadow-lg">
-                                    <img
+                                    <Image
                                         src="https://media.istockphoto.com/id/1489671297/photo/portrait-satisfied-businessman-showing-to-camera-thumbs-up.webp?a=1&b=1&s=612x612&w=0&k=20&c=KaBPwuabdbqPaz7yDt7FalfbilBykUiXb_ZPHpuW1Lo="
                                         alt="Mona Sejpal"
                                         width={200}
