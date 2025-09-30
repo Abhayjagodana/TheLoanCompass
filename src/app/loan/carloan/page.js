@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image"; // ✅ Correct import
 
 export default function CarLoan() {
   return (
@@ -43,7 +44,7 @@ export default function CarLoan() {
             {/* Left Image */}
             <div className="md:col-span-4">
               <div className="services-img">
-                <img
+                <Image
                   src="https://media.istockphoto.com/id/2187018053/photo/vehicle-purchase-and-sale-contract-sales-representative-in-car-showroom-vehicle-loan-business.webp?a=1&b=1&s=612x612&w=0&k=20&c=xyXpP8S4AEogoQYA0PquN_AtYkNdr65-kQai17SEOjU="
                   alt="Car Loan"
                   className="w-full rounded-lg shadow-lg"

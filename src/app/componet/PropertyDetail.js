@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image"; // ✅ Correct import
 
 import React from "react";
 import Slider from "react-slick";
@@ -56,7 +57,7 @@ export default function PropertyDetail({ property }) {
                                 {property.media.map((item, index) => (
                                     <div key={index} className="relative">
                                         {item.type === "image" ? (
-                                            <img
+                                            <Image
                                                 src={item.src}
                                                 alt={`Property ${index + 1}`}
                                                 className="w-full h-96 md:h-[28rem] object-cover rounded-xl"

@@ -43,7 +43,7 @@ export default function UnsecuredBusinessLoanSection() {
                     {/* Left Image */}
                     <div className="lg:w-1/3 w-full">
                         <div className="services-img">
-                            <img
+                            <Image
                                 src="https://media.istockphoto.com/id/827709914/photo/page-of-paper-with-words-unsecured-loans-and-glasses.webp?a=1&b=1&s=612x612&w=0&k=20&c=tc6RnFeVj6WHazyfJTvPHh5kfKw9yyzp7XyHc6z6Ko0="
                                 alt="Service Image"
                                 width={500}

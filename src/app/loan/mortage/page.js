@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "next/image"; // ✅ Correct import
 
 export default function MortgageLoanSection() {
     return (
@@ -41,7 +41,7 @@ export default function MortgageLoanSection() {
                     {/* Left Image */}
                     <div className="lg:w-1/3 w-full">
                         <div className="services-img">
-                            <img
+                            <Image
                                 src="https://media.istockphoto.com/id/1409298953/photo/real-estate-agents-shake-hands-after-the-signing-of-the-contract-agreement-is-complete.webp?a=1&b=1&s=612x612&w=0&k=20&c=IlUK1X_LKI-HU8APW7XbKHiFx0B122NKETS9prbQYGE="
                                 alt="Service Image"
                                 width={500}

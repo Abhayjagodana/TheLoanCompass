@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
-
+import Image from "next/image"; // ✅ Correct import
+  
 export default function PersonalLoanSection() {
   return (
 
@@ -41,7 +41,7 @@ export default function PersonalLoanSection() {
           {/* Left Image */}
           <div className="lg:w-1/3 w-full">
             <div className="services-img">
-              <img
+              <Image
                 src="https://media.istockphoto.com/id/2170497017/photo/finance-and-investment-businessman-approved-personal-loan-loan-approval-from-a-bank-or.webp?a=1&b=1&s=612x612&w=0&k=20&c=FZzvwe0jewgZHwhmVGse2Rh3_cyuOz2yRK16mCunkFQ="
                 alt="Service Image"
                 width={500}

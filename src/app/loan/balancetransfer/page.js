@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image"; // ✅ Correct import
 
 export default function BalanceTransfer() {
     return (
@@ -43,7 +44,7 @@ export default function BalanceTransfer() {
                         {/* Left Image */}
                         <div className="md:col-span-4">
                             <div className="services-img">
-                                <img
+                                <Image
                                     src="https://media.istockphoto.com/id/853923224/photo/businessman-using-a-tablet-computer-for-online-banking-at-an-outdoor-caf%C3%A9.webp?a=1&b=1&s=612x612&w=0&k=20&c=yriQWj_9Y5094SgNJxyoph8qNLznrCw5rd22Iq_sr44="
                                     alt="Service Image"
                                     className="w-full rounded-lg shadow-lg"

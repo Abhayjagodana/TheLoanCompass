@@ -41,7 +41,7 @@ export default function WorkingCapitalLoanSection() {
                 {/* Left Image */}
                 <div className="lg:w-1/3 w-full">
                     <div className="services-img">
-                        <img
+                        <Image
                             src="https://media.istockphoto.com/id/1137023551/photo/working-capital-concept.webp?a=1&b=1&s=612x612&w=0&k=20&c=l8ALM9f-BnprNlajztjyWMnvHBKE7PrRFJeahwN2hhE="
                             alt="Service Image"
                             width={500}
