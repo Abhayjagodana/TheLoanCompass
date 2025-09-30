@@ -4,7 +4,7 @@
 export default function AboutBanner() {
     return (
         <div>
-            <section className="relative w-full bg-gradient-to-r from-blue-800 to-blue-700 min-h-[25vh] flex items-center my-28 animate-slide-right delay-300">
+            <section className="relative w-full bg-gradient-to-r from-purple-600 to-purple-800 min-h-[25vh] flex items-center my-28 animate-slide-right delay-300">
                 {/* Overlay optional for text shadow */}
                 <div className="absolute inset-0 bg-black opacity-10"></div>
 

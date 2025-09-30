@@ -266,7 +266,7 @@ export default function PropertyBox() {
                                 <div className="flex gap-4 mt-4">
                                     <button
                                         onClick={() => setShowInquiry(true)}
-                                        className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-2 rounded-full font-semibold hover:bg-blue-700 transition"
+                                        className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-purple-500 text-white py-2 rounded-full font-semibold hover:bg-blue-700 transition"
                                     >
                                         <Mail size={20} /> Inquiry
                                     </button>
