@@ -135,13 +135,13 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-16  animate-slide-right delay-300">
-      
+
       <div className="container mx-auto px-4">
         {/* Top Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center md:text-left">
           {/* Column 1 */}
           <div>
-            <h4 className="text-xl font-semibold mb-4">We're on a mission.</h4>
+            <h4 className="text-xl font-semibold mb-4">We&apos;re on a mission.</h4>
             <p className="mb-6 text-gray-300 leading-relaxed">
               Your go-to source for retail and business loans, empowering
               financial growth with trust, simplicity, and excellence.
@@ -263,7 +263,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-       <style jsx>{`
+      <style jsx>{`
     @keyframes slideRight {
       0% {
         transform: translateX(-50px);

@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
                                 <p>
                                     <strong>1. Introduction</strong>
                                     <br />
-                                    Secure Edge Solution ("Company," "we," "our," or "us") values your privacy and is committed to protecting your personal information. This Privacy Policy outlines how we collect, use, and safeguard the information you provide when applying for a bank loan through our platform.
+                                    Secure Edge Solution (&quot;Company,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;)
                                 </p>
 
                                 <p>

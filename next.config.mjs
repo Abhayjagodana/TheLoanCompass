@@ -1,8 +1,30 @@
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//     images: {
+//     domains: ["secureedgesolution.com"],
+//   },
+// };
+
+// export default nextConfig;
+
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-    domains: ["secureedgesolution.com"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "media.istockphoto.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "secureedgesolution.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
 export default nextConfig;
+
