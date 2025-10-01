@@ -446,7 +446,7 @@ export default function Banner() {
 
 
       {/* Loan Slider Section */}
-      <section className="py-16 bg-gray-50  animate-slide-right delay-300">
+      <section className="py-16 bg-white  animate-slide-right delay-300">
         <div className="container mx-auto">
           <Swiper
             modules={[Pagination, Autoplay]}
