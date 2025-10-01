@@ -387,86 +387,63 @@ export default function Banner() {
       </div>
     </section> */}
 
-      <section className="relative pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-blue-700">
-        {/* Background animated shapes */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Slide Shape 3 (Main Image Animation) */}
-          <div className="absolute top-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-[50%]">
-            <motion.div
-              initial={{ x: 200, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <Image
-                src="/z.png"
-                width={570}
-                height={150}
-                alt="shape"
-                className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
-              />
-            </motion.div>
-          </div>
+    <section className="relative w-full min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-blue-700">
+  {/* Background animated shapes */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-[50%]">
+      <motion.div
+        initial={{ x: 200, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <Image
+          src="/z.png"
+          width={570}
+          height={150}
+          alt="shape"
+          className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
+        />
+      </motion.div>
+    </div>
+  </div>
+
+  {/* Banner Content */}
+  <div className="container mx-auto relative z-10 px-4">
+    <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left">
+      {/* Left Content */}
+      <div className="lg:w-1/2 pt-24 lg:pt-48 pb-12 lg:pb-48 text-white">
+        <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6 leading-snug drop-shadow-lg">
+          Compare loans <br />from several <br />banks and find <br />the best offer!
+        </h1>
+
+        {/* Button for Desktop */}
+        <div className="hidden lg:block">
+          <Link
+            href="/apply"
+            className="inline-block mt-4 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
+          >
+            Apply Now
+          </Link>
         </div>
+      </div>
 
-        {/* Banner Content */}
-        <div className="container mx-auto relative z-10 px-4">
-          <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left">
-            {/* Left Content */}
-            <div className="lg:w-1/2 pt-24 lg:pt-48 pb-12 lg:pb-48 text-white ">
-              <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6 leading-snug drop-shadow-lg my-[-84]">
-                Compare loans <br />from several <br />banks and find <br />the best offer!
-              </h1>
+      {/* Right side image only visible on desktop */}
+      <div className="lg:w-1/2 hidden lg:flex justify-end"></div>
+    </div>
 
-              {/* Button for Desktop */}
-              <div className="hidden lg:block">
-                <Link
-                  href="/apply"
-                  className="inline-block mt-4 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
-                >
-                  Apply Now
-                </Link>
-              </div>
-            </div>
+    {/* Button below image for Mobile/Tablet */}
+    <div className="block lg:hidden text-center mt-6">
+      <Link
+        href="/apply"
+        className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
+      >
+        Apply Now
+      </Link>
+    </div>
+  </div>
+</section>
 
-            {/* Right side image only visible on desktop */}
-            <div className="lg:w-1/2 hidden lg:flex justify-end">{/* empty */}</div>
-          </div>
-
-          {/* Button below image for Mobile/Tablet */}
-          <div className="block lg:hidden text-center mt-6">
-            <Link
-              href="/apply"
-              className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
-            >
-              Apply Now
-            </Link>
-          </div>
-        </div>
-
-        {/* Tailwind animations */}
-        <style jsx>{`
-        @keyframes slideRight {
-          0% {
-            transform: translateX(-50px);
-            opacity: 0;
-          }
-          100% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-        .animate-slide-right {
-          animation: slideRight 1s ease-out forwards;
-        }
-        .delay-300 {
-          animation-delay: 0.3s;
-        }
-        .delay-700 {
-          animation-delay: 0.7s;
-        }
-      `}</style>
-      </section>
 
       {/* Loan Slider Section */}
       <section className="py-16 bg-gray-50  animate-slide-right delay-300">
@@ -617,20 +594,18 @@ export default function Banner() {
                       Year
                     </button>
                   </div>
-                  <div className="ml-4 my-8">
+                  <div className="ml-0 lg:ml-4 my-4 lg:my-8 w-full lg:w-auto">
                     <input
                       type="text"
                       value={duration}
                       onChange={(e) =>
                         setDuration(e.target.value.replace(/[^0-9]/g, ""))
                       }
-                      placeholder={
-                        activeTab === "month" ? "Enter months" : "Enter years"
-                      }
-                      className="border border-gray-300 rounded-lg px-4 py-2 w-32 text-right focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder={activeTab === "month" ? "Enter months" : "Enter years"}
+                      className="border border-gray-300 rounded-lg px-4 py-2 w-full sm:w-40 md:w-48 lg:w-32 text-right focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-
                   </div>
+
                 </div>
 
                 <div className="w-full h-2 bg-gray-200 rounded-full relative">
