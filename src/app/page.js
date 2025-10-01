@@ -387,62 +387,62 @@ export default function Banner() {
       </div>
     </section> */}
 
-      <section className="relative w-full min-h-screen pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-blue-700">
-        {/* Background animated shapes */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-[50%]">
-            <motion.div
-              initial={{ x: 200, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <Image
-                src="/z.png"
-                width={570}
-                height={150}
-                alt="shape"
-                className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
-              />
-            </motion.div>
-          </div>
+     <section className="relative w-full min-h-[500px] sm:min-h-[600px] lg:min-h-screen pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-blue-700">
+  {/* Background animated shapes */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-[50%]">
+      <motion.div
+        initial={{ x: 200, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <Image
+          src="/z.png"
+          width={570}
+          height={150}
+          alt="shape"
+          className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
+        />
+      </motion.div>
+    </div>
+  </div>
+
+  {/* Banner Content */}
+  <div className="container mx-auto relative z-10 px-4">
+    <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left">
+      {/* Left Content */}
+      <div className="lg:w-1/2 pt-24 lg:pt-48 pb-12 lg:pb-48 text-white">
+        <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6 leading-snug drop-shadow-lg">
+          Compare loans <br />from several <br />banks and find <br />the best offer!
+        </h1>
+
+        {/* Button for Desktop */}
+        <div className="hidden lg:block">
+          <Link
+            href="/apply"
+            className="inline-block mt-4 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
+          >
+            Apply Now
+          </Link>
         </div>
+      </div>
 
-        {/* Banner Content */}
-        <div className="container mx-auto relative z-10 px-4">
-          <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left">
-            {/* Left Content */}
-            <div className="lg:w-1/2 pt-24 lg:pt-48 pb-12 lg:pb-48 text-white">
-              <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6 leading-snug drop-shadow-lg">
-                Compare loans <br />from several <br />banks and find <br />the best offer!
-              </h1>
+      {/* Right side image only visible on desktop */}
+      <div className="lg:w-1/2 hidden lg:flex justify-end"></div>
+    </div>
 
-              {/* Button for Desktop */}
-              <div className="hidden lg:block">
-                <Link
-                  href="/apply"
-                  className="inline-block mt-4 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
-                >
-                  Apply Now
-                </Link>
-              </div>
-            </div>
-
-            {/* Right side image only visible on desktop */}
-            <div className="lg:w-1/2 hidden lg:flex justify-end"></div>
-          </div>
-
-          {/* Button below image for Mobile/Tablet */}
-          <div className="block lg:hidden text-center mt-6">
-            <Link
-              href="/apply"
-              className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
-            >
-              Apply Now
-            </Link>
-          </div>
-        </div>
-      </section>
+    {/* Button below image for Mobile/Tablet */}
+    <div className="block lg:hidden text-center mt-6">
+      <Link
+        href="/apply"
+        className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
+      >
+        Apply Now
+      </Link>
+    </div>
+  </div>
+</section>
 
 
       {/* Loan Slider Section */}
