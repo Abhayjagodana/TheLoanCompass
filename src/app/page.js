@@ -387,7 +387,7 @@ export default function Banner() {
       </div>
     </section> */}
 
-    <section className="relative w-full min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-blue-700">
+     <section className="relative w-full min-h-screen pt-[90px] lg:pt-[150px] overflow-hidden bg-blue-700">
   {/* Background animated shapes */}
   <div className="absolute inset-0 pointer-events-none">
     <div className="absolute top-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-[50%]">
