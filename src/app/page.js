@@ -175,6 +175,7 @@ import "swiper/css/navigation";
 import { Landmark, MailMinus, Phone, phone, } from "lucide-react";
 import { useEffect, useState } from "react";
 import Footer from "./footer/page";
+import EMICalculatorPage from "./calculater/page";
 
 export default function Banner() {
   // slider loan type
@@ -387,62 +388,66 @@ export default function Banner() {
       </div>
     </section> */}
 
-     <section className="relative w-full min-h-[500px] sm:min-h-[600px] lg:min-h-screen pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-blue-700">
-  {/* Background animated shapes */}
-  <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-[50%]">
-      <motion.div
-        initial={{ x: 200, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        <Image
-          src="/z.png"
-          width={570}
-          height={150}
-          alt="shape"
-          className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
-        />
-      </motion.div>
-    </div>
-  </div>
-
-  {/* Banner Content */}
-  <div className="container mx-auto relative z-10 px-4">
-    <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left">
-      {/* Left Content */}
-      <div className="lg:w-1/2 pt-24 lg:pt-48 pb-12 lg:pb-48 text-white">
-        <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6 leading-snug drop-shadow-lg">
-          Compare loans <br />from several <br />banks and find <br />the best offer!
-        </h1>
-
-        {/* Button for Desktop */}
-        <div className="hidden lg:block">
-          <Link
-            href="/apply"
-            className="inline-block mt-4 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
-          >
-            Apply Now
-          </Link>
+      <section className="relative w-full min-h-[500px] sm:min-h-[600px] lg:min-h-screen pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-blue-700">
+        {/* Background animated shapes */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-[50%]">
+            <motion.div
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <Image
+                src="/z.png"
+                width={570}
+                height={150}
+                alt="shape"
+                className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
+              />
+            </motion.div>
+          </div>
         </div>
-      </div>
 
-      {/* Right side image only visible on desktop */}
-      <div className="lg:w-1/2 hidden lg:flex justify-end"></div>
-    </div>
+        {/* Banner Content */}
+        <div className="container mx-auto relative z-10 px-4">
+          <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left">
+            {/* Left Content */}
+      <div className="lg:w-1/2 pt-8 lg:pt-12 pb-12 lg:pb-48 text-white">
+  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug drop-shadow-lg text-left">
+    Compare loans <br />
+    from several <br />
+    banks and find <br />
+    the best offer!
+  </h1>
 
-    {/* Button below image for Mobile/Tablet */}
-    <div className="block lg:hidden text-center mt-6">
-      <Link
-        href="/apply"
-        className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
-      >
-        Apply Now
-      </Link>
-    </div>
+  {/* Button for Desktop */}
+  <div className="hidden lg:block mt-6">
+    <Link
+      href="/apply"
+      className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
+    >
+      Apply Now
+    </Link>
   </div>
-</section>
+</div>
+
+
+            {/* Right side image only visible on desktop */}
+            <div className="lg:w-1/2 hidden lg:flex justify-end"></div>
+          </div>
+
+          {/* Button below image for Mobile/Tablet */}
+          <div className="block lg:hidden text-center mt-6">
+            <Link
+              href="/apply"
+              className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
+            >
+              Apply Now
+            </Link>
+          </div>
+        </div>
+      </section>
 
 
       {/* Loan Slider Section */}
@@ -464,7 +469,7 @@ export default function Banner() {
           >
             {features.map((feature, idx) => (
               <SwiperSlide key={idx}>
-                <div className="bg-blue-600 rounded-xl  shadow-lg p-6 relative overflow-hidden group hover:shadow-2xl transition-all h-full flex flex-col justify-between">
+                <div className="bg-pink-700 rounded-xl  shadow-lg p-6 relative overflow-hidden group hover:shadow-2xl transition-all h-full flex flex-col justify-between">
                   <div className="text-white mb-4">
                     <feature.icon className="w-12 h-12" />
                   </div>
@@ -476,7 +481,7 @@ export default function Banner() {
                   </p>
                   <Link
                     href="/apply"
-                    className="mt-auto w-32 inline-block bg-white text-blue-700 px-4 py-2 rounded-full hover:bg-blue-800 hover:text-white transition text-sm text-center"
+                    className="mt-auto w-32 inline-block bg-white text-blue-700 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-white transition text-sm text-center"
                   >
                     Apply Now
                   </Link>
@@ -509,237 +514,8 @@ export default function Banner() {
       </section>
 
       {/* Calculator */}
-      <div className="container mx-auto px-4  animate-slide-right delay-300">
-        <div className="flex justify-center mb-12">
-          <div className="text-center max-w-xl">
-            <h2 className="text-3xl font-bold mb-4">Calculator</h2>
-            <p className="text-gray-600">
-              Get an approximate figure for the total monthly installment
-              payments along with a complete break-up of the home loan.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-xl shadow-lg p-6">
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Left Side */}
-            <div className="lg:w-7/12 space-y-10">
-              {/* Loan Amount */}
-              <div className="space-y-2">
-                <div className="flex justify-between items-center mb-2">
-                  <h6 className="font-semibold">Loan Amount</h6>
-                  <input
-
-                    type="text"
-                    value={loanAmount.toLocaleString()}
-                    onChange={(e) => {
-                      const value = e.target.value.replace(/[^0-9]/g, "");
-                      setLoanAmount(Number(value));
-                    }}
-                    className="border border-gray-100 rounded-lg px-4 py-2 w-32 my-4 text-right focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-                <div className="w-full h-2 bg-gray-200 rounded-full relative">
-                  <input
-                    type="range"
-                    min={0}
-                    max={maxValue}
-                    value={loanAmount}
-                    onChange={(e) => setLoanAmount(Number(e.target.value))}
-                    className="absolute top-0 left-0 w-full h-2 opacity-0 cursor-pointer "
-                  />
-                  {marks.map((mark, index) => (
-                    <div
-                      key={index}
-                      className="absolute top-1/2 -translate-y-1/2"
-                      style={{ left: `${(mark.value / maxValue) * 100}%` }}
-                    >
-                      <div
-                        className={`w-1 h-4 ${index === 0 ? "bg-gray-500" : "bg-blue-200"
-                          } rounded`}
-                      />
-                      <div className="text-xs mt-1 text-center cursor-pointer">
-                        {mark.label}
-                      </div>
-                    </div>
-                  ))}
-                  <div
-                    className="h-2 bg-blue-600 rounded-full"
-                    style={{ width: `${(loanAmount / maxValue) * 100}%` }}
-                  />
-                </div>
-              </div>
-
-              {/* Loan Duration */}
-              <div className="space-y-2">
-                <div className="flex justify-between items-center mb-2">
-                  <h6 className="font-semibold">Loan Duration</h6>
-                  <div className="flex items-center space-x-4">
-                    <button
-                      onClick={() => setActiveTab("month")}
-                      className={`px-4 py-1 rounded-t-lg text-sm font-medium border-b-2 ${activeTab === "month"
-                        ? "border-blue-600 text-blue-600"
-                        : "border-transparent text-gray-500 hover:text-blue-600"
-                        }`}
-                    >
-                      Month
-                    </button>
-                    <button
-                      onClick={() => setActiveTab("year")}
-                      className={`px-4 py-1 rounded-t-lg text-sm font-medium border-b-2 ${activeTab === "year"
-                        ? "border-blue-600 text-blue-600"
-                        : "border-transparent text-gray-500 hover:text-blue-600"
-                        }`}
-                    >
-                      Year
-                    </button>
-                  </div>
-                  <div className="ml-0 lg:ml-4 my-4 lg:my-8 w-full lg:w-auto">
-                    <input
-                      type="text"
-                      value={duration}
-                      onChange={(e) =>
-                        setDuration(e.target.value.replace(/[^0-9]/g, ""))
-                      }
-                      placeholder={activeTab === "month" ? "Enter months" : "Enter years"}
-                      className="border border-gray-300 rounded-lg px-4 py-2 w-full sm:w-40 md:w-48 lg:w-32 text-right focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-
-                </div>
-
-                <div className="w-full h-2 bg-gray-200 rounded-full relative">
-                  <input
-                    type="range"
-                    min={0}
-                    max={maxloan}
-                    step={10}
-                    value={duration}
-                    onChange={(e) => setDuration(Number(e.target.value))}
-                    className="absolute top-0 left-0 w-full h-2 opacity-0 cursor-pointer"
-                  />
-                  {loan.map((item, index) => (
-                    <div
-                      key={index}
-                      className="absolute top-1/2 -translate-y-1/2 text-center"
-                      style={{ left: `${(item.value / maxloan) * 100}%` }}
-                      onClick={() => setDuration(item.value)}
-                    >
-                      <div className="w-1 h-4 bg-blue-500 mx-auto rounded"></div>
-                      <div className="text-xs mt-1 text-gray-600 cursor-pointer">
-                        {item.label}
-                      </div>
-                    </div>
-                  ))}
-                  <div
-                    className="h-2 bg-blue-600 rounded-full"
-                    style={{ width: `${(duration / maxloan) * 100}%` }}
-                  />
-                </div>
-
-                {/* <div className="text-right font-semibold text-gray-700">
-                  Selected Duration: {duration} months
-                </div> */}
-              </div>
-
-              {/* Interest Rate */}
-              <div className="bg-gray-100 px-4 py-2 mb-5 rounded-lg shadow-sm">
-                <p className="text-sm font-medium text-gray-700">Rate of Interest</p>
-                <span id="InterestAmount" className="text-lg font-semibold text-blue-600">
-                  16.00 %
-                </span>
-              </div>
-            </div>
-
-            {/* Right Side */}
-            <div className="lg:w-5/12 bg-gray-50 rounded-xl p-6 flex flex-col justify-between">
-              <div className="space-y-6">
-                <div>
-                  <h6 className="font-semibold">EMI Amount</h6>
-                  <span className="text-sm text-gray-500">Principal + Interest</span>
-                  <p id="TotalAmount" className="text-xl font-bold text-blue-600 mt-2">
-                    ₹ 994,643*
-                  </p>                </div>
-                <div>
-                  <h6 className="font-semibold text-gray-800">Interest Payable</h6>
-                  <p id="InterestPayable" className="text-lg text-gray-600 mt-2">
-                    ₹ 137,192*
-                  </p>
-                </div>
-                <div className="flex justify-center mt-4">
-                  <svg
-                    className="w-32 h-32"
-                    viewBox="0 0 80 80"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="40"
-                      cy="40"
-                      r="35"
-                      stroke="#E5E7EB"
-                      strokeWidth="10"
-                    />
-                    <circle
-                      cx="40"
-                      cy="40"
-                      r="30"
-                      stroke="#3B82F6"
-                      strokeWidth="10"
-                      strokeDasharray="188.4"
-                      strokeDashoffset="62.8"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              <div className="text-center mt-10">
-                <h4 className="text-lg font-semibold mb-1">Your EMI Amount</h4>
-                <h1 id="emiAmount" className="text-3xl font-bold text-blue-700 m-0">
-                  ₹ 76,511*
-                </h1>
-                <a
-                  href="/apply"
-                  className="inline-block mt-8 px-8 py-3 rounded-full  text-white text-lg font-medium  transition bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500"
-                >
-                  Apply Now
-                </a>
-              </div>
-              {/* <div className="text-center mt-6">
-                <a
-                  href="/contact"
-                  className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition"
-                >
-                  Apply Now
-                </a>
-              </div> */}
-            </div>
-
-
-          </div>
-
-        </div>
-        <style jsx>{`
-    @keyframes slideRight {
-      0% {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    .animate-slide-right {
-      animation: slideRight 1s ease-out forwards;
-    }
-    .delay-300 {
-      animation-delay: 0.3s;
-    }
-    .delay-700 {
-      animation-delay: 0.7s;
-    }
-  `}</style>
+      <div>
+        <EMICalculatorPage />
       </div>
 
       <section className="py-20 overflow-hidden bg-white animate-slide-right delay-300">

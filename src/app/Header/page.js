@@ -164,17 +164,17 @@ export default function Header() {
 
         <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="/logo-1.png"
+            src="/23.jpg"
             alt="Secure Edge"
             width={80}
-            height={50}
+            height={60}
             className="object-contain"
           />
-          <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-blue-700">
+          {/* <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-blue-700">
             The Loan Compass
-          </span>
+          </span> */}
         </Link>
-        
+
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 items-center font-medium text-blue-600 uppercase text-lg font-sans	">
@@ -189,9 +189,12 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/propertie" className="hover:text-blue-400">
+            {/* <Link href="/propertie" className="hover:text-blue-400">
               Properties
-            </Link>
+            </Link> */}
+            {/* <Link href="/calculater" className="hover:text-blue-400">
+              calculater
+            </Link> */}
           </li>
 
           {/* Apply Loan Dropdown */}

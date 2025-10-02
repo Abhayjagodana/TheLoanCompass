@@ -21,6 +21,24 @@ export default function ContactPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // --- Validation ---
+        if (!/^[A-Za-z\s]+$/.test(formData.name)) {
+            toast.error("Full Name should contain only letters and spaces.");
+            return;
+        }
+        if (!/^\d{10}$/.test(formData.number)) {
+            toast.error("Number must be exactly 10 digits.");
+            return;
+        }
+        if (!formData.loan_type) {
+            toast.error("Please select a loan type.");
+            return;
+        }
+        if (formData.message.length < 5) {
+            toast.error("Message must be at least 5 characters long.");
+            return;
+        }
+
         setLoading(true);
         try {
             const res = await fetch("/api/contact-submit", {
@@ -83,9 +101,11 @@ export default function ContactPage() {
                     <div className="lg:w-5/12 mb-12 lg:mb-0">
                         <h2 className="text-3xl font-bold mb-8 text-blue-900">Get in touch with us.</h2>
                         <p className="text-gray-600 mb-8">
-                            <p>
-                                Want to get in touch? We&#39;d love to hear from you. Here&#39;s how you can reach us...
-                            </p>                        </p>
+                            <div className="text-gray-600 mb-8 space-y-2">
+                                <p>Want to get in touch? We&#39;d love to hear from you.</p>
+                                <p>Here&#39;s how you can reach us...</p>
+                            </div>
+                        </p>
                         <div className="grid grid-cols-2 gap-4">
                             <div className="col-sm-6">
                                 <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">

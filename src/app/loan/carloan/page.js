@@ -43,13 +43,14 @@ export default function CarLoan() {
 
             {/* Left Image */}
             <div className="md:col-span-4">
-              <div className="services-img">
-                <Image
-                  src="https://media.istockphoto.com/id/2187018053/photo/vehicle-purchase-and-sale-contract-sales-representative-in-car-showroom-vehicle-loan-business.webp?a=1&b=1&s=612x612&w=0&k=20&c=xyXpP8S4AEogoQYA0PquN_AtYkNdr65-kQai17SEOjU="
-                  alt="Car Loan"
-                  className="w-full rounded-lg shadow-lg"
-                />
-              </div>
+             <div className="md:col-span-4 relative w-full h-80 md:h-96">
+  <Image
+    src="https://media.istockphoto.com/id/2187018053/photo/vehicle-purchase-and-sale-contract-sales-representative-in-car-showroom-vehicle-loan-business.webp?a=1&b=1&s=612x612&w=0&k=20&c=xyXpP8S4AEogoQYA0PquN_AtYkNdr65-kQai17SEOjU="
+    alt="Car Loan"
+    fill
+    className="object-cover rounded-lg shadow-lg"
+  />
+</div>
             </div>
 
             {/* Right Content */}

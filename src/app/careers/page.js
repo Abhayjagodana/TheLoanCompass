@@ -27,6 +27,26 @@ function Career() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        // Validation
+        const nameRegex = /^[A-Za-z\s]+$/;
+        const numberRegex = /^[0-9]{10}$/;
+
+        if (!formData.name || !nameRegex.test(formData.name)) {
+            return toast.error("Full Name must contain letters only.");
+        }
+        if (!formData.number || !numberRegex.test(formData.number)) {
+            return toast.error("Number must be exactly 10 digits.");
+        }
+        if (!formData.email) {
+            return toast.error("Email is required.");
+        }
+        if (!formData.job_type.length) {
+            return toast.error("Please select at least one Job Type.");
+        }
+        if (!formData.message || formData.message.length < 5) {
+            return toast.error("Message must be at least 5 characters.");
+        }
         setLoading(true);
         try {
             const res = await fetch("/api/career-submit", {
@@ -56,7 +76,7 @@ function Career() {
     };
 
     return (
-        
+
         <div className="min-h-screen bg-gray-50">
             {/* Toast container */}
             <Toaster position="top-right" reverseOrder={false} />

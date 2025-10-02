@@ -43,13 +43,15 @@ export default function BalanceTransfer() {
 
                         {/* Left Image */}
                         <div className="md:col-span-4">
-                            <div className="services-img">
-                                <Image
-                                    src="https://media.istockphoto.com/id/853923224/photo/businessman-using-a-tablet-computer-for-online-banking-at-an-outdoor-caf%C3%A9.webp?a=1&b=1&s=612x612&w=0&k=20&c=yriQWj_9Y5094SgNJxyoph8qNLznrCw5rd22Iq_sr44="
-                                    alt="Service Image"
-                                    className="w-full rounded-lg shadow-lg"
-                                />
-                            </div>
+                            <div className="md:col-span-4 relative w-full h-80 md:h-96">
+  <Image
+    src="https://media.istockphoto.com/id/853923224/photo/businessman-using-a-tablet-computer-for-online-banking-at-an-outdoor-caf%C3%A9.webp?a=1&b=1&s=612x612&w=0&k=20&c=yriQWj_9Y5094SgNJxyoph8qNLznrCw5rd22Iq_sr44="
+    alt="Service Image"
+    fill
+    className="object-cover rounded-lg shadow-lg"
+  />
+</div>
+✅
                         </div>
 
                         {/* Right Content */}

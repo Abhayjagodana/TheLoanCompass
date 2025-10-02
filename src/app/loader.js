@@ -54,7 +54,7 @@ function Loader() {
 
         {/* Static logo in center */}
         <Image
-          src="/logo-1.png"
+          src="/23.jpg"
           alt="The Loan Compass"
           width={80}
           height={80}

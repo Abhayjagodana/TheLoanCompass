@@ -117,6 +117,29 @@ export default function PropertyBox() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // Validation
+        const nameRegex = /^[A-Za-z\s]+$/;
+        const phoneRegex = /^[0-9]{10}$/;
+
+        if (!nameRegex.test(formData.name)) {
+            setSuccess("Full name should contain only letters.");
+            return;
+        }
+
+        if (!formData.email) {
+            setSuccess("Email is required.");
+            return;
+        }
+
+        if (!phoneRegex.test(formData.phone)) {
+            setSuccess("Phone number should be exactly 10 digits.");
+            return;
+        }
+
+        if (formData.message.length < 5) {
+            setSuccess("Message should be at least 5 characters.");
+            return;
+        }
         setLoading(true);
         try {
             const res = await fetch("/api/inquiry", {
