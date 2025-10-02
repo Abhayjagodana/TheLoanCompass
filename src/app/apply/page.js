@@ -100,12 +100,12 @@ export default function ContactPage() {
                     {/* Contact Info */}
                     <div className="lg:w-5/12 mb-12 lg:mb-0">
                         <h2 className="text-3xl font-bold mb-8 text-blue-900">Get in touch with us.</h2>
-                        <p className="text-gray-600 mb-8">
-                            <div className="text-gray-600 mb-8 space-y-2">
+                        <div className="text-gray-600 mb-8">
+                            <div className="space-y-2">
                                 <p>Want to get in touch? We&#39;d love to hear from you.</p>
                                 <p>Here&#39;s how you can reach us...</p>
                             </div>
-                        </p>
+                        </div>
                         <div className="grid grid-cols-2 gap-4">
                             <div className="col-sm-6">
                                 <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">

@@ -200,7 +200,7 @@ export default function Header() {
           {/* Apply Loan Dropdown */}
           <li className="relative group">
             <button className="flex items-center hover:text-blue-400 cursor-pointer">
-              Apply Loan <span className="ml-1">▾</span>
+              APPLY LOAN <span className="ml-1">▾</span>
             </button>
             <ul className="absolute left-0 mt-2 w-56 bg-white border rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
               <li>

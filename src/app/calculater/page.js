@@ -640,358 +640,652 @@
 // export default EMICalculatorPage;
 
 
+// "use client";
+// import React, { useEffect, useState } from "react";
+
+// function EMICalculatorPage() {
+//   // Loan Type Configs
+//   const loanConfigs = {
+//     "home-loan": { amount: 3000000, rate: 8, tenure: 20 },
+//     "personal-loan": { amount: 500000, rate: 12, tenure: 5 },
+//     "car-loan": { amount: 1000000, rate: 9, tenure: 7 },
+//     "mortgage-loan": { amount: 5000000, rate: 7.5, tenure: 25 },
+//     "unsecured-business-loan": { amount: 2000000, rate: 14, tenure: 10 },
+//   };
+
+//   const [loanProduct, setLoanProduct] = useState("home-loan");
+//   const [loanAmount, setLoanAmount] = useState(loanConfigs["home-loan"].amount);
+//   const [interestRate, setInterestRate] = useState(loanConfigs["home-loan"].rate);
+//   const [termValue, setTermValue] = useState(loanConfigs["home-loan"].tenure);
+//   const [termUnit, setTermUnit] = useState("years");
+//   const [emiScheme, setEmiScheme] = useState("arrears");
+
+//   // Convert tenure to months
+//   const months = termUnit === "years" ? Math.round(termValue * 12) : Math.round(termValue);
+
+//   const [emi, setEmi] = useState(0);
+//   const [totalInterest, setTotalInterest] = useState(0);
+//   const [totalPayment, setTotalPayment] = useState(0);
+
+//   // Format functions
+//   const formatCurrency = (value) => {
+//     try {
+//       return value.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+//     } catch (e) {
+//       return value;
+//     }
+//   };
+//   const formatCurrencyWithSymbol = (value) => `₹${formatCurrency(value)}`;
+
+//   // Recalculate EMI
+//   useEffect(() => {
+//     const r = interestRate / 100 / 12;
+//     const n = Math.max(1, months);
+//     const P = Math.max(0, loanAmount);
+
+//     let monthlyEmi = 0;
+//     if (r === 0) monthlyEmi = P / n;
+//     else {
+//       const pow = Math.pow(1 + r, n);
+//       monthlyEmi = (P * r * pow) / (pow - 1);
+//     }
+
+//     if (emiScheme === "advance") {
+//       const approxReduction = monthlyEmi * r;
+//       monthlyEmi = Math.max(0, monthlyEmi - approxReduction);
+//     }
+
+//     const total = monthlyEmi * n;
+//     const interest = Math.max(0, total - P);
+
+//     setEmi(Math.round(monthlyEmi));
+//     setTotalInterest(Math.round(interest));
+//     setTotalPayment(Math.round(total));
+//   }, [loanAmount, interestRate, months, emiScheme]);
+
+//   // Input limits
+//   const loanMin = 0;
+//   const loanMax = 20000000;
+//   const interestMin = 5;
+//   const interestMax = 20;
+//   const termMinYears = 0;
+//   const termMaxYears = 30;
+//   const termMaxMonths = 360;
+
+//   // Donut chart values
+//   const principalPart = Math.max(0, loanAmount);
+//   const interestPart = Math.max(0, totalInterest);
+//   const totalParts = principalPart + interestPart || 1;
+//   const principalPct = Math.round((principalPart / totalParts) * 1000) / 10;
+//   const interestPct = Math.round((interestPart / totalParts) * 1000) / 10;
+
+//   const donutCircumference = 2 * Math.PI * 50;
+//   const interestDash = (interestPart / totalParts) * donutCircumference;
+//   const principalDash = donutCircumference - interestDash;
+
+//   return (
+//     <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+//       <h2 className="text-2xl font-semibold mb-6 text-center lg:text-center">
+//         EMI Calculator
+//       </h2>
+
+//       <div className="bg-white shadow rounded-lg p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+//         {/* Left Controls */}
+//         <div className="lg:col-span-2 space-y-6">
+
+//           {/* Loan Type Dropdown */}
+//           <div className="space-y-2">
+//             <label className="font-medium">Loan Type</label>
+//             <select
+//               value={loanProduct}
+//               onChange={(e) => {
+//                 const type = e.target.value;
+//                 setLoanProduct(type);
+//                 setLoanAmount(loanConfigs[type].amount);
+//                 setInterestRate(loanConfigs[type].rate);
+//                 setTermValue(loanConfigs[type].tenure);
+//                 setTermUnit("years");
+
+//                 // Navigate to different pages
+//                 switch (type) {
+//                   case "home-loan":
+//                     // window.location.href = "/home-loan";
+//                     break;
+//                   case "personal-loan":
+//                     // window.location.href = "/personal-loan";
+//                     break;
+//                   case "car-loan":
+//                     // window.location.href = "/car-loan";
+//                     break;
+//                   case "mortgage-loan":
+//                     // window.location.href = "/mortgage-loan";
+//                     break;
+//                   case "unsecured-business-loan":
+//                     // window.location.href = "/unsecured-business-loan";
+//                     break;
+//                   default:
+//                     break;
+//                 }
+//               }}
+//               className="w-full border rounded px-3 py-2"
+//             >
+//               <option value="home-loan">Home Loan</option>
+//               <option value="personal-loan">Personal Loan</option>
+//               <option value="car-loan">Car Loan</option>
+//               <option value="mortgage-loan">Mortgage Loan</option>
+//               <option value="unsecured-business-loan">Unsecured Business Loan</option>
+//             </select>
+//           </div>
+
+//           {/* Loan Amount */}
+//           <div className="space-y-2">
+//             <label className="font-medium">Loan Amount</label>
+//             <div className="flex flex-col sm:flex-row items-center gap-3">
+//               <input
+//                 type="text"
+//                 value={formatCurrency(loanAmount)}
+//                 onChange={(e) => {
+//                   const digits = e.target.value.replace(/[^0-9]/g, "");
+//                   const val = Number(digits || 0);
+//                   const rounded = Math.round(val / 10000) * 10000;
+//                   setLoanAmount(Math.min(Math.max(rounded, loanMin), loanMax));
+//                 }}
+//                 className="w-full sm:flex-1 border rounded px-3 py-2"
+//               />
+//               <div className="sm:w-40 text-sm text-right font-semibold">
+//                 {formatCurrencyWithSymbol(loanAmount)}
+//               </div>
+//             </div>
+//             <input
+//               type="range"
+//               min={loanMin}
+//               max={loanMax}
+//               step={10000}
+//               value={loanAmount}
+//               onChange={(e) => setLoanAmount(Number(e.target.value))}
+//               className="w-full"
+//             />
+//           </div>
+
+//           {/* Interest Rate */}
+//           <div className="space-y-2">
+//             <label className="font-medium">Interest Rate (Annual %)</label>
+//             <div className="flex flex-col sm:flex-row items-center gap-3">
+//               <input
+//       type="number"
+//       value={
+//         loanProduct === "home-loan"
+//           ? 7.5
+//           : loanProduct === "mortgage-loan"
+//           ? 15
+//           : loanProduct === "unsecured-business-loan"
+//           ? 8.5
+//           :loanProduct === "personal-loan"
+//           ? 12
+//           :loanProduct === "car-loan"
+//           ?12.5
+//           : interestRate
+//       }
+//       step="0.1"
+//       onChange={(e) => setInterestRate(Number(e.target.value))}
+//       className="w-full sm:w-28 border rounded px-3 py-2"
+//       disabled={
+//         loanProduct === "home-loan" ||
+//         loanProduct === "mortgage-loan" ||
+//         loanProduct === "unsecured-business-loan"||
+//         loanProduct === "personal-loan" || 
+//         loanProduct === "car-loan"
+//       }
+//     />
+//               {loanProduct !== "home-loan" &&
+//     loanProduct !== "mortgage-loan" &&
+//     loanProduct !== "unsecured-business-loan" &&
+//     loanProduct !== "personal-loan" &&
+//     loanProduct !== "car-loan"
+//     ? (
+//       <>
+//         <input
+//           type="range"
+//           min={interestMin}
+//           max={interestMax}
+//           step={0.1}
+//           value={interestRate}
+//           onChange={(e) => setInterestRate(Number(e.target.value))}
+//           className="flex-1"
+//         />
+//         <span className="text-sm sm:w-16 text-right">{interestRate}%</span>
+//       </>
+//     ) : (
+//       <span className="text-sm sm:w-16 text-right">
+//         {loanProduct === "home-loan"
+//           ? "7.5%"
+//           : loanProduct === "mortgage-loan"
+//           ? "15%"
+//           : "8.5%"
+
+//           }
+//       </span>
+//     )}
+//             </div>
+//           </div>
+
+//           {/* Tenure */}
+//           <div className="space-y-2">
+//             <label className="font-medium">Loan Tenure</label>
+//             <div className="flex flex-col sm:flex-row items-center gap-3">
+//               <input
+//                 type="number"
+//                 value={termValue}
+//                 min={termUnit === "years" ? termMinYears : 1}
+//                 max={termUnit === "years" ? termMaxYears : termMaxMonths}
+//                 onChange={(e) => setTermValue(Number(e.target.value))}
+//                 className="w-full sm:w-24 border rounded px-3 py-2"
+//               />
+
+//               {/* Unit Toggle */}
+//               <div className="inline-flex border rounded overflow-hidden">
+//                 <button
+//                   onClick={() => {
+//                     if (termUnit === "months") {
+//                       setTermValue(Math.round(termValue / 12));
+//                     }
+//                     setTermUnit("years");
+//                   }}
+//                   className={`px-3 py-1 ${termUnit === "years" ? "bg-indigo-600 text-white" : "bg-white"
+//                     }`}
+//                 >
+//                   Yr
+//                 </button>
+//                 <button
+//                   onClick={() => {
+//                     if (termUnit === "years") {
+//                       setTermValue(Math.round(termValue * 12));
+//                     }
+//                     setTermUnit("months");
+//                   }}
+//                   className={`px-3 py-1 ${termUnit === "months" ? "bg-indigo-600 text-white" : "bg-white"
+//                     }`}
+//                 >
+//                   Mo
+//                 </button>
+//               </div>
+
+//               <input
+//                 type="range"
+//                 min={termUnit === "years" ? termMinYears : 1}
+//                 max={termUnit === "years" ? termMaxYears : termMaxMonths}
+//                 step={1}
+//                 value={termValue}
+//                 onChange={(e) => setTermValue(Number(e.target.value))}
+//                 className="flex-1"
+//               />
+
+//               <div className="text-sm sm:w-24 text-right">
+//                 {termUnit === "years" ? `${termValue} yr` : `${termValue} mo`}
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* EMI Scheme */}
+//           <div className="space-y-2">
+//             <label className="font-medium">EMI Scheme</label>
+//             <div className="flex flex-wrap gap-2">
+//               {["advance", "arrears"].map((scheme) => (
+//                 <button
+//                   key={scheme}
+//                   onClick={() => setEmiScheme(scheme)}
+//                   className={`px-3 py-1 rounded-md text-sm font-medium transition ${emiScheme === scheme
+//                     ? "bg-indigo-600 text-white"
+//                     : "bg-gray-100 hover:bg-gray-200"
+//                     }`}
+//                 >
+//                   {scheme === "advance" ? "EMI in Advance" : "EMI in Arrears"}
+//                 </button>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Right Summary */}
+//         <div className="bg-gray-50 p-6 rounded-lg flex flex-col items-center gap-6">
+//           <div className="text-center">
+//             <h4 className="text-sm text-gray-500">Loan EMI</h4>
+//             <p className="text-2xl font-bold">₹{formatCurrency(emi)}</p>
+//           </div>
+
+//           <div className="w-full grid grid-cols-2 gap-4 text-sm">
+//             <div className="bg-white p-3 rounded shadow-sm">
+//               <div className="text-xs text-gray-500">Total Interest Payable</div>
+//               <div className="font-semibold">{formatCurrencyWithSymbol(totalInterest)}</div>
+//             </div>
+//             <div className="bg-white p-3 rounded shadow-sm">
+//               <div className="text-xs text-gray-500">Total Payment (P + I)</div>
+//               <div className="font-semibold">{formatCurrencyWithSymbol(totalPayment)}</div>
+//             </div>
+//           </div>
+
+//           {/* Donut Chart */}
+//           <div className="flex flex-col sm:flex-row items-center gap-6">
+//             <svg width="120" height="120" viewBox="0 0 120 120">
+//               <g transform="translate(60,60)">
+//                 <circle r="50" cx="0" cy="0" fill="transparent" strokeWidth="20" stroke="#E6E6E6" />
+//                 <circle
+//                   r="50"
+//                   cx="0"
+//                   cy="0"
+//                   fill="transparent"
+//                   stroke="#ED8C2B"
+//                   strokeWidth="20"
+//                   strokeDasharray={`${interestDash} ${principalDash}`}
+//                   transform="rotate(-90)"
+//                 />
+//                 <text x="0" y="4" textAnchor="middle" fontSize="12" fontWeight="700">{interestPct}%</text>
+//                 <text x="0" y="20" textAnchor="middle" fontSize="10" fill="#666">Interest</text>
+//               </g>
+//             </svg>
+
+//             <div className="text-sm space-y-2">
+//               <div className="flex items-center gap-2">
+//                 <span className="w-3 h-3 bg-[#88A825] rounded-full inline-block" />
+//                 <span>Principal:</span>
+//                 <strong>{formatCurrencyWithSymbol(principalPart)}</strong>
+//               </div>
+//               <div className="flex items-center gap-2">
+//                 <span className="w-3 h-3 bg-[#ED8C2B] rounded-full inline-block" />
+//                 <span>Interest:</span>
+//                 <strong>{formatCurrencyWithSymbol(interestPart)}</strong>
+//               </div>
+//             </div>
+//           </div>
+
+//           <div className="text-xs text-gray-500">Break-up of total payment</div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default EMICalculatorPage;
 "use client";
 import React, { useEffect, useState } from "react";
 
 function EMICalculatorPage() {
-  // Loan Type Configs
-  const loanConfigs = {
-    "home-loan": { amount: 3000000, rate: 8, tenure: 20 },
-    "personal-loan": { amount: 500000, rate: 12, tenure: 5 },
-    "car-loan": { amount: 1000000, rate: 9, tenure: 7 },
-    "mortgage-loan": { amount: 5000000, rate: 7.5, tenure: 25 },
-    "unsecured-business-loan": { amount: 2000000, rate: 14, tenure: 10 },
-  };
+    // Loan Type Configs
+    const loanConfigs = {
+        "home-loan": { amount: 3000000, rate: 7.5, tenure: 20 },
+        "personal-loan": { amount: 500000, rate: 12, tenure: 5 },
+        "car-loan": { amount: 1000000, rate: 8.5, tenure: 7 },
+        "used-car-loan": { amount: 800000, rate: 12.5, tenure: 5 },
+        "mortgage-loan": { amount: 5000000, rate: 8.5, tenure: 25 },
+        "unsecured-business-loan": { amount: 2000000, rate: 15, tenure: 10 },
+    };
 
-  const [loanProduct, setLoanProduct] = useState("home-loan");
-  const [loanAmount, setLoanAmount] = useState(loanConfigs["home-loan"].amount);
-  const [interestRate, setInterestRate] = useState(loanConfigs["home-loan"].rate);
-  const [termValue, setTermValue] = useState(loanConfigs["home-loan"].tenure);
-  const [termUnit, setTermUnit] = useState("years");
-  const [emiScheme, setEmiScheme] = useState("arrears");
+    const [loanProduct, setLoanProduct] = useState("home-loan");
+    const [loanAmount, setLoanAmount] = useState(loanConfigs["home-loan"].amount);
+    const [interestRate, setInterestRate] = useState(loanConfigs["home-loan"].rate);
+    const [termValue, setTermValue] = useState(loanConfigs["home-loan"].tenure);
+    const [termUnit, setTermUnit] = useState("years");
+    const [emiScheme, setEmiScheme] = useState("arrears");
 
-  // Convert tenure to months
-  const months = termUnit === "years" ? Math.round(termValue * 12) : Math.round(termValue);
+    // Convert tenure to months
+    const months = termUnit === "years" ? Math.round(termValue * 12) : Math.round(termValue);
 
-  const [emi, setEmi] = useState(0);
-  const [totalInterest, setTotalInterest] = useState(0);
-  const [totalPayment, setTotalPayment] = useState(0);
+    const [emi, setEmi] = useState(0);
+    const [totalInterest, setTotalInterest] = useState(0);
+    const [totalPayment, setTotalPayment] = useState(0);
 
-  // Format functions
-  const formatCurrency = (value) => {
-    try {
-      return value.toLocaleString("en-IN", { maximumFractionDigits: 0 });
-    } catch (e) {
-      return value;
-    }
-  };
-  const formatCurrencyWithSymbol = (value) => `₹${formatCurrency(value)}`;
+    // Format functions
+    const formatCurrency = (value) => {
+        try {
+            return value.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+        } catch (e) {
+            return value;
+        }
+    };
+    const formatCurrencyWithSymbol = (value) => `₹${formatCurrency(value)}`;
 
-  // Recalculate EMI
-  useEffect(() => {
-    const r = interestRate / 100 / 12;
-    const n = Math.max(1, months);
-    const P = Math.max(0, loanAmount);
+    // Recalculate EMI
+    useEffect(() => {
+        const r = interestRate / 100 / 12;
+        const n = Math.max(1, months);
+        const P = Math.max(0, loanAmount);
 
-    let monthlyEmi = 0;
-    if (r === 0) monthlyEmi = P / n;
-    else {
-      const pow = Math.pow(1 + r, n);
-      monthlyEmi = (P * r * pow) / (pow - 1);
-    }
+        let monthlyEmi = 0;
+        if (r === 0) monthlyEmi = P / n;
+        else {
+            const pow = Math.pow(1 + r, n);
+            monthlyEmi = (P * r * pow) / (pow - 1);
+        }
 
-    if (emiScheme === "advance") {
-      const approxReduction = monthlyEmi * r;
-      monthlyEmi = Math.max(0, monthlyEmi - approxReduction);
-    }
+        if (emiScheme === "advance") {
+            const approxReduction = monthlyEmi * r;
+            monthlyEmi = Math.max(0, monthlyEmi - approxReduction);
+        }
 
-    const total = monthlyEmi * n;
-    const interest = Math.max(0, total - P);
+        const total = monthlyEmi * n;
+        const interest = Math.max(0, total - P);
 
-    setEmi(Math.round(monthlyEmi));
-    setTotalInterest(Math.round(interest));
-    setTotalPayment(Math.round(total));
-  }, [loanAmount, interestRate, months, emiScheme]);
+        setEmi(Math.round(monthlyEmi));
+        setTotalInterest(Math.round(interest));
+        setTotalPayment(Math.round(total));
+    }, [loanAmount, interestRate, months, emiScheme]);
 
-  // Input limits
-  const loanMin = 0;
-  const loanMax = 20000000;
-  const interestMin = 5;
-  const interestMax = 20;
-  const termMinYears = 0;
-  const termMaxYears = 30;
-  const termMaxMonths = 360;
+    // Input limits
+    const loanMin = 0;
+    const loanMax = 20000000;
+    const termMinYears = 0;
+    const termMaxYears = 30;
+    const termMaxMonths = 360;
 
-  // Donut chart values
-  const principalPart = Math.max(0, loanAmount);
-  const interestPart = Math.max(0, totalInterest);
-  const totalParts = principalPart + interestPart || 1;
-  const principalPct = Math.round((principalPart / totalParts) * 1000) / 10;
-  const interestPct = Math.round((interestPart / totalParts) * 1000) / 10;
+    // Donut chart values
+    const principalPart = Math.max(0, loanAmount);
+    const interestPart = Math.max(0, totalInterest);
+    const totalParts = principalPart + interestPart || 1;
+    const principalPct = Math.round((principalPart / totalParts) * 1000) / 10;
+    const interestPct = Math.round((interestPart / totalParts) * 1000) / 10;
 
-  const donutCircumference = 2 * Math.PI * 50;
-  const interestDash = (interestPart / totalParts) * donutCircumference;
-  const principalDash = donutCircumference - interestDash;
+    const donutCircumference = 2 * Math.PI * 50;
+    const interestDash = (interestPart / totalParts) * donutCircumference;
+    const principalDash = donutCircumference - interestDash;
 
-  return (
-    <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-      <h2 className="text-2xl font-semibold mb-6 text-center lg:text-center">
-        EMI Calculator
-      </h2>
+    return (
+        <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+            <h2 className="text-2xl font-semibold mb-6 text-center lg:text-center">
+                EMI Calculator
+            </h2>
 
-      <div className="bg-white shadow rounded-lg p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left Controls */}
-        <div className="lg:col-span-2 space-y-6">
+            <div className="bg-white shadow rounded-lg p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* Left Controls */}
+                <div className="lg:col-span-2 space-y-6">
 
-          {/* Loan Type Dropdown */}
-          <div className="space-y-2">
-            <label className="font-medium">Loan Type</label>
-            <select
-              value={loanProduct}
-              onChange={(e) => {
-                const type = e.target.value;
-                setLoanProduct(type);
-                setLoanAmount(loanConfigs[type].amount);
-                setInterestRate(loanConfigs[type].rate);
-                setTermValue(loanConfigs[type].tenure);
-                setTermUnit("years");
+                    {/* Loan Type Dropdown */}
+                    <div className="space-y-2">
+                        <label className="font-medium">Loan Type</label>
+                        <select
+                            value={loanProduct}
+                            onChange={(e) => {
+                                const type = e.target.value;
+                                setLoanProduct(type);
+                                setLoanAmount(loanConfigs[type].amount);
+                                setInterestRate(loanConfigs[type].rate);
+                                setTermValue(loanConfigs[type].tenure);
+                                setTermUnit("years");
+                            }}
+                            className="w-full border rounded px-3 py-2"
+                        >
+                            <option value="home-loan">Home Loan</option>
+                            <option value="personal-loan">Personal Loan</option>
+                            <option value="car-loan">New Car Loan</option>
+                            <option value="used-car-loan">Used Car Loan</option>
+                            <option value="mortgage-loan">Mortgage Loan</option>
+                            <option value="unsecured-business-loan">Unsecured Business Loan</option>
+                        </select>
+                    </div>
 
-                // Navigate to different pages
-                switch (type) {
-                  case "home-loan":
-                    // window.location.href = "/home-loan";
-                    break;
-                  case "personal-loan":
-                    // window.location.href = "/personal-loan";
-                    break;
-                  case "car-loan":
-                    // window.location.href = "/car-loan";
-                    break;
-                  case "mortgage-loan":
-                    // window.location.href = "/mortgage-loan";
-                    break;
-                  case "unsecured-business-loan":
-                    // window.location.href = "/unsecured-business-loan";
-                    break;
-                  default:
-                    break;
-                }
-              }}
-              className="w-full border rounded px-3 py-2"
-            >
-              <option value="home-loan">Home Loan</option>
-              <option value="personal-loan">Personal Loan</option>
-              <option value="car-loan">Car Loan</option>
-              <option value="mortgage-loan">Mortgage Loan</option>
-              <option value="unsecured-business-loan">Unsecured Business Loan</option>
-            </select>
-          </div>
+                    {/* Loan Amount */}
+                    <div className="space-y-2">
+                        <label className="font-medium">Loan Amount</label>
+                        <div className="flex flex-col sm:flex-row items-center gap-3">
+                            <input
+                                type="text"
+                                value={formatCurrency(loanAmount)}
+                                onChange={(e) => {
+                                    const digits = e.target.value.replace(/[^0-9]/g, "");
+                                    const val = Number(digits || 0);
+                                    const rounded = Math.round(val / 10000) * 10000;
+                                    setLoanAmount(Math.min(Math.max(rounded, loanMin), loanMax));
+                                }}
+                                className="w-full sm:flex-1 border rounded px-3 py-2"
+                            />
+                            <div className="sm:w-40 text-sm text-right font-semibold">
+                                {formatCurrencyWithSymbol(loanAmount)}
+                            </div>
+                        </div>
+                        <input
+                            type="range"
+                            min={loanMin}
+                            max={loanMax}
+                            step={10000}
+                            value={loanAmount}
+                            onChange={(e) => setLoanAmount(Number(e.target.value))}
+                            className="w-full"
+                        />
+                    </div>
 
-          {/* Loan Amount */}
-          <div className="space-y-2">
-            <label className="font-medium">Loan Amount</label>
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              <input
-                type="text"
-                value={formatCurrency(loanAmount)}
-                onChange={(e) => {
-                  const digits = e.target.value.replace(/[^0-9]/g, "");
-                  const val = Number(digits || 0);
-                  const rounded = Math.round(val / 10000) * 10000;
-                  setLoanAmount(Math.min(Math.max(rounded, loanMin), loanMax));
-                }}
-                className="w-full sm:flex-1 border rounded px-3 py-2"
-              />
-              <div className="sm:w-40 text-sm text-right font-semibold">
-                {formatCurrencyWithSymbol(loanAmount)}
-              </div>
+                    {/* Interest Rate */}
+                    <div className="space-y-2">
+                        <label className="font-medium">Interest Rate (Annual %)</label>
+                        <div className="text-sm sm:w-16 text-right font-semibold">
+                            {interestRate}%
+                        </div>
+                    </div>
+
+                    {/* Tenure */}
+                    <div className="space-y-2">
+                        <label className="font-medium">Loan Tenure</label>
+                        <div className="flex flex-col sm:flex-row items-center gap-3">
+                            <input
+                                type="number"
+                                value={termValue}
+                                min={termUnit === "years" ? termMinYears : 1}
+                                max={termUnit === "years" ? termMaxYears : termMaxMonths}
+                                onChange={(e) => setTermValue(Number(e.target.value))}
+                                className="w-full sm:w-24 border rounded px-3 py-2"
+                            />
+
+                            {/* Unit Toggle */}
+                            <div className="inline-flex border rounded overflow-hidden">
+                                <button
+                                    onClick={() => {
+                                        if (termUnit === "months") setTermValue(Math.round(termValue / 12));
+                                        setTermUnit("years");
+                                    }}
+                                    className={`px-3 py-1 ${termUnit === "years" ? "bg-indigo-600 text-white" : "bg-white"}`}
+                                >
+                                    Yr
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        if (termUnit === "years") setTermValue(Math.round(termValue * 12));
+                                        setTermUnit("months");
+                                    }}
+                                    className={`px-3 py-1 ${termUnit === "months" ? "bg-indigo-600 text-white" : "bg-white"}`}
+                                >
+                                    Mo
+                                </button>
+                            </div>
+
+                            <input
+                                type="range"
+                                min={termUnit === "years" ? termMinYears : 1}
+                                max={termUnit === "years" ? termMaxYears : termMaxMonths}
+                                step={1}
+                                value={termValue}
+                                onChange={(e) => setTermValue(Number(e.target.value))}
+                                className="flex-1"
+                            />
+
+                            <div className="text-sm sm:w-24 text-right">
+                                {termUnit === "years" ? `${termValue} yr` : `${termValue} mo`}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* EMI Scheme */}
+                    <div className="space-y-2">
+                        <label className="font-medium">EMI Scheme</label>
+                        <div className="flex flex-wrap gap-2">
+                            {["advance", "arrears"].map((scheme) => (
+                                <button
+                                    key={scheme}
+                                    onClick={() => setEmiScheme(scheme)}
+                                    className={`px-3 py-1 rounded-md text-sm font-medium transition ${emiScheme === scheme ? "bg-indigo-600 text-white" : "bg-gray-100 hover:bg-gray-200"
+                                        }`}
+                                >
+                                    {scheme === "advance" ? "EMI in Advance" : "EMI in Arrears"}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Right Summary */}
+                <div className="bg-gray-50 p-6 rounded-lg flex flex-col items-center gap-6">
+                    <div className="text-center">
+                        <h4 className="text-sm text-gray-500">Loan EMI</h4>
+                        <p className="text-2xl font-bold">₹{formatCurrency(emi)}</p>
+                    </div>
+
+                    <div className="w-full grid grid-cols-2 gap-4 text-sm">
+                        <div className="bg-white p-3 rounded shadow-sm">
+                            <div className="text-xs text-gray-500">Total Interest Payable</div>
+                            <div className="font-semibold">{formatCurrencyWithSymbol(totalInterest)}</div>
+                        </div>
+                        <div className="bg-white p-3 rounded shadow-sm">
+                            <div className="text-xs text-gray-500">Total Payment (P + I)</div>
+                            <div className="font-semibold">{formatCurrencyWithSymbol(totalPayment)}</div>
+                        </div>
+                    </div>
+
+                    {/* Donut Chart */}
+                    <div className="flex flex-col sm:flex-row items-center gap-6">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <g transform="translate(60,60)">
+                                <circle r="50" cx="0" cy="0" fill="transparent" strokeWidth="20" stroke="#E6E6E6" />
+                                <circle
+                                    r="50"
+                                    cx="0"
+                                    cy="0"
+                                    fill="transparent"
+                                    stroke="#ED8C2B"
+                                    strokeWidth="20"
+                                    strokeDasharray={`${interestDash} ${principalDash}`}
+                                    transform="rotate(-90)"
+                                />
+                                <text x="0" y="4" textAnchor="middle" fontSize="12" fontWeight="700">{interestPct}%</text>
+                                <text x="0" y="20" textAnchor="middle" fontSize="10" fill="#666">Interest</text>
+                            </g>
+                        </svg>
+
+                        <div className="text-sm space-y-2">
+                            <div className="flex items-center gap-2">
+                                <span className="w-3 h-3 bg-[#88A825] rounded-full inline-block" />
+                                <span>Principal:</span>
+                                <strong>{formatCurrencyWithSymbol(principalPart)}</strong>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <span className="w-3 h-3 bg-[#ED8C2B] rounded-full inline-block" />
+                                <span>Interest:</span>
+                                <strong>{formatCurrencyWithSymbol(interestPart)}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="text-xs text-gray-500">Break-up of total payment</div>
+                </div>
             </div>
-            <input
-              type="range"
-              min={loanMin}
-              max={loanMax}
-              step={10000}
-              value={loanAmount}
-              onChange={(e) => setLoanAmount(Number(e.target.value))}
-              className="w-full"
-            />
-          </div>
-
-          {/* Interest Rate */}
-          <div className="space-y-2">
-            <label className="font-medium">Interest Rate (Annual %)</label>
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              <input
-      type="number"
-      value={
-        loanProduct === "home-loan"
-          ? 7.5
-          : loanProduct === "mortgage-loan"
-          ? 15
-          : loanProduct === "unsecured-business-loan"
-          ? 8.5
-          : interestRate
-      }
-      step="0.1"
-      onChange={(e) => setInterestRate(Number(e.target.value))}
-      className="w-full sm:w-28 border rounded px-3 py-2"
-      disabled={
-        loanProduct === "home-loan" ||
-        loanProduct === "mortgage-loan" ||
-        loanProduct === "unsecured-business-loan"
-      }
-    />
-              {loanProduct !== "home-loan" &&
-    loanProduct !== "mortgage-loan" &&
-    loanProduct !== "unsecured-business-loan" ? (
-      <>
-        <input
-          type="range"
-          min={interestMin}
-          max={interestMax}
-          step={0.1}
-          value={interestRate}
-          onChange={(e) => setInterestRate(Number(e.target.value))}
-          className="flex-1"
-        />
-        <span className="text-sm sm:w-16 text-right">{interestRate}%</span>
-      </>
-    ) : (
-      <span className="text-sm sm:w-16 text-right">
-        {loanProduct === "home-loan"
-          ? "7.5%"
-          : loanProduct === "mortgage-loan"
-          ? "15%"
-          : "8.5%"}
-      </span>
-    )}
-            </div>
-          </div>
-
-          {/* Tenure */}
-          <div className="space-y-2">
-            <label className="font-medium">Loan Tenure</label>
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              <input
-                type="number"
-                value={termValue}
-                min={termUnit === "years" ? termMinYears : 1}
-                max={termUnit === "years" ? termMaxYears : termMaxMonths}
-                onChange={(e) => setTermValue(Number(e.target.value))}
-                className="w-full sm:w-24 border rounded px-3 py-2"
-              />
-
-              {/* Unit Toggle */}
-              <div className="inline-flex border rounded overflow-hidden">
-                <button
-                  onClick={() => {
-                    if (termUnit === "months") {
-                      setTermValue(Math.round(termValue / 12));
-                    }
-                    setTermUnit("years");
-                  }}
-                  className={`px-3 py-1 ${termUnit === "years" ? "bg-indigo-600 text-white" : "bg-white"
-                    }`}
-                >
-                  Yr
-                </button>
-                <button
-                  onClick={() => {
-                    if (termUnit === "years") {
-                      setTermValue(Math.round(termValue * 12));
-                    }
-                    setTermUnit("months");
-                  }}
-                  className={`px-3 py-1 ${termUnit === "months" ? "bg-indigo-600 text-white" : "bg-white"
-                    }`}
-                >
-                  Mo
-                </button>
-              </div>
-
-              <input
-                type="range"
-                min={termUnit === "years" ? termMinYears : 1}
-                max={termUnit === "years" ? termMaxYears : termMaxMonths}
-                step={1}
-                value={termValue}
-                onChange={(e) => setTermValue(Number(e.target.value))}
-                className="flex-1"
-              />
-
-              <div className="text-sm sm:w-24 text-right">
-                {termUnit === "years" ? `${termValue} yr` : `${termValue} mo`}
-              </div>
-            </div>
-          </div>
-
-          {/* EMI Scheme */}
-          <div className="space-y-2">
-            <label className="font-medium">EMI Scheme</label>
-            <div className="flex flex-wrap gap-2">
-              {["advance", "arrears"].map((scheme) => (
-                <button
-                  key={scheme}
-                  onClick={() => setEmiScheme(scheme)}
-                  className={`px-3 py-1 rounded-md text-sm font-medium transition ${emiScheme === scheme
-                    ? "bg-indigo-600 text-white"
-                    : "bg-gray-100 hover:bg-gray-200"
-                    }`}
-                >
-                  {scheme === "advance" ? "EMI in Advance" : "EMI in Arrears"}
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
-
-        {/* Right Summary */}
-        <div className="bg-gray-50 p-6 rounded-lg flex flex-col items-center gap-6">
-          <div className="text-center">
-            <h4 className="text-sm text-gray-500">Loan EMI</h4>
-            <p className="text-2xl font-bold">₹{formatCurrency(emi)}</p>
-          </div>
-
-          <div className="w-full grid grid-cols-2 gap-4 text-sm">
-            <div className="bg-white p-3 rounded shadow-sm">
-              <div className="text-xs text-gray-500">Total Interest Payable</div>
-              <div className="font-semibold">{formatCurrencyWithSymbol(totalInterest)}</div>
-            </div>
-            <div className="bg-white p-3 rounded shadow-sm">
-              <div className="text-xs text-gray-500">Total Payment (P + I)</div>
-              <div className="font-semibold">{formatCurrencyWithSymbol(totalPayment)}</div>
-            </div>
-          </div>
-
-          {/* Donut Chart */}
-          <div className="flex flex-col sm:flex-row items-center gap-6">
-            <svg width="120" height="120" viewBox="0 0 120 120">
-              <g transform="translate(60,60)">
-                <circle r="50" cx="0" cy="0" fill="transparent" strokeWidth="20" stroke="#E6E6E6" />
-                <circle
-                  r="50"
-                  cx="0"
-                  cy="0"
-                  fill="transparent"
-                  stroke="#ED8C2B"
-                  strokeWidth="20"
-                  strokeDasharray={`${interestDash} ${principalDash}`}
-                  transform="rotate(-90)"
-                />
-                <text x="0" y="4" textAnchor="middle" fontSize="12" fontWeight="700">{interestPct}%</text>
-                <text x="0" y="20" textAnchor="middle" fontSize="10" fill="#666">Interest</text>
-              </g>
-            </svg>
-
-            <div className="text-sm space-y-2">
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 bg-[#88A825] rounded-full inline-block" />
-                <span>Principal:</span>
-                <strong>{formatCurrencyWithSymbol(principalPart)}</strong>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 bg-[#ED8C2B] rounded-full inline-block" />
-                <span>Interest:</span>
-                <strong>{formatCurrencyWithSymbol(interestPart)}</strong>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-xs text-gray-500">Break-up of total payment</div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default EMICalculatorPage;
