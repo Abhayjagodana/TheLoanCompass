@@ -362,7 +362,7 @@ export default function Banner() {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <div>
+    <div className="bg-gray-100">
       {/* <Header /> */}
 
       {/* Banner Section */}
@@ -413,24 +413,24 @@ export default function Banner() {
         <div className="container mx-auto relative z-10 px-4">
           <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left">
             {/* Left Content */}
-      <div className="lg:w-1/2 pt-8 lg:pt-12 pb-12 lg:pb-48 text-white">
-  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug drop-shadow-lg text-left">
-    Compare loans <br />
-    from several <br />
-    banks and find <br />
-    the best offer!
-  </h1>
+            <div className="lg:w-1/2 pt-8 lg:pt-12 pb-12 lg:pb-48 text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug drop-shadow-lg text-left">
+                Compare loans <br />
+                from several <br />
+                banks and find <br />
+                the best offer!
+              </h1>
 
-  {/* Button for Desktop */}
-  <div className="hidden lg:block mt-6">
-    <Link
-      href="/apply"
-      className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
-    >
-      Apply Now
-    </Link>
-  </div>
-</div>
+              {/* Button for Desktop */}
+              <div className="hidden lg:block mt-6">
+                <Link
+                  href="/apply"
+                  className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-blue-700 font-semibold hover:bg-gray-200 transition-colors text-lg"
+                >
+                  Apply Now
+                </Link>
+              </div>
+            </div>
 
 
             {/* Right side image only visible on desktop */}
@@ -469,7 +469,7 @@ export default function Banner() {
           >
             {features.map((feature, idx) => (
               <SwiperSlide key={idx}>
-                <div className="bg-pink-700 rounded-xl  shadow-lg p-6 relative overflow-hidden group hover:shadow-2xl transition-all h-full flex flex-col justify-between">
+                <div className="bg-green-800 rounded-xl  shadow-lg p-6 relative overflow-hidden group hover:shadow-2xl transition-all h-full flex flex-col justify-between">
                   <div className="text-white mb-4">
                     <feature.icon className="w-12 h-12" />
                   </div>
@@ -481,7 +481,7 @@ export default function Banner() {
                   </p>
                   <Link
                     href="/apply"
-                    className="mt-auto w-32 inline-block bg-white text-blue-700 px-4 py-2 rounded-full hover:bg-pink-500 hover:text-white transition text-sm text-center"
+                    className="mt-auto w-32 inline-block bg-white text-blue-700 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition text-sm text-center"
                   >
                     Apply Now
                   </Link>
@@ -690,7 +690,7 @@ export default function Banner() {
               >
                 {testimonials.map((t, index) => (
                   <SwiperSlide key={index}>
-                    <div className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
+                    <div className="bg-yellow-50 p-6 rounded-xl shadow-md flex flex-col items-center text-center">
                       <div className="w-24 h-24 relative mb-4">
                         <Image
                           src={t.image}
