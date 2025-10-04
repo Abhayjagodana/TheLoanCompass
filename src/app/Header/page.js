@@ -177,14 +177,14 @@ export default function Header() {
 
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 items-center font-medium text-blue-600 uppercase text-lg font-sans	">
+        <ul className="hidden md:flex space-x-8 items-center font-medium text-purple-900 uppercase text-lg font-sans	">
           <li>
-            <Link href="/" className="hover:text-blue-400">
+            <Link href="/" className="hover:text-purple-400">
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className="hover:text-blue-400">
+            <Link href="/about" className="hover:text-purple-400">
               About Us
             </Link>
           </li>
@@ -199,7 +199,7 @@ export default function Header() {
 
           {/* Apply Loan Dropdown */}
           <li className="relative group">
-            <button className="flex items-center hover:text-blue-400 cursor-pointer">
+            <button className="flex items-center hover:text-purple-400 cursor-pointer">
               APPLY LOAN <span className="ml-1">▾</span>
             </button>
             <ul className="absolute left-0 mt-2 w-56 bg-white border rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
@@ -263,7 +263,7 @@ export default function Header() {
           </li>
 
           <li>
-            <Link href="/careers" className="hover:text-blue-400">
+            <Link href="/careers" className="hover:text-purple-400">
               Careers
             </Link>
           </li>
@@ -271,7 +271,7 @@ export default function Header() {
           <li>
             <Link
               href="/apply"
-              className="bg-blue-700 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition text-sm"
+              className="bg-purple-700 text-white px-6 py-2 rounded-full hover:bg-purple-400 transition text-sm"
             >
               Apply
             </Link>
@@ -313,19 +313,19 @@ export default function Header() {
         <div className="md:hidden bg-white border-t shadow-lg">
           <Link
             href="/"
-            className="block px-4 py-3 hover:bg-gray-100 text-blue-700 font-medium"
+            className="block px-4 py-3 hover:bg-gray-100 text-purple-400 font-medium"
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="block px-4 py-3 hover:bg-gray-100 text-blue-700 font-medium"
+            className="block px-4 py-3 hover:bg-gray-100 text-purple-400 font-medium"
           >
             About Us
           </Link>
           <Link
             href="/propertie"
-            className="block px-4 py-3 hover:bg-gray-100 text-blue-700 font-medium"
+            className="block px-4 py-3 hover:bg-gray-100 text-purple-400 font-medium"
           >
             Properties
           </Link>
@@ -334,7 +334,7 @@ export default function Header() {
           <div className="px-4 py-2">
             <button
               onClick={() => setLoanOpen(!loanOpen)}
-              className="w-full flex justify-between items-center hover:text-blue-700 text-sm font-medium"
+              className="w-full flex justify-between items-center hover:text-purple-400 text-sm font-medium"
             >
               Apply Loan <span>{loanOpen ? "▴" : "▾"}</span>
             </button>
@@ -343,7 +343,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/loan/Homeloan"
-                    className="block hover:text-blue-700"
+                    className="block hover:text-purple-400"
                   >
                     Home Loan
                   </Link>
@@ -351,7 +351,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/loan/mortage"
-                    className="block hover:text-blue-700"
+                    className="block hover:text-purple-400"
                   >
                     Mortgage Loan
                   </Link>
@@ -359,7 +359,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/loan/personal"
-                    className="block hover:text-blue-700"
+                    className="block hover:text-purple-400"
                   >
                     Personal Loan
                   </Link>
@@ -367,7 +367,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/loan/unsecureloan"
-                    className="block hover:text-blue-700"
+                    className="block hover:text-purple-400"
                   >
                     Unsecured Business Loan
                   </Link>
@@ -375,7 +375,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/loan/workingcapital"
-                    className="block hover:text-blue-700"
+                    className="block hover:text-purple-400"
                   >
                     Working Capital
                   </Link>
@@ -383,7 +383,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/loan/balancetransfer"
-                    className="block hover:text-blue-700"
+                    className="block hover:text-purple-400"
                   >
                     Balance Transfer
                   </Link>
@@ -391,7 +391,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/loan/carloan"
-                    className="block hover:text-blue-700"
+                    className="block hover:text-purple-400"
                   >
                     Car Loans
                   </Link>
@@ -402,13 +402,13 @@ export default function Header() {
 
           <Link
             href="/careers"
-            className="block px-4 py-3 hover:bg-gray-100 text-blue-700 font-medium"
+            className="block px-4 py-3 hover:bg-gray-100 text-purple-400 font-medium"
           >
             Careers
           </Link>
           <Link
             href="/apply"
-            className="block bg-blue-700 text-white m-4 px-4 py-2 rounded-full text-center hover:bg-blue-800 transition text-sm"
+            className="block bg-blue-700 text-white m-4 px-4 py-2 rounded-full text-center hover:bg-purple-400 transition text-sm"
           >
             Apply
           </Link>

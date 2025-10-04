@@ -388,7 +388,7 @@ export default function Banner() {
       </div>
     </section> */}
 
-      <section className="relative w-full min-h-[500px] sm:min-h-[600px] lg:min-h-screen pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-blue-700">
+      <section className="relative w-full min-h-[500px] sm:min-h-[600px] lg:min-h-screen pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-gradient-to-r from-purple-700 to-purple-900  ">
         {/* Background animated shapes */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-[50%]">
@@ -398,13 +398,13 @@ export default function Banner() {
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Image
+              {/* <Image
                 src="/z.png"
                 width={570}
                 height={150}
                 alt="shape"
                 className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
-              />
+              /> */}
             </motion.div>
           </div>
         </div>
@@ -469,7 +469,7 @@ export default function Banner() {
           >
             {features.map((feature, idx) => (
               <SwiperSlide key={idx}>
-                <div className="bg-green-800 rounded-xl  shadow-lg p-6 relative overflow-hidden group hover:shadow-2xl transition-all h-full flex flex-col justify-between">
+                <div className="bg-purple-900 rounded-xl  shadow-lg p-6 relative overflow-hidden group hover:shadow-2xl transition-all h-full flex flex-col justify-between">
                   <div className="text-white mb-4">
                     <feature.icon className="w-12 h-12" />
                   </div>
@@ -481,7 +481,7 @@ export default function Banner() {
                   </p>
                   <Link
                     href="/apply"
-                    className="mt-auto w-32 inline-block bg-white text-blue-700 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition text-sm text-center"
+                    className="mt-auto w-32 inline-block bg-white text-blue-900 px-4 py-2 rounded-full hover:bg-purple-400 hover:text-white transition text-sm text-center"
                   >
                     Apply Now
                   </Link>
@@ -522,7 +522,7 @@ export default function Banner() {
         <div className="container mx-auto px-4">
           {/* Title */}
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+            <h2 className="text-3xl md:text-4xl font-bold text-purple-800 ">
               We have helped more than 5000 users!
             </h2>
           </div>
@@ -615,7 +615,7 @@ export default function Banner() {
         <div className="container mx-auto px-4">
           {/* Section Title */}
           <div className="text-center mb-10 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+            <h2 className="text-3xl md:text-4xl font-bold text-purple-800">
               Secure Edge Partners With
             </h2>
             <p className="mt-4 text-gray-600">
@@ -672,7 +672,7 @@ export default function Banner() {
       <section className="bg-gray-50 py-16 px-4 animate-slide-right delay-300">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-3xl md:text-4xl font-bold text-purple-800">
               What Our Customers Are Saying
             </h2>
           </div>
@@ -752,7 +752,7 @@ export default function Banner() {
         <div className="container mx-auto flex flex-col lg:flex-row gap-12">
           {/* Left: Advisor Section */}
           <div className="lg:w-1/2 flex flex-col gap-6">
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-3xl md:text-4xl font-bold text-purple-800">
               Our advisors are ready to help you!
             </h2>
 
@@ -775,13 +775,13 @@ export default function Banner() {
             <div className="flex flex-col gap-3">
               <a
                 href="tel:9619131314"
-                className="bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-blue-800 text-white px-6 py-3 rounded-full text-center flex items-center justify-center gap-2 transition"
+                className="bg-gradient-to-r from-purple-800 to-purple-900 hover:from-pink-500 hover:to-blue-800 text-white px-6 py-3 rounded-full text-center flex items-center justify-center gap-2 transition"
               >
                 <Phone />+91-9624459515
               </a>
               <a
                 href="mailto:info@secureedgesolution.com"
-                className="bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-blue-800 text-white px-6 py-3 rounded-full text-center flex items-center justify-center gap-2  transition"
+                className="bg-gradient-to-r from-purple-800 to-purple-900 hover:from-pink-500 hover:to-blue-800 text-white px-6 py-3 rounded-full text-center flex items-center justify-center gap-2  transition"
               >
                 <MailMinus /> bj@theloancompass.in
               </a>
@@ -848,7 +848,7 @@ export default function Banner() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto bg-white/90 backdrop-blur-md shadow-xl rounded-2xl p-10 text-center">
             <div className="section-title mb-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-bold text-purple-800">
                 We help with both new loan and balance transfer
               </h2>
             </div>
@@ -860,7 +860,7 @@ export default function Banner() {
               <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
                 <a
                   href="/apply"
-                  className="relative inline-block px-6 py-3 rounded-full font-semibold text-white bg-blue-600 overflow-hidden group"
+                  className="relative inline-block px-6 py-3 rounded-full font-semibold text-white bg-purple-900 overflow-hidden group"
                 >
                   <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
                   <span className="relative z-10 transition-colors duration-500 group-hover:text-white ">
