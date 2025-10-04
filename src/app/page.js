@@ -388,7 +388,7 @@ export default function Banner() {
       </div>
     </section> */}
 
-      <section className="relative w-full min-h-[500px] sm:min-h-[600px] lg:min-h-screen pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-gradient-to-r from-purple-700 to-purple-900  ">
+      <section className="relative w-full min-h-[500px] sm:min-h-[600px] lg:min-h-screen pt-[90px] lg:pt-[150px] overflow-hidden my-24 bg-gradient-to-r from-purple-900 to-purple-900  ">
         {/* Background animated shapes */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-[50%]">
@@ -398,13 +398,13 @@ export default function Banner() {
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              {/* <Image
-                src="/z.png"
+              <Image
+                src="/zzz.png"
                 width={570}
                 height={150}
                 alt="shape"
                 className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
-              /> */}
+              />
             </motion.div>
           </div>
         </div>
