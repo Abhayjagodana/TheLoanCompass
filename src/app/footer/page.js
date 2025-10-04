@@ -134,7 +134,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-16  animate-slide-right delay-300">
+    <footer className="bg-gray-900 text-white py-16  animate-slide-right delay-300">
 
       <div className="container mx-auto px-4">
         {/* Top Section */}

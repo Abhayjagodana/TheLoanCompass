@@ -63,14 +63,14 @@ export default function ContactPage() {
 
     return (
         <div>
-            <section className="relative w-full bg-gradient-to-r from-blue-800 to-blue-700 min-h-[25vh] flex items-center justify-center my-24 animate-slide-right delay-300">
+            <section className="relative w-full bg-gradient-to-r from-green-900 to-green-900 min-h-[25vh] flex items-center justify-center my-24 animate-slide-right delay-300">
                 <div className="absolute inset-0 bg-black/10"></div>
                 <div className="relative z-10 text-center px-4">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
                         Contact
                     </h1>
                 </div>
-                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-blue-800 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-green-900 to-transparent"></div>
                 <style jsx>{`
     @keyframes slideRight {
       0% {
@@ -99,7 +99,7 @@ export default function ContactPage() {
                 <div className="container mx-auto px-4 lg:flex lg:gap-16">
                     {/* Contact Info */}
                     <div className="lg:w-5/12 mb-12 lg:mb-0">
-                        <h2 className="text-3xl font-bold mb-8 text-blue-900">Get in touch with us.</h2>
+                        <h2 className="text-3xl font-bold mb-8 text-green-900">Get in touch with us.</h2>
                         <div className="text-gray-600 mb-8">
                             <div className="space-y-2">
                                 <p>Want to get in touch? We&#39;d love to hear from you.</p>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                                 <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">
                                     <Phone className="w-6 h-6 text-blue-600" />
                                     <div>
-                                        <p className="text-blue-900 font-bold">Call the helpline:</p>
+                                        <p className="text-green-900 font-bold">Call the helpline:</p>
                                         <span className="font-medium">+91-9624459515</span>
                                     </div>
                                 </div>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                                 <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">
                                     <Mail className="w-6 h-6 text-blue-600" />
                                     <div>
-                                        <p className="text-blue-900 font-bold">Email us:</p>
+                                        <p className="text-green-900 font-bold">Email us:</p>
                                         <span className="font-medium">bj@theloancompass.in</span>
                                     </div>
                                 </div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                                 <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">
                                     <MapPin size={32} className="w-20 h-20 text-blue-600" />
                                     <div>
-                                        <p className="text-blue-900 font-bold">Location</p>
+                                        <p className="text-green-900 font-bold">Location</p>
                                         <span className="font-medium text-sm">
                                             201, Balaji Enclave, Nr Nanpura old , Police Chowki , Nanpura ,Surat, Gujarat - 395009
                                         </span>
@@ -140,7 +140,7 @@ export default function ContactPage() {
                                 <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">
                                     <Clock className="w-8 h-8 text-blue-600" />
                                     <div>
-                                        <p className="text-blue-900 font-bold">Work Hours</p>
+                                        <p className="text-green-900 font-bold">Work Hours</p>
                                         <span className="font-medium text-sm">
                                             Monday - Saturday: 9am - 7pm | Sunday: 12pm - 6pm
                                         </span>
@@ -153,7 +153,7 @@ export default function ContactPage() {
                     {/* Contact Form */}
                     <div className="lg:w-7/12">
                         <div className="p-8 rounded-xl">
-                            <h3 className="text-2xl font-bold mb-6 text-center">Send a Message</h3>
+                            <h3 className="text-2xl font-bold mb-6 text-center text-green-900">Send a Message</h3>
                             <form onSubmit={handleSubmit} className="space-y-4">
 
                                 {/* Full Name */}
@@ -288,7 +288,7 @@ export default function ContactPage() {
                                 <button
                                     type="submit"
                                     disabled={loading}
-                                    className={`w-full bg-blue-600 text-white font-semibold py-3 rounded hover:bg-blue-700 transition ${loading ? "opacity-70 cursor-not-allowed" : ""
+                                    className={`w-full bg-green-900 text-white font-semibold py-3 rounded hover:bg-green-700 transition ${loading ? "opacity-70 cursor-not-allowed" : ""
                                         }`}
                                 >
                                     {loading ? "Submitting..." : "Submit Now"}

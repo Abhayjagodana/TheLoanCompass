@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function WorkingCapitalLoanSection() {
     return (
         <div>
-             <section className="relative w-full bg-gradient-to-r from-blue-800 to-blue-700 min-h-[25vh] flex items-center justify-center my-24 animate-slide-right delay-300">
+             <section className="relative w-full bg-gradient-to-r from-green-900 to-green-900 min-h-[25vh] flex items-center justify-center my-24 animate-slide-right delay-300">
                 <div className="absolute inset-0 bg-black/10"></div>
                 <div className="relative z-10 text-center px-4">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
@@ -13,7 +13,7 @@ export default function WorkingCapitalLoanSection() {
 
                     </h1>
                 </div>
-                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-blue-800 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-green-900 to-transparent"></div>
                 <style jsx>{`
     @keyframes slideRight {
       0% {
@@ -53,7 +53,7 @@ export default function WorkingCapitalLoanSection() {
 
                 {/* Right Content */}
                 <div className="lg:w-2/3 w-full flex flex-col gap-4">
-                    <button className=" text-black text-start font-bold px-4 py-1 rounded-md mb-2">
+                    <button className=" text-green-900 text-start font-bold px-4 py-1 rounded-md mb-2">
                         Working Capital
                     </button>
 
@@ -73,7 +73,7 @@ export default function WorkingCapitalLoanSection() {
                             your business.
                         </p>
 
-                        <p>📊 <strong>Why Choose Our Working Capital Loans?</strong></p>
+                        <p className="text-green-900">📊 <strong>Why Choose Our Working Capital Loans?</strong></p>
 
                         <ul className="list-disc list-inside space-y-1">
                             <li>
@@ -114,7 +114,7 @@ export default function WorkingCapitalLoanSection() {
 
                     <a
                         href="/apply"
-                        className="inline-block bg-blue-800 text-white w-32 text-center rounded-full px-6 py-2 mt-4 hover:bg-blue-900 transition"
+                        className="inline-block bg-green-900 text-white w-32 text-center rounded-full px-6 py-2 mt-4 hover:bg-green-700 transition"
                     >
                         Apply
                     </a>

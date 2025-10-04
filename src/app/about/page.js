@@ -5,7 +5,7 @@ import Image from "next/image"; // ✅ Correct import
 export default function AboutBanner() {
     return (
         <div>
-            <section className="relative w-full bg-gradient-to-r from-purple-600 to-purple-800 min-h-[25vh] flex items-center my-28 animate-slide-right delay-300">
+            <section className="relative w-full bg-gradient-to-r from-green-900 to-green-900 min-h-[25vh] flex items-center my-28 animate-slide-right delay-300">
                 {/* Overlay optional for text shadow */}
                 <div className="absolute inset-0 bg-black opacity-10"></div>
 
@@ -16,7 +16,7 @@ export default function AboutBanner() {
                 </div>
 
                 {/* Optional bottom gradient for smooth transition */}
-                <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-blue-800 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-green-900 to-transparent"></div>
                 <style jsx>{`
     @keyframes slideRight {
       0% {
@@ -46,7 +46,7 @@ export default function AboutBanner() {
                     <div className="flex flex-col lg:flex-row lg:items-start">
                         {/* Left Column */}
                         <div className="lg:w-1/3 flex justify-start mb-4 lg:mb-0 ">
-                            <div className="bg-blue-700 p-4 text-white rounded-lg text-right h-48 w-80 lg:w-84 flex items-center justify-end">
+                            <div className="bg-green-800 p-4 text-white rounded-lg text-right h-48 w-80 lg:w-84 flex items-center justify-end">
                                 <h2 className="text-xl lg:text-2xl font-semibold leading-snug whitespace-pre-line">
                                     {`A journey that
 started with a
@@ -105,7 +105,7 @@ Different`}
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-0">
                         {/* Left Side */}
                         <div className="lg:w-7/12 flex flex-col lg:flex-row items-center lg:items-start gap-4">
-                            <div className="lg:w-2/8 bg-blue-900 p-6 rounded-lg text-white flex flex-col items-center justify-center h-48 text-center">
+                            <div className="lg:w-2/8 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center h-48 text-center">
                                 <h1 className="text-4xl lg:text-5xl font-bold">5000</h1>
                                 <p className="mt-2">Trusted partner for 5000+ Channel Partners</p>
                             </div>
@@ -122,7 +122,7 @@ Different`}
 
                         {/* Right Side */}
                         <div className="lg:w-4/12 mt-6 lg:mt-0">
-                            <div className="lg:w-2/8 bg-blue-700 p-6 rounded-lg text-white flex flex-col items-center justify-center h-48 text-center">
+                            <div className="lg:w-2/8 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center h-48 text-center">
                                 <h1 className="text-4xl lg:text-5xl font-bold">125</h1>
                                 <p className="mt-2">Our colleagues come from across cities of India</p>
                             </div>
@@ -132,19 +132,19 @@ Different`}
                     {/* Second Row */}
                     <div className="flex flex-wrap mt-8 lg:mt-12 gap-4 lg:gap-6">
                         <div className="w-84">
-                            <div className="lg:w-2/8 bg-blue-900 p-6 rounded-lg text-white flex flex-col h-48 items-center justify-center text-center">
+                            <div className="lg:w-2/8 bg-green-900 p-6 rounded-lg text-white flex flex-col h-48 items-center justify-center text-center">
                                 <h1 className="text-4xl lg:text-5xl font-bold">5000</h1>
                                 <p className="mt-2">Trusted partner for 5000+ Channel Partners</p>
                             </div>
                         </div>
                         <div className="w-[300px]">
-                            <div className="bg-gray-200 p-6 rounded-lg text-blue-700 flex flex-col items-center justify-center h-48 text-center">
+                            <div className="bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center h-48 text-center">
                                 <h1 className="text-4xl font-bold">15</h1>
                                 <p className="mt-2">15 Partner Branches</p>
                             </div>
                         </div>
                         <div className="w-[450px]">
-                            <div className="bg-blue-700 p-6 rounded-lg text-white flex flex-col items-center justify-center h-48 text-center">
+                            <div className="bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center h-48 text-center">
                                 <h1 className="text-4xl font-bold">100</h1>
                                 <p className="mt-2">We are present in 100+ markets</p>
                             </div>
@@ -180,8 +180,8 @@ Different`}
                     {/* Section Title */}
                     <div className="flex flex-col md:flex-row items-start md:items-end mb-16">
                         <div className="md:w-2/3">
-                            <span className="text-blue-700 font-semibold uppercase text-sm">Leadership</span>
-                            <h2 className="text-3xl md:text-4xl font-bold mt-2">Meet our leadership team</h2>
+                            <span className="text-green-900 font-semibold uppercase text-sm">Leadership</span>
+                            <h2 className="text-3xl md:text-4xl font-bold mt-2 text-green-900">Meet our leadership team</h2>
                         </div>
                     </div>
 

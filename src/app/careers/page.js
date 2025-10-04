@@ -82,14 +82,14 @@ function Career() {
             <Toaster position="top-right" reverseOrder={false} />
 
             {/* Header Section */}
-            <section className="relative w-full bg-gradient-to-r from-blue-800 to-blue-700 min-h-[25vh] flex items-center justify-center my-24 animate-slide-right delay-300">
+            <section className="relative w-full bg-gradient-to-r from-green-900 to-green-900 min-h-[25vh] flex items-center justify-center my-24 animate-slide-right delay-300">
                 <div className="absolute inset-0 bg-black/10"></div>
                 <div className="relative z-10 text-center px-4">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
                         Careers
                     </h1>
                 </div>
-                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-blue-800 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-green-900 to-transparent"></div>
                 <style jsx>{`
     @keyframes slideRight {
       0% {
@@ -117,7 +117,7 @@ function Career() {
             <section className="py-12 sm:py-16 lg:py-20">
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mx-auto bg-white p-8 sm:p-10 md:p-12 rounded-xl shadow-xl">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-gray-800">
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-green-900">
                             Apply for a Job
                         </h2>
                         <form onSubmit={handleSubmit} className="space-y-6">
@@ -199,7 +199,7 @@ function Career() {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className={`w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition flex justify-center items-center gap-2 ${loading ? "opacity-70 cursor-not-allowed" : ""
+                                className={`w-full bg-green-900 text-white font-semibold py-3 rounded-lg hover:bg-green-700 transition flex justify-center items-center gap-2 ${loading ? "opacity-70 cursor-not-allowed" : ""
                                     }`}
                             >
                                 {loading ? "Submitting..." : "Apply Now"}

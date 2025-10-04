@@ -1090,7 +1090,7 @@ function EMICalculatorPage() {
 
     return (
         <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-            <h2 className="text-2xl font-semibold mb-6 text-center lg:text-center text-purple-900">
+            <h2 className="text-2xl font-semibold mb-6 text-center lg:text-center text-green-900">
                 EMI CALCULATOR  
             </h2>
 
@@ -1232,18 +1232,18 @@ function EMICalculatorPage() {
                 {/* Right Summary */}
                 <div className="bg-gray-50 p-6 rounded-lg flex flex-col items-center gap-6">
                     <div className="text-center">
-                        <h4 className="text-sm text-gray-500">Loan EMI</h4>
-                        <p className="text-2xl font-bold">₹{formatCurrency(emi)}</p>
+                        <h4 className="text-sm text-green-900">Loan EMI</h4>
+                        <p className="text-2xl font-bold text-green-900">₹{formatCurrency(emi)}</p>
                     </div>
 
                     <div className="w-full grid grid-cols-2 gap-4 text-sm">
                         <div className="bg-white p-3 rounded shadow-sm">
                             <div className="text-xs text-gray-500">Total Interest Payable</div>
-                            <div className="font-semibold">{formatCurrencyWithSymbol(totalInterest)}</div>
+                            <div className="font-semibold text-green-900">{formatCurrencyWithSymbol(totalInterest)}</div>
                         </div>
                         <div className="bg-white p-3 rounded shadow-sm">
                             <div className="text-xs text-gray-500">Total Payment (P + I)</div>
-                            <div className="font-semibold">{formatCurrencyWithSymbol(totalPayment)}</div>
+                            <div className="font-semibold text-green-900">{formatCurrencyWithSymbol(totalPayment)}</div>
                         </div>
                     </div>
 
@@ -1281,7 +1281,7 @@ function EMICalculatorPage() {
                         </div>
                     </div>
 
-                    <div className="text-xs text-gray-500">Break-up of total payment</div>
+                    <div className="text-xs text-green-900">Break-up of total payment</div>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ import Image from "next/image"; // ✅ Correct import
 export default function CarLoan() {
   return (
     <div>
-      <section className="relative w-full bg-gradient-to-r from-blue-800 to-blue-700 min-h-[25vh] flex items-center justify-center my-24 animate-slide-right delay-300">
+      <section className="relative w-full bg-gradient-to-r from-green-900 to-green-900 min-h-[25vh] flex items-center justify-center my-24 animate-slide-right delay-300">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10 text-center px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
@@ -14,7 +14,7 @@ export default function CarLoan() {
 
           </h1>
         </div>
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-blue-800 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-green-900 to-transparent"></div>
         <style jsx>{`
     @keyframes slideRight {
       0% {
@@ -43,21 +43,21 @@ export default function CarLoan() {
 
             {/* Left Image */}
             <div className="md:col-span-4">
-             <div className="md:col-span-4 relative w-full h-80 md:h-96">
-  <Image
-    src="https://media.istockphoto.com/id/2187018053/photo/vehicle-purchase-and-sale-contract-sales-representative-in-car-showroom-vehicle-loan-business.webp?a=1&b=1&s=612x612&w=0&k=20&c=xyXpP8S4AEogoQYA0PquN_AtYkNdr65-kQai17SEOjU="
-    alt="Car Loan"
-    fill
-    className="object-cover rounded-lg shadow-lg"
-  />
-</div>
+              <div className="md:col-span-4 relative w-full h-80 md:h-96">
+                <Image
+                  src="https://media.istockphoto.com/id/2187018053/photo/vehicle-purchase-and-sale-contract-sales-representative-in-car-showroom-vehicle-loan-business.webp?a=1&b=1&s=612x612&w=0&k=20&c=xyXpP8S4AEogoQYA0PquN_AtYkNdr65-kQai17SEOjU="
+                  alt="Car Loan"
+                  fill
+                  className="object-cover rounded-lg shadow-lg"
+                />
+              </div>
             </div>
 
             {/* Right Content */}
             <div className="md:col-span-8 my-[-70]">
               <div className="services-content">
                 {/* Category Button */}
-                <button className=" text-black-800 text-sm font-bold px-4 py-1 rounded-full mb-4">
+                <button className=" text-green-900 text-sm font-bold px-4 py-1 rounded-full mb-4">
                   Car Loans
                 </button>
 
@@ -76,7 +76,7 @@ export default function CarLoan() {
                 </p>
 
                 {/* Features */}
-                <h4 className="font-semibold text-lg mb-2">
+                <h4 className="font-semibold text-lg mb-2 text-green-900">
                   🚗 Why Choose Our Car Loans?
                 </h4>
                 <ul className="list-disc list-inside text-gray-500 space-y-2 mb-4">
@@ -118,7 +118,7 @@ export default function CarLoan() {
                 {/* Apply Button */}
                 <a
                   href="/apply"
-                  className="inline-block bg-[#0050b2] text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-800 transition"
+                  className="inline-block bg-green-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition"
                 >
                   Apply
                 </a>

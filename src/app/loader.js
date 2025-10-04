@@ -50,7 +50,7 @@ function Loader() {
       {/* Spinning Border with Static Logo */}
       <div className="relative w-32 h-32 flex items-center justify-center">
         {/* Spinning border */}
-        <div className="absolute inset-0 rounded-full border-4 border-blue-500 border-t-transparent animate-spin-slow"></div>
+        <div className="absolute inset-0 rounded-full border-4 border-green-900 border-t-transparent animate-spin-slow"></div>
 
         {/* Static logo in center */}
         <Image
@@ -63,7 +63,7 @@ function Loader() {
       </div>
 
       {/* Static Text */}
-      <p className="mt-6 text-xl font-bold text-blue-700">
+      <p className="mt-6 text-xl font-bold text-green-900">
         The Loan Compass
       </p>
     </div>
