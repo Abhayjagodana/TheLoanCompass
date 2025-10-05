@@ -107,49 +107,56 @@ export default function ContactPage() {
                             </div>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
-                            <div className="col-sm-6">
-                                <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">
-                                    <Phone className="w-6 h-6 text-blue-600" />
-                                    <div>
-                                        <p className="text-green-900 font-bold">Call the helpline:</p>
-                                        <span className="font-medium">+91-9624459515</span>
-                                    </div>
-                                </div>
-                            </div>
-                           <div className="w-full sm:col-span-1">
-  <div className="flex items-start sm:items-center gap-3 p-4 rounded shadow-sm bg-white h-full">
-    <Mail className="w-6 h-6 text-blue-600 flex-shrink-0" />
-    <div className="flex flex-col">
-      <p className="text-green-900 font-bold text-sm sm:text-base">Email us:</p>
-      <span className="font-medium text-gray-800 text-sm sm:text-base break-all">
-        bj@theloancompass.in
-      </span>
-    </div>
-  </div>
-</div>
-
-                            <div className="get-touch-box mt-6">
-                                <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">
-                                    <MapPin size={32} className="w-20 h-20 text-blue-600" />
-                                    <div>
-                                        <p className="text-green-900 font-bold">Location</p>
-                                        <span className="font-medium text-sm">
-                                            201, Balaji Enclave, Nr Nanpura old , Police Chowki , Nanpura ,Surat, Gujarat - 395009
+                            <div className="w-full sm:col-span-1">
+                                <div className="flex items-start sm:items-center gap-3 p-4 rounded shadow-sm bg-white h-full">
+                                    <Phone className="w-6 h-6 text-blue-600 flex-shrink-0" />
+                                    <div className="flex flex-col">
+                                        <p className="text-green-900 font-bold text-sm sm:text-base">
+                                            Call the helpline:
+                                        </p>
+                                        <span className="font-medium text-gray-800 text-sm sm:text-base break-all">
+                                            +91-9624459515
                                         </span>
                                     </div>
                                 </div>
                             </div>
-                            <div className="get-touch-box mt-6">
-                                <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">
-                                    <Clock className="w-8 h-8 text-blue-600" />
-                                    <div>
-                                        <p className="text-green-900 font-bold">Work Hours</p>
-                                        <span className="font-medium text-sm">
+
+                            <div className="w-full sm:col-span-1">
+                                <div className="flex items-start sm:items-center gap-3 p-4 rounded shadow-sm bg-white h-full">
+                                    <Mail className="w-6 h-6 text-blue-600 flex-shrink-0" />
+                                    <div className="flex flex-col">
+                                        <p className="text-green-900 font-bold text-sm sm:text-base">Email us:</p>
+                                        <span className="font-medium text-gray-800 text-sm sm:text-base break-all">
+                                            bj@theloancompass.in
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="w-full mt-6">
+                                <div className="flex items-start sm:items-center gap-3 p-4 rounded shadow-sm bg-white h-full">
+                                    <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0" />
+                                    <div className="flex flex-col">
+                                        <p className="text-green-900 font-bold text-sm sm:text-base">Location</p>
+                                        <span className="font-medium text-gray-800 text-sm sm:text-base break-words">
+                                            201, Balaji Enclave, Nr Nanpura old, Police Chowki, Nanpura, Surat, Gujarat - 395009
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="w-full mt-6">
+                                <div className="flex items-start sm:items-center gap-3 p-4 rounded shadow-sm bg-white h-full">
+                                    <Clock className="w-6 h-6 text-blue-600 flex-shrink-0" />
+                                    <div className="flex flex-col">
+                                        <p className="text-green-900 font-bold text-sm sm:text-base">Work Hours</p>
+                                        <span className="font-medium text-gray-800 text-sm sm:text-base break-words">
                                             Monday - Saturday: 9am - 7pm | Sunday: 12pm - 6pm
                                         </span>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
