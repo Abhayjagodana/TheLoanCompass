@@ -280,7 +280,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden flex items-center text-blue-700"
+          className="md:hidden flex items-center text-green-900"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <svg
@@ -408,7 +408,7 @@ export default function Header() {
           </Link>
           <Link
             href="/apply"
-            className="block bg-blue-700 text-white m-4 px-4 py-2 rounded-full text-center hover:bg-purple-400 transition text-sm"
+            className="block bg-green-900 text-white m-4 px-4 py-2 rounded-full text-center hover:bg-green-700 transition text-sm"
           >
             Apply
           </Link>
