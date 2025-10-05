@@ -313,19 +313,19 @@ export default function Header() {
         <div className="md:hidden bg-white border-t shadow-lg">
           <Link
             href="/"
-            className="block px-4 py-3 hover:bg-gray-100 text-purple-400 font-medium"
+            className="block px-4 py-3 hover:bg-green-100 text-green-900 font-medium"
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="block px-4 py-3 hover:bg-gray-100 text-purple-400 font-medium"
+            className="block px-4 py-3 hover:bg-green-100 text-green-900 font-medium"
           >
             About Us
           </Link>
           <Link
             href="/propertie"
-            className="block px-4 py-3 hover:bg-gray-100 text-purple-400 font-medium"
+            className="block px-4 py-3 hover:bg-green-100 text-green-900 font-medium"
           >
             Properties
           </Link>
@@ -334,7 +334,7 @@ export default function Header() {
           <div className="px-4 py-2">
             <button
               onClick={() => setLoanOpen(!loanOpen)}
-              className="w-full flex justify-between items-center hover:text-purple-400 text-sm font-medium"
+              className="w-full flex justify-between items-center hover:text-green-900 text-green-900 text-sm font-medium"
             >
               Apply Loan <span>{loanOpen ? "▴" : "▾"}</span>
             </button>
@@ -343,57 +343,57 @@ export default function Header() {
                 <li>
                   <Link
                     href="/loan/Homeloan"
-                    className="block hover:text-purple-400"
+                    className="block hover:text-green-900 text-green-900"
                   >
-                    Home Loan
+                    HOME LOAN
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/loan/mortage"
-                    className="block hover:text-purple-400"
+                    className="block hover:text-green-900 text-green-900"
                   >
-                    Mortgage Loan
+                    MORTGAGE LOAN
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/loan/personal"
-                    className="block hover:text-purple-400"
+                    className="block hover:text-green-900 text-green-900"
                   >
-                    Personal Loan
+                    PERSONAL LOAN
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/loan/unsecureloan"
-                    className="block hover:text-purple-400"
+                    className="block hover:text-green-900 text-green-900"
                   >
-                    Unsecured Business Loan
+                    UNSECURED BUSINESS
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/loan/workingcapital"
-                    className="block hover:text-purple-400"
+                    className="block hover:text-green-900 text-green-900"
                   >
-                    Working Capital
+                    WORKING CAPITAL
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/loan/balancetransfer"
-                    className="block hover:text-purple-400"
+                    className="block hover:text-green-900 text-green-900"
                   >
-                    Balance Transfer
+                    BALANCE TRANSFER
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/loan/carloan"
-                    className="block hover:text-purple-400"
+                    className="block hover:text-green-900 text-green-900"
                   >
-                    Car Loans
+                    CART Loan
                   </Link>
                 </li>
               </ul>
@@ -402,7 +402,7 @@ export default function Header() {
 
           <Link
             href="/careers"
-            className="block px-4 py-3 hover:bg-gray-100 text-purple-400 font-medium"
+            className="block px-4 py-3 hover:bg-green-100 text-green-900 font-medium"
           >
             Careers
           </Link>
