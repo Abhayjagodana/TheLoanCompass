@@ -441,7 +441,7 @@ export default function Banner() {
           <div className="block lg:hidden text-center mt-6">
             <Link
               href="/apply"
-              className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-green-900 font-semibold hover:bg-gray-200 transition-colors text-lg"
+              className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-green-900 font-semibold hover:bg-green-700 transition-colors text-lg"
             >
               Apply Now
             </Link>
