@@ -331,69 +331,50 @@ export default function Header() {
           </Link>
 
           {/* Mobile Apply Loan Collapsible */}
-          <div className="px-4 py-2">
-            <button
-              onClick={() => setLoanOpen(!loanOpen)}
-              className="w-full flex justify-between items-center hover:text-green-900 text-green-900 text-sm font-medium"
-            >
+          <div
+            className="relative px-4 py-2"
+            onMouseEnter={() => setLoanOpen(true)}
+            onMouseLeave={() => setLoanOpen(false)}
+          >
+            <button className="w-full flex justify-between items-center text-green-900 text-sm font-medium hover:text-green-700">
               Apply Loan <span>{loanOpen ? "▴" : "▾"}</span>
             </button>
+
             {loanOpen && (
-              <ul className="mt-2 pl-4 space-y-2">
+              <ul className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg border border-gray-200 w-48 py-2 z-50">
                 <li>
-                  <Link
-                    href="/loan/Homeloan"
-                    className="block hover:text-green-900 text-green-900"
-                  >
+                  <Link href="/loan/Homeloan" className="block px-4 py-2 hover:bg-green-100 text-green-900">
                     HOME LOAN
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/loan/mortage"
-                    className="block hover:text-green-900 text-green-900"
-                  >
+                  <Link href="/loan/mortage" className="block px-4 py-2 hover:bg-green-100 text-green-900">
                     MORTGAGE LOAN
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/loan/personal"
-                    className="block hover:text-green-900 text-green-900"
-                  >
+                  <Link href="/loan/personal" className="block px-4 py-2 hover:bg-green-100 text-green-900">
                     PERSONAL LOAN
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/loan/unsecureloan"
-                    className="block hover:text-green-900 text-green-900"
-                  >
+                  <Link href="/loan/unsecureloan" className="block px-4 py-2 hover:bg-green-100 text-green-900">
                     UNSECURED BUSINESS
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/loan/workingcapital"
-                    className="block hover:text-green-900 text-green-900"
-                  >
+                  <Link href="/loan/workingcapital" className="block px-4 py-2 hover:bg-green-100 text-green-900">
                     WORKING CAPITAL
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/loan/balancetransfer"
-                    className="block hover:text-green-900 text-green-900"
-                  >
+                  <Link href="/loan/balancetransfer" className="block px-4 py-2 hover:bg-green-100 text-green-900">
                     BALANCE TRANSFER
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/loan/carloan"
-                    className="block hover:text-green-900 text-green-900"
-                  >
-                    CART Loan
+                  <Link href="/loan/carloan" className="block px-4 py-2 hover:bg-green-100 text-green-900">
+                    CAR LOAN
                   </Link>
                 </li>
               </ul>
