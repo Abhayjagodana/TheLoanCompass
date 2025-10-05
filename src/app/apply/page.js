@@ -116,15 +116,18 @@ export default function ContactPage() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-sm-6">
-                                <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">
-                                    <Mail className="w-6 h-6 text-blue-600" />
-                                    <div>
-                                        <p className="text-green-900 font-bold">Email us:</p>
-                                        <span className="font-medium">bj@theloancompass.in</span>
-                                    </div>
-                                </div>
-                            </div>
+                           <div className="w-full sm:col-span-1">
+  <div className="flex items-start sm:items-center gap-3 p-4 rounded shadow-sm bg-white h-full">
+    <Mail className="w-6 h-6 text-blue-600 flex-shrink-0" />
+    <div className="flex flex-col">
+      <p className="text-green-900 font-bold text-sm sm:text-base">Email us:</p>
+      <span className="font-medium text-gray-800 text-sm sm:text-base break-all">
+        bj@theloancompass.in
+      </span>
+    </div>
+  </div>
+</div>
+
                             <div className="get-touch-box mt-6">
                                 <div className="flex items-center gap-3 p-4 rounded shadow-sm bg-white">
                                     <MapPin size={32} className="w-20 h-20 text-blue-600" />
