@@ -63,13 +63,13 @@ Different`}
                                     Welcome to theloancompass Pvt. Ltd., a pioneering venture co-founded by the highly experienced finance professional, Hiren Sejpal, boasting an impressive track record of over 25 years in the retail loan industry. Joining forces with the equally accomplished Mrs. Mona Hiren Sejpal, this dynamic duo envisioned a company dedicated to alleviating the challenges faced by individuals seeking loans, yet encountering difficulties in securing timely disbursements for their various financial needs, be it housing, personal, or business loans.
                                 </p>
                                 <p className="mb-2 leading-relaxed">
-                                    At Secure Edge, we understand the financial aspirations and challenges of our clients, and our mission is clear—to simplify the loan acquisition process and make it accessible to all. With our commitment to client convenience, we offer a unique door-step service that not only minimizes the hassle for our customers but also ensures a seamless experience from application to disbursal.
+                                    At theloancompass, we understand the financial aspirations and challenges of our clients, and our mission is clear—to simplify the loan acquisition process and make it accessible to all. With our commitment to client convenience, we offer a unique door-step service that not only minimizes the hassle for our customers but also ensures a seamless experience from application to disbursal.
                                 </p>
                                 <p className="mb-2 leading-relaxed">
-                                    Our comprehensive end-to-end service guarantees that clients receive unparalleled support throughout the entire loan journey. What sets Secure Edge apart is our unwavering dedication to providing this exceptional service without any additional charges, affirming our commitment to transparency and client satisfaction.
+                                    Our comprehensive end-to-end service guarantees that clients receive unparalleled support throughout the entire loan journey. What sets TheLoanCompass apart is our unwavering dedication to providing this exceptional service without any additional charges, affirming our commitment to transparency and client satisfaction.
                                 </p>
                                 <p className="mb-0 leading-relaxed">
-                                    Choose Secure Edge Solution Pvt. Ltd. for a reliable, efficient, and client-centric approach to securing your financial future. Experience the difference as we work tirelessly to ensure your loan requirements are not just met but exceeded, paving the way for your financial success.
+                                    Choose Secure TheLoanCompass Pvt. Ltd. for a reliable, efficient, and client-centric approach to securing your financial future. Experience the difference as we work tirelessly to ensure your loan requirements are not just met but exceeded, paving the way for your financial success.
                                 </p>
                             </div>
                         </div>

@@ -400,7 +400,7 @@ export default function Banner() {
             >
               <Image
                 src="/zzzzz.png"
-                width={570}
+                width={600}
                 height={150}
                 alt="shape"
                 className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
