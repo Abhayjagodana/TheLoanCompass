@@ -80,17 +80,17 @@
 //     );
 //   }
 // }
-
-import connectToDB from "../../../utils/dbconfig";
-import Contact from "../../../model/contact";
+ import connectToDB from "../../../utils/dbconfig";
+ import Contact from "../../../model/contact";
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
     await connectToDB();
     const data = await req.json();
-
     const { name, number, loan_type, subject, message } = data;
+
+    // Validation
     if (!name || !number || !loan_type || !subject || !message) {
       return new Response(
         JSON.stringify({ message: "All fields are required." }),
@@ -99,47 +99,50 @@ export async function POST(req) {
     }
 
     // Save to MongoDB
-    const newContact = new Contact(data);
-    await newContact.save();
+    await Contact.create(data);
 
-    // ✅ Nodemailer transporter with Zoho SMTP
+    // ✅ Configure Zoho SMTP properly
     const transporter = nodemailer.createTransport({
-      host: "smtp.zoho.in", // Zoho India (use smtp.zoho.com if global)
-      port: 465, // 465 for SSL
-      secure: true, // true for port 465
+      host: "smtp.zoho.in", // or "smtp.zoho.com" for global accounts
+      port: 465,
+      secure: true,
       auth: {
-        user: process.env.SMTP_USER, // your Zoho email (example: support@theloancompass.in)
-        pass: process.env.SMTP_PASS, // your Zoho app password (not normal password!)
+        user: process.env.SMTP_USER, // your Zoho email address
+        pass: process.env.SMTP_PASS, // Zoho app password
+      },
+      tls: {
+        rejectUnauthorized: false, // avoid SSL certificate issues
       },
     });
-
-    // Mail options
+    
+    // ✅ Email content
     const mailOptions = {
-      from: `"The Loan Compass" <${process.env.SMTP_USER}>`, // must match Zoho account
-      to: "bj@theloancompass.in", // recipient (your admin email)
+      from: `"The Loan Compass" <${process.env.SMTP_USER}>`,
+      to: "bj@theloancompass.in", // where you receive inquiries
       subject: `📩 New Contact Form Submission - ${subject}`,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Number:</strong> ${number}</p>
-        <p><strong>Loan Type:</strong> ${loan_type}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong> ${message}</p>
+        <div style="font-family:Arial,sans-serif;line-height:1.6;color:#333">
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Number:</strong> ${number}</p>
+          <p><strong>Loan Type:</strong> ${loan_type}</p>
+          <p><strong>Subject:</strong> ${subject}</p>
+          <p><strong>Message:</strong><br/>${message}</p>
+        </div>
       `,
     };
 
+    // ✅ Send mail
     await transporter.sendMail(mailOptions);
 
     return new Response(
-      JSON.stringify({
-        message: "Contact form submitted and email sent successfully.",
-      }),
+      JSON.stringify({ message: "Form submitted and email sent successfully!" }),
       { status: 200 }
     );
   } catch (error) {
     console.error("Contact API Error:", error);
     return new Response(
-      JSON.stringify({ message: "Failed to submit form." }),
+      JSON.stringify({ message: "Failed to submit form.", error: error.message }),
       { status: 500 }
     );
   }

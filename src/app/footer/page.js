@@ -134,8 +134,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-16  animate-slide-right delay-300">
-
+    <footer className="bg-gray-900 text-white py-16 animate-slide-right delay-300">
       <div className="container mx-auto px-4">
         {/* Top Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center md:text-left">
@@ -147,22 +146,13 @@ export default function Footer() {
               financial growth with trust, simplicity, and excellence.
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
-              <Link
-                href="https://www.facebook.com/secureedgesolution/"
-                target="_blank"
-              >
+              <Link href="https://www.facebook.com/secureedgesolution/" target="_blank">
                 <FaFacebookF className="text-white hover:text-blue-500 text-lg transition-colors duration-300" />
               </Link>
-              <Link
-                href="https://www.instagram.com/secureedgesolution.pvt.ltd/"
-                target="_blank"
-              >
+              <Link href="https://www.instagram.com/secureedgesolution.pvt.ltd/" target="_blank">
                 <FaInstagram className="text-white hover:text-pink-500 text-lg transition-colors duration-300" />
               </Link>
-              <Link
-                href="https://www.linkedin.com/company/secure-edge-solution-pvt-ltd/?originalSubdomain=in"
-                target="_blank"
-              >
+              <Link href="https://www.linkedin.com/company/secure-edge-solution-pvt-ltd/?originalSubdomain=in" target="_blank">
                 <FaLinkedinIn className="text-white hover:text-blue-400 text-lg transition-colors duration-300" />
               </Link>
             </div>
@@ -172,47 +162,13 @@ export default function Footer() {
           <div>
             <h5 className="text-lg font-semibold mb-4">Loan</h5>
             <ul className="grid grid-cols-2 gap-3 text-gray-300">
-              <li>
-                <Link href="/loan/Homeloan" className="hover:text-white">
-                  Home Loan
-                </Link>
-              </li>
-              <li>
-                <Link href="/loan/mortage" className="hover:text-white">
-                  Mortgage Loan
-                </Link>
-              </li>
-              <li>
-                <Link href="/loan/personal" className="hover:text-white">
-                  Personal Loan
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan/unsecureloan"
-                  className="hover:text-white"
-                >
-                  Unsecured Business Loan
-                </Link>
-              </li>
-              <li>
-                <Link href="/loan/workingcapital" className="hover:text-white">
-                  Working Capital
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan/balancetransfer"
-                  className="hover:text-white"
-                >
-                  Balance Transfer
-                </Link>
-              </li>
-              <li>
-                <Link href="/loan/carloan" className="hover:text-white">
-                  Car Loans
-                </Link>
-              </li>
+              <li><Link href="/loan/Homeloan" className="hover:text-white">Home Loan</Link></li>
+              <li><Link href="/loan/mortage" className="hover:text-white">Mortgage Loan</Link></li>
+              <li><Link href="/loan/personal" className="hover:text-white">Personal Loan</Link></li>
+              <li><Link href="/loan/unsecureloan" className="hover:text-white">Unsecured Business Loan</Link></li>
+              <li><Link href="/loan/workingcapital" className="hover:text-white">Working Capital</Link></li>
+              <li><Link href="/loan/balancetransfer" className="hover:text-white">Balance Transfer</Link></li>
+              <li><Link href="/loan/carloan" className="hover:text-white">Car Loans</Link></li>
             </ul>
           </div>
 
@@ -220,31 +176,11 @@ export default function Footer() {
           <div>
             <h5 className="text-lg font-semibold mb-4">Company</h5>
             <ul className="space-y-2 text-gray-300">
-              <li>
-                <Link href="/about" className="hover:text-white">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/propertie" className="hover:text-white">
-                  Properties
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="hover:text-white">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-police" className="hover:text-white">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/Tems&condistion" className="hover:text-white">
-                  Terms &amp; Conditions
-                </Link>
-              </li>
+              <li><Link href="/about" className="hover:text-white">About Us</Link></li>
+              <li><Link href="/propertie" className="hover:text-white">Properties</Link></li>
+              <li><Link href="/careers" className="hover:text-white">Careers</Link></li>
+              <li><Link href="/privacy-police" className="hover:text-white">Privacy Policy</Link></li>
+              <li><Link href="/Tems&condistion" className="hover:text-white">Terms &amp; Conditions</Link></li>
             </ul>
           </div>
         </div>
@@ -252,38 +188,38 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="mt-10 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
           <p>
-            Copyright © Secure TheLoan Compass Pvt Ltd. 2025.
+            Copyright ©{" "}
+            <span className="text-white">The Loan Compass Pvt Ltd.</span> 2025.
             <br className="sm:hidden" /> Designed by{" "}
             <Link
-              href="https://shopnoecommerce.com/"
+              href="https://jagodana-abhi123.vercel.app/"
               className="text-blue-400 hover:underline"
+              target="_blank"
             >
               Abhay Jagodana
             </Link>
           </p>
         </div>
       </div>
+
       <style jsx>{`
-    @keyframes slideRight {
-      0% {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    .animate-slide-right {
-      animation: slideRight 1s ease-out forwards;
-    }
-    .delay-300 {
-      animation-delay: 0.3s;
-    }
-    .delay-700 {
-      animation-delay: 0.7s;
-    }
-  `}</style>
+        @keyframes slideRight {
+          0% {
+            transform: translateX(-50px);
+            opacity: 0;
+          }
+          100% {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+        .animate-slide-right {
+          animation: slideRight 1s ease-out forwards;
+        }
+        .delay-300 {
+          animation-delay: 0.3s;
+        }
+      `}</style>
     </footer>
   );
 }

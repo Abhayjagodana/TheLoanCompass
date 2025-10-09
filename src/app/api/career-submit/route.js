@@ -113,14 +113,14 @@ export async function POST(req) {
       port: 465,
       secure: true,
       auth: {
-        user: process.env.ZOHO_USER, // must be a Zoho email (e.g. info@theloancompass.in)
-        pass: process.env.ZOHO_PASS, // Zoho app password
+        user: process.env.SMTP_USER, // must be a Zoho email (e.g. info@theloancompass.in)
+        pass: process.env.SMTP_PASS, // Zoho app password
       },
     });
 
     // Mail options
     const mailOptions = {
-      from: `"Career Portal" <${process.env.ZOHO_USER}>`, // ✅ Must be Zoho email
+      from: `"Career Portal" <${process.env.SMTP_USER}>`, // ✅ Must be Zoho email
       to: "bj@theloancompass.in", // where to receive applications
       replyTo: data.email, // applicant’s email (so admin can reply directly)
       subject: "New Career Application",
