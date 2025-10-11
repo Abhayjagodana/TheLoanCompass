@@ -388,84 +388,86 @@ export default function Banner() {
       </div>
     </section> */}
 
-<section className="relative w-full min-h-[850px] sm:min-h-[950px] lg:min-h-screen pt-[90px] lg:pt-[150px] pb-[100px] overflow-hidden my-24 bg-gradient-to-r from-green-900 to-green-900">
-  {/* Background animated shapes */}
-  <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-[50%] hidden lg:block">
-      {/* Show background image only on large screens */}
-      <motion.div
-        initial={{ x: 200, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        <Image
-          src="/zzzzz.png"
-          width={600}
-          height={150}
-          alt="shape"
-          className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
-        />
-      </motion.div>
-    </div>
-  </div>
+      <section className="relative w-full min-h-[850px] sm:min-h-[950px] lg:min-h-screen pt-[90px] lg:pt-[150px] pb-[100px] overflow-hidden my-24 bg-gradient-to-r from-green-900 to-green-900">
+        {/* Background animated shapes */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-[50%] hidden lg:block">
+            {/* Show background image only on large screens */}
+            <motion.div
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <Image
+                src="/zzzzz.png"
+                width={600}
+                height={150}
+                alt="shape"
+                className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
+                  // className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-[550px] mx-auto object-cover"
 
-  {/* Banner Content */}
-  <div className="container mx-auto relative z-10 px-4">
-    <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left">
-      {/* Left Content */}
-      <div className="lg:w-1/2 pt-8 lg:pt-12 pb-12 lg:pb-48 text-white">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug drop-shadow-lg text-left">
-          Compare loans <br />
-          from several <br />
-          banks and find <br />
-          the best offer!
-        </h1>
-
-        {/* Button for Desktop */}
-        <div className="hidden lg:block mt-6">
-          <Link
-            href="/apply"
-            className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-green-700 font-semibold hover:bg-green-200 transition-colors text-lg"
-          >
-            Apply Now
-          </Link>
+              />
+            </motion.div>
+          </div>
         </div>
 
-        {/* Show image below text on mobile */}
-        <div className="mt-8 block lg:hidden">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <Image
-              src="/zzzzz.png"
-              width={600}
-              height={150}
-              alt="shape"
-              className="rounded-lg w-full max-w-[500px] h-auto mx-auto"
-            />
-          </motion.div>
+        {/* Banner Content */}
+        <div className="container mx-auto relative z-10 px-4">
+          <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left">
+            {/* Left Content */}
+            <div className="lg:w-1/2 pt-8 lg:pt-12 pb-12 lg:pb-48 text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug drop-shadow-lg text-left">
+                Compare loans <br />
+                from several <br />
+                banks and find <br />
+                the best offer!
+              </h1>
+
+              {/* Button for Desktop */}
+              <div className="hidden lg:block mt-6">
+                <Link
+                  href="/apply"
+                  className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-green-700 font-semibold hover:bg-green-200 transition-colors text-lg"
+                >
+                  Apply Now
+                </Link>
+              </div>
+
+              {/* Show image below text on mobile */}
+              <div className="mt-8 block lg:hidden">
+                <motion.div
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                >
+                  <Image
+                    src="/zzzzz.png"
+                    width={600}
+                    height={150}
+                    alt="shape"
+                    className="rounded-lg w-full max-w-[500px] h-auto mx-auto"
+                  />
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Right side image (only on desktop) */}
+            <div className="lg:w-1/2 hidden lg:flex justify-end"></div>
+          </div>
+
+          {/* Button below image for Mobile/Tablet */}
+          <div className="block lg:hidden text-center mt-6">
+            <Link
+              href="/apply"
+              className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-green-900 font-semibold hover:bg-green-700 transition-colors text-lg"
+            >
+              Apply Now
+            </Link>
+          </div>
         </div>
-      </div>
-
-      {/* Right side image (only on desktop) */}
-      <div className="lg:w-1/2 hidden lg:flex justify-end"></div>
-    </div>
-
-    {/* Button below image for Mobile/Tablet */}
-    <div className="block lg:hidden text-center mt-6">
-      <Link
-        href="/apply"
-        className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-green-900 font-semibold hover:bg-green-700 transition-colors text-lg"
-      >
-        Apply Now
-      </Link>
-    </div>
-  </div>
-</section>
+      </section>
 
 
 
