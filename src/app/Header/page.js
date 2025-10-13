@@ -323,12 +323,12 @@ export default function Header() {
           >
             About Us
           </Link>
-          <Link
+          {/* <Link
             href="/propertie"
             className="block px-4 py-3 hover:bg-green-100 text-green-900 font-medium"
           >
             Properties
-          </Link>
+          </Link> */}
 
           {/* Mobile Apply Loan Collapsible */}
           <div
