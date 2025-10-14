@@ -19,7 +19,7 @@ export default function AboutBanner() {
 
                 {/* Optional bottom gradient for smooth transition */}
                 <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-green-900 to-transparent"></div>
-                <style jsx>{`
+                {/* <style jsx>{`
     @keyframes slideRight {
       0% {
         transform: translateX(-50px);
@@ -39,7 +39,7 @@ export default function AboutBanner() {
     .delay-700 {
       animation-delay: 0.7s;
     }
-  `}</style>
+  `}</style> */}
             </section>
 
             {/* Add About containe */}
@@ -77,7 +77,7 @@ Different`}
                         </div>
                     </div>
                 </div>
-                <style jsx>{`
+                {/* <style jsx>{`
     @keyframes slideRight {
       0% {
         transform: translateX(-50px);
@@ -97,7 +97,7 @@ Different`}
     .delay-700 {
       animation-delay: 0.7s;
     }
-  `}</style>
+  `}</style> */}
             </section>
 
             {/* box for counter */}
@@ -153,7 +153,7 @@ Different`}
                         </div>
                     </div>
                 </div>
-                <style jsx>{`
+                {/* <style jsx>{`
     @keyframes slideRight {
       0% {
         transform: translateX(-50px);
@@ -173,7 +173,7 @@ Different`}
     .delay-700 {
       animation-delay: 0.7s;
     }
-  `}</style>
+  `}</style> */}
             </section>
 
             {/* leadership tems */}
@@ -254,7 +254,7 @@ Different`}
                         </div>
                     </div>
                 </div>
-                <style jsx>{`
+                {/* <style jsx>{`
     @keyframes slideRight {
       0% {
         transform: translateX(-50px);
@@ -274,7 +274,7 @@ Different`}
     .delay-700 {
       animation-delay: 0.7s;
     }
-  `}</style>
+  `}</style> */}
             </section>
 
 

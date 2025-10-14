@@ -1,11 +1,11 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//     images: {
-//     domains: ["secureedgesolution.com"],
-//   },
-// };
+// // /** @type {import('next').NextConfig} */
+// // const nextConfig = {
+// //     images: {
+// //     domains: ["secureedgesolution.com"],
+// //   },
+// // };
 
-// export default nextConfig;
+// // export default nextConfig;
 
 
 /** @type {import('next').NextConfig} */
@@ -27,4 +27,12 @@ const nextConfig = {
 };
 
 export default nextConfig;
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   images: {
+//     domains: ["media.istockphoto.com"], // ✅ your image domain
+//   },
+// };
+
+// export default nextConfig; // ✅ ESM export
 
