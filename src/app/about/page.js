@@ -5,7 +5,7 @@ import Image from "next/image"; // ✅ Correct import
 export default function AboutBanner() {
     return (
         <div>
-            
+
 
             <section className="relative w-full bg-gradient-to-r from-green-900 to-green-900 min-h-[25vh] flex items-center my-28 animate-slide-right delay-300">
                 {/* Overlay optional for text shadow */}
