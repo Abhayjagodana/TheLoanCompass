@@ -7,7 +7,6 @@
 
 // // export default nextConfig;
 
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -15,18 +14,21 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "media.istockphoto.com",
-        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "secureedgesolution.com",
-        pathname: "/**",
       },
     ],
   },
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
 export default nextConfig;
+
+
+
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
 //   images: {
