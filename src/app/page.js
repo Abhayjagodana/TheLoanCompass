@@ -405,7 +405,7 @@ export default function Banner() {
                 height={150}
                 alt="shape"
                 className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
-                  // className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-[550px] mx-auto object-cover"
+              // className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-[550px] mx-auto object-cover"
 
               />
             </motion.div>
@@ -417,18 +417,19 @@ export default function Banner() {
           <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left">
             {/* Left Content */}
             <div className="lg:w-1/2 pt-8 lg:pt-12 pb-12 lg:pb-48 text-white">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug drop-shadow-lg text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-semibold leading-snug drop-shadow-lg text-left mx-4 sm:mx-6 md:mx-8 lg:mx-12">
                 Compare loans <br />
                 from several <br />
                 banks and find <br />
                 the best offer!
               </h1>
 
+
               {/* Button for Desktop */}
               <div className="hidden lg:block mt-6">
                 <Link
                   href="/apply"
-                  className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-green-700 font-semibold hover:bg-green-200 transition-colors text-lg"
+                  className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-green-700 font-semibold hover:bg-green-200 transition-colors text-lg mx-20"
                 >
                   Apply Now
                 </Link>
@@ -443,7 +444,7 @@ export default function Banner() {
                   viewport={{ once: true }}
                 >
                   <Image
-                    src="/zzzzz.png"
+                    src="/zzzzzz.png"
                     width={600}
                     height={150}
                     alt="shape"
@@ -564,50 +565,55 @@ export default function Banner() {
           </div> */}
 
             {/* Right Side Content */}
-            <div className="flex flex-col lg:flex-row w-full gap-10">
-              {/* Offers List */}
-              <div className="lg:w-3/12 bg-gray-50 rounded-lg shadow-md p-6 relative">
-                <ul className="space-y-4 text-gray-700">
-                  <li className="flex items-center">
-                    <span className="text-blue-600 mr-3">✔</span>
-                    Offers from several banks
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-blue-600 mr-3">✔</span>
-                    Free &amp; no obligation
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-blue-600 mr-3">✔</span>
-                    Compare safely and securely
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-blue-600 mr-3">✔</span>
-                    Offer within a few hours
-                  </li>
-                </ul>
-                {/* Decorative Shape */}
-                <Image
-                  src="/shap.png"
-                  alt="Shape"
-                  width={150}
-                  height={150}
-                  className="absolute -bottom-6 -right-6 w-24 h-24 opacity-20"
-                />
-              </div>
+            <div className="px-4 sm:px-6 md:px-8 lg:px-12 my-8">
+              <div className="flex flex-col lg:flex-row w-full gap-10 mx-auto">
+                {/* Offers List */}
+                <div className="lg:w-3/12 w-full bg-gray-50 rounded-lg shadow-md p-6 relative mx-auto">
+                  <ul className="space-y-4 text-gray-700">
+                    <li className="flex items-center">
+                      <span className="text-blue-600 mr-3">✔</span>
+                      Offers from several banks
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-blue-600 mr-3">✔</span>
+                      Free &amp; no obligation
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-blue-600 mr-3">✔</span>
+                      Compare safely and securely
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-blue-600 mr-3">✔</span>
+                      Offer within a few hours
+                    </li>
+                  </ul>
+                  {/* Decorative Shape */}
+                  <Image
+                    src="/shap.png"
+                    alt="Shape"
+                    width={150}
+                    height={150}
+                    className="absolute -bottom-6 -right-6 w-24 h-24 opacity-20"
+                  />
+                </div>
 
-              {/* Description */}
-              <div className="lg:w-7/12 text-gray-700 leading-relaxed">
-                <p>
-                  Compare multiple banks with just one non-binding application. We
-                  save you the hassle of checking the cost of a loan at each bank.
-                </p>
-                <p className="py-4">
-                  It takes 2 minutes. To fill out the application, you immediately
-                  get quotes from banks and can choose the best quote!
-                </p>
-                <p>We save you not only time but also get you the best deal!</p>
+                {/* Description */}
+                <div className="lg:w-7/12 w-full text-gray-700 leading-relaxed">
+                  <p className="mb-4">
+                    Compare multiple banks with just one non-binding application. We save
+                    you the hassle of checking the cost of a loan at each bank.
+                  </p>
+                  <p className="mb-4">
+                    It takes 2 minutes to fill out the application, you immediately get
+                    quotes from banks and can choose the best quote!
+                  </p>
+                  <p>
+                    We save you not only time but also get you the best deal!
+                  </p>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
         <style jsx>{`
@@ -702,7 +708,7 @@ export default function Banner() {
 
           <div className="flex flex-col md:flex-row gap-8">
             {/* Left side - Testimonial Carousel */}
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 w-full mx-4 sm:mx-6 md:mx-8 lg:mx-12">
               <Swiper
                 modules={[Pagination, Autoplay]}
                 spaceBetween={20}
@@ -730,6 +736,9 @@ export default function Banner() {
                 ))}
               </Swiper>
             </div>
+
+
+
 
             {/* Right side - Highlighted text or another carousel */}
             <div className="md:w-1/2 flex flex-col justify-center">
@@ -771,7 +780,7 @@ export default function Banner() {
       </section>
 
       {/* //Help you  */}
-      <section className="py-16 px-4 bg-white animate-slide-right delay-300">
+      <section className="py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-white animate-slide-right delay-300">
         <div className="container mx-auto flex flex-col lg:flex-row gap-12">
           {/* Left: Advisor Section */}
           <div className="lg:w-1/2 flex flex-col gap-6">
@@ -795,20 +804,23 @@ export default function Banner() {
             </div>
 
             {/* Contact buttons */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 w-full">
               <a
                 href="tel:9619131314"
-                className="bg-gradient-to-r from-green-800 to-green-800 hover:from-green-500 hover:to-green-800 text-white px-6 py-3 rounded-full text-center flex items-center justify-center gap-2 transition"
+                className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full bg-gradient-to-r from-green-800 to-green-800 hover:from-green-500 hover:to-green-800 text-white font-semibold transition"
               >
-                <Phone />+91-9624459515
+                <Phone className="w-5 h-5 flex-shrink-0" />
+                +91-9624459515
               </a>
               <a
                 href="mailto:info@secureedgesolution.com"
-                className="bg-gradient-to-r from-green-800 to-green-800 hover:from-green-500 hover:to-green-800 text-white px-6 py-3 rounded-full text-center flex items-center justify-center gap-2  transition"
+                className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full bg-gradient-to-r from-green-800 to-green-800 hover:from-green-500 hover:to-green-800 text-white font-semibold transition"
               >
-                <MailMinus /> bj@theloancompass.in
+                <MailMinus className="w-5 h-5 flex-shrink-0" />
+                bj@theloancompass.in
               </a>
             </div>
+
           </div>
 
           {/* Right: FAQ Section */}
