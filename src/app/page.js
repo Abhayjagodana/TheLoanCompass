@@ -444,7 +444,7 @@ export default function Banner() {
                   viewport={{ once: true }}
                 >
                   <Image
-                    src="/zzzzzz.png"
+                    src="/ooo.jpg"
                     width={600}
                     height={150}
                     alt="shape"

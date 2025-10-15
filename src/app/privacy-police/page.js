@@ -229,170 +229,170 @@ import Head from "next/head";
             }
           `}</style>
         </section>
+<section className="bg-white pt-4 pb-32">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 mx-4 sm:mx-6 lg:mx-8">
+    <div className="description-widget">
+      <div className="flex flex-col">
+        <div className="desc-text lg:pl-10 text-gray-700 leading-relaxed">
+          <p className="mb-6">
+            <strong className="text-green-900 text-lg">
+              1. Introduction
+            </strong>
+            <br />
+            The Loan Compass (&quot;Company,&quot; &quot;we,&quot;
+            &quot;our,&quot; or &quot;us&quot;) values your privacy and
+            is committed to protecting your personal information. This
+            Privacy Policy outlines how we collect, use, and safeguard
+            the information you provide when applying for a bank loan
+            through our platform.
+          </p>
 
-        <section className="bg-white pt-4 pb-32">
-          <div className="container mx-auto px-4">
-            <div className="description-widget">
-              <div className="flex flex-col">
-                <div className="desc-text lg:pl-10 text-gray-700 leading-relaxed">
-                  <p className="mb-6">
-                    <strong className="text-green-900 text-lg">
-                      1. Introduction
-                    </strong>
-                    <br />
-                    The Loan Compass (&quot;Company,&quot; &quot;we,&quot;
-                    &quot;our,&quot; or &quot;us&quot;) values your privacy and
-                    is committed to protecting your personal information. This
-                    Privacy Policy outlines how we collect, use, and safeguard
-                    the information you provide when applying for a bank loan
-                    through our platform.
-                  </p>
+          <p className="mb-6">
+            <strong className="text-green-900 text-lg">
+              2. Information We Collect
+            </strong>
+            <br />
+            When you apply for a bank loan through The Loan Compass, we
+            may collect the following types of information:
+          </p>
 
-                  <p className="mb-6">
-                    <strong className="text-green-900 text-lg">
-                      2. Information We Collect
-                    </strong>
-                    <br />
-                    When you apply for a bank loan through The Loan Compass, we
-                    may collect the following types of information:
-                  </p>
+          <ul className="list-disc list-inside space-y-2 mb-6">
+            <li>
+              <strong>Personal Information:</strong> Name, address, date
+              of birth, phone number, email address, and
+              government-issued identification details.
+            </li>
+            <li>
+              <strong>Financial Information:</strong> Income details,
+              credit score, bank account details, employment status, and
+              loan history.
+            </li>
+            <li>
+              <strong>Other Information:</strong> IP address, browsing
+              behavior, and other relevant data for security and
+              analytics.
+            </li>
+          </ul>
 
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li>
-                      <strong>Personal Information:</strong> Name, address, date
-                      of birth, phone number, email address, and
-                      government-issued identification details.
-                    </li>
-                    <li>
-                      <strong>Financial Information:</strong> Income details,
-                      credit score, bank account details, employment status, and
-                      loan history.
-                    </li>
-                    <li>
-                      <strong>Other Information:</strong> IP address, browsing
-                      behavior, and other relevant data for security and
-                      analytics.
-                    </li>
-                  </ul>
+          <p className="mb-6">
+            <strong className="text-green-900 text-lg">
+              3. How We Use Your Information
+            </strong>
+            <br />
+            We use the collected information for the following purposes:
+          </p>
 
-                  <p className="mb-6">
-                    <strong className="text-green-900 text-lg">
-                      3. How We Use Your Information
-                    </strong>
-                    <br />
-                    We use the collected information for the following purposes:
-                  </p>
+          <ul className="list-disc list-inside space-y-2 mb-6">
+            <li>To process and evaluate your loan application.</li>
+            <li>To verify your identity and financial standing.</li>
+            <li>To communicate loan-related updates and support.</li>
+            <li>To comply with legal and regulatory requirements.</li>
+            <li>To improve our services and user experience.</li>
+          </ul>
 
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li>To process and evaluate your loan application.</li>
-                    <li>To verify your identity and financial standing.</li>
-                    <li>To communicate loan-related updates and support.</li>
-                    <li>To comply with legal and regulatory requirements.</li>
-                    <li>To improve our services and user experience.</li>
-                  </ul>
+          <p className="mb-6">
+            <strong className="text-green-900 text-lg">
+              4. Information Sharing and Disclosure
+            </strong>
+            <br />
+            We do not sell or rent your personal information. However,
+            we may share your data with:
+          </p>
 
-                  <p className="mb-6">
-                    <strong className="text-green-900 text-lg">
-                      4. Information Sharing and Disclosure
-                    </strong>
-                    <br />
-                    We do not sell or rent your personal information. However,
-                    we may share your data with:
-                  </p>
+          <ul className="list-disc list-inside space-y-2 mb-6">
+            <li>
+              <strong>Financial Institutions &amp; Lenders:</strong> To
+              facilitate loan approval and processing.
+            </li>
+            <li>
+              <strong>Regulatory Authorities:</strong> If required by
+              law or legal processes.
+            </li>
+            <li>
+              <strong>Third-Party Service Providers:</strong> For fraud
+              prevention, credit analysis, or customer support.
+            </li>
+          </ul>
 
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li>
-                      <strong>Financial Institutions &amp; Lenders:</strong> To
-                      facilitate loan approval and processing.
-                    </li>
-                    <li>
-                      <strong>Regulatory Authorities:</strong> If required by
-                      law or legal processes.
-                    </li>
-                    <li>
-                      <strong>Third-Party Service Providers:</strong> For fraud
-                      prevention, credit analysis, or customer support.
-                    </li>
-                  </ul>
+          <p className="mb-6">
+            <strong className="text-green-900 text-lg">
+              5. Data Security
+            </strong>
+            <br />
+            We implement industry-standard security measures to protect
+            your personal and financial data from unauthorized access,
+            disclosure, or loss. However, no method of transmission over
+            the internet is entirely secure.
+          </p>
 
-                  <p className="mb-6">
-                    <strong className="text-green-900 text-lg">
-                      5. Data Security
-                    </strong>
-                    <br />
-                    We implement industry-standard security measures to protect
-                    your personal and financial data from unauthorized access,
-                    disclosure, or loss. However, no method of transmission over
-                    the internet is entirely secure.
-                  </p>
+          <p className="mb-6">
+            <strong className="text-green-900 text-lg">
+              6. Your Rights &amp; Choices
+            </strong>
+            <br />
+            You have the right to:
+          </p>
 
-                  <p className="mb-6">
-                    <strong className="text-green-900 text-lg">
-                      6. Your Rights &amp; Choices
-                    </strong>
-                    <br />
-                    You have the right to:
-                  </p>
+          <ul className="list-disc list-inside space-y-2 mb-6">
+            <li>Access, update, or correct your personal data.</li>
+            <li>
+              Withdraw consent for data processing (this may affect loan
+              processing).
+            </li>
+            <li>
+              Request deletion of your personal data, subject to legal
+              obligations.
+            </li>
+          </ul>
 
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                    <li>Access, update, or correct your personal data.</li>
-                    <li>
-                      Withdraw consent for data processing (this may affect loan
-                      processing).
-                    </li>
-                    <li>
-                      Request deletion of your personal data, subject to legal
-                      obligations.
-                    </li>
-                  </ul>
+          <p className="mb-6">
+            <strong className="text-green-900 text-lg">
+              7. Cookies &amp; Tracking Technologies
+            </strong>
+            <br />
+            We use cookies and similar technologies to improve our
+            website functionality and enhance user experience. You can
+            manage cookie preferences through your browser settings.
+          </p>
 
-                  <p className="mb-6">
-                    <strong className="text-green-900 text-lg">
-                      7. Cookies &amp; Tracking Technologies
-                    </strong>
-                    <br />
-                    We use cookies and similar technologies to improve our
-                    website functionality and enhance user experience. You can
-                    manage cookie preferences through your browser settings.
-                  </p>
+          <p className="mb-6">
+            <strong className="text-green-900 text-lg">
+              8. Changes to This Privacy Policy
+            </strong>
+            <br />
+            We may update this Privacy Policy from time to time. Any
+            changes will be posted on this page with an updated
+            effective date.
+          </p>
 
-                  <p className="mb-6">
-                    <strong className="text-green-900 text-lg">
-                      8. Changes to This Privacy Policy
-                    </strong>
-                    <br />
-                    We may update this Privacy Policy from time to time. Any
-                    changes will be posted on this page with an updated
-                    effective date.
-                  </p>
+          <p className="mb-6">
+            <strong className="text-green-900 text-lg">
+              9. Contact Us
+            </strong>
+            <br />
+            If you have any questions regarding this Privacy Policy or
+            your personal data, please contact us at:
+          </p>
 
-                  <p className="mb-6">
-                    <strong className="text-green-900 text-lg">
-                      9. Contact Us
-                    </strong>
-                    <br />
-                    If you have any questions regarding this Privacy Policy or
-                    your personal data, please contact us at:
-                  </p>
+          <p>
+            <strong className="text-green-900">The Loan Compass</strong>
+            <br />
+            Website:{" "}
+            <a
+              href="https://the-loan-compass.vercel.app/"
+              className="text-green-900 underline hover:text-green-700"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              the-loan-compass.vercel.app
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                  <p>
-                    <strong>The Loan Compass</strong>
-                    <br />
-                    Website:{" "}
-                    <a
-                      href="https://the-loan-compass.vercel.app/"
-                      className="text-green-900 underline hover:text-green-700"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      the-loan-compass.vercel.app
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );

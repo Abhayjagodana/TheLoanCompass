@@ -389,29 +389,29 @@ import toast, { Toaster } from "react-hot-toast";
         <Toaster position="top-right" />
         <div className="container mx-auto px-4 lg:flex lg:gap-16">
           {/* Contact Info */}
-          <div className="lg:w-5/12 mb-12 lg:mb-0">
-            <h2 className="text-3xl font-bold mb-8 text-green-900">
-              Get in touch with us.
-            </h2>
-            <p className="text-gray-600 mb-8">
-              We’d love to hear from you. Here’s how you can reach us.
-            </p>
+          <div className="lg:w-5/12 mb-12 lg:mb-0 px-4 sm:px-6 lg:px-8">
+  <h2 className="text-3xl font-bold mb-8 text-green-900">
+    Get in touch with us.
+  </h2>
+  <p className="text-gray-600 mb-8">
+    We’d love to hear from you. Here’s how you can reach us.
+  </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <InfoBox icon={<Phone />} title="Call the helpline:" value="+91-9624459515" />
-              <InfoBox icon={<Mail />} title="Email us:" value="bj@theloancompass.in" />
-              <InfoBox
-                icon={<MapPin />}
-                title="Location"
-                value="201, Balaji Enclave, Nr Nanpura old Police Chowki, Nanpura, Surat, Gujarat - 395009"
-              />
-              <InfoBox
-                icon={<Clock />}
-                title="Work Hours"
-                value="Mon - Sat: 9am - 7pm | Sun: 12pm - 6pm"
-              />
-            </div>
-          </div>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <InfoBox icon={<Phone />} title="Call the helpline:" value="+91-9624459515" />
+    <InfoBox icon={<Mail />} title="Email us:" value="bj@theloancompass.in" />
+    <InfoBox
+      icon={<MapPin />}
+      title="Location"
+      value="201, Balaji Enclave, Nr Nanpura old Police Chowki, Nanpura, Surat, Gujarat - 395009"
+    />
+    <InfoBox
+      icon={<Clock />}
+      title="Work Hours"
+      value="Mon - Sat: 9am - 7pm | Sun: 12pm - 6pm"
+    />
+  </div>
+</div>
 
           {/* Contact Form */}
           <div className="lg:w-7/12">
