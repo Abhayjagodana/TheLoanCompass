@@ -47,17 +47,18 @@ export default function AboutBanner() {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row lg:items-start">
                         {/* Left Column */}
-                        <div className="lg:w-1/3 flex justify-start mb-4 lg:mb-0 ">
-                            <div className="bg-green-800 p-4 sm:p-6 text-white rounded-lg text-right h-auto sm:h-48 w-full sm:w-64 lg:w-96 flex items-center justify-end mx-auto sm:mx-5">
-                                <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold leading-snug whitespace-pre-line text-right">
+                        <div className="lg:w-1/3 w-full flex justify-center mb-4 lg:mb-0">
+                            <div className="bg-green-800 p-4 sm:p-6 text-white rounded-lg text-right h-auto sm:h-48 w-full sm:w-64 lg:w-80 flex items-center justify-end">
+                                <h2 className="text-base sm:text-xl lg:text-2xl font-semibold leading-snug whitespace-pre-line text-right">
                                     {`A journey that
 started with a
 belief to Be
 Different`}
                                 </h2>
                             </div>
-
                         </div>
+
+
 
                         {/* Right Column */}
                         <div className="lg:w-2/3 lg:pl-6">
@@ -102,71 +103,71 @@ Different`}
             </section>
 
             {/* box for counter */}
-<section className="bg-gray-100 py-24 animate-slide-right delay-300">
-  <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col items-center justify-center">
-    {/* First Row */}
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-10 w-full">
-      {/* Left Side */}
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
-        {/* 5000 Box */}
-        <div className="w-72 sm:w-80 h-48 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center text-center shadow-md">
-          <h1 className="text-4xl lg:text-5xl font-bold">5000</h1>
-          <p className="mt-2 text-sm sm:text-base">
-            Trusted partner for 5000+ Channel Partners
-          </p>
-        </div>
+            <section className="bg-gray-100 py-24 animate-slide-right delay-300">
+                <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col items-center justify-center">
+                    {/* First Row */}
+                    <div className="flex flex-col lg:flex-row items-center justify-center gap-10 w-full">
+                        {/* Left Side */}
+                        <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
+                            {/* 5000 Box */}
+                            <div className="w-72 sm:w-80 h-48 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center text-center shadow-md">
+                                <h1 className="text-4xl lg:text-5xl font-bold">5000</h1>
+                                <p className="mt-2 text-sm sm:text-base">
+                                    Trusted partner for 5000+ Channel Partners
+                                </p>
+                            </div>
 
-        {/* Image */}
-        <div className="flex justify-center">
-          <Image
-            src="https://media.istockphoto.com/id/1332358775/photo/young-couple-shaking-hands-deal-contract-real-estate-investment-business-agreement-agent.webp?a=1&b=1&s=612x612&w=0&k=20&c=gFtxy5dE4doeHAs_crzmgl-efeRUBLgJhRaO1J4-yxQ="
-            alt="Statistics"
-            width={612}
-            height={300}
-            className="object-cover rounded-lg h-48 w-72 sm:w-80 shadow-md"
-          />
-        </div>
-      </div>
+                            {/* Image */}
+                            <div className="flex justify-center">
+                                <Image
+                                    src="https://media.istockphoto.com/id/1332358775/photo/young-couple-shaking-hands-deal-contract-real-estate-investment-business-agreement-agent.webp?a=1&b=1&s=612x612&w=0&k=20&c=gFtxy5dE4doeHAs_crzmgl-efeRUBLgJhRaO1J4-yxQ="
+                                    alt="Statistics"
+                                    width={612}
+                                    height={300}
+                                    className="object-cover rounded-lg h-48 w-72 sm:w-80 shadow-md"
+                                />
+                            </div>
+                        </div>
 
-      {/* Right Side */}
-      <div className="flex justify-center">
-        <div className="w-72 sm:w-80 h-48 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center text-center shadow-md">
-          <h1 className="text-4xl lg:text-5xl font-bold">125</h1>
-          <p className="mt-2 text-sm sm:text-base">
-            Our colleagues come from across cities of India
-          </p>
-        </div>
-      </div>
-    </div>
+                        {/* Right Side */}
+                        <div className="flex justify-center">
+                            <div className="w-72 sm:w-80 h-48 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center text-center shadow-md">
+                                <h1 className="text-4xl lg:text-5xl font-bold">125</h1>
+                                <p className="mt-2 text-sm sm:text-base">
+                                    Our colleagues come from across cities of India
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-    {/* Second Row */}
-    <div className="flex flex-wrap justify-center gap-8 mt-14 w-full">
-      {/* Box 1 */}
-      <div className="w-72 sm:w-80 h-48 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center text-center shadow-md">
-        <h1 className="text-4xl lg:text-5xl font-bold">5000</h1>
-        <p className="mt-2 text-sm sm:text-base">
-          Trusted partner for 5000+ Channel Partners
-        </p>
-      </div>
+                    {/* Second Row */}
+                    <div className="flex flex-wrap justify-center gap-8 mt-14 w-full">
+                        {/* Box 1 */}
+                        <div className="w-72 sm:w-80 h-48 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center text-center shadow-md">
+                            <h1 className="text-4xl lg:text-5xl font-bold">5000</h1>
+                            <p className="mt-2 text-sm sm:text-base">
+                                Trusted partner for 5000+ Channel Partners
+                            </p>
+                        </div>
 
-      {/* Box 2 */}
-      <div className="w-72 sm:w-80 h-48 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center text-center shadow-md">
-        <h1 className="text-4xl font-bold">15</h1>
-        <p className="mt-2 text-sm sm:text-base">15 Partner Branches</p>
-      </div>
+                        {/* Box 2 */}
+                        <div className="w-72 sm:w-80 h-48 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center text-center shadow-md">
+                            <h1 className="text-4xl font-bold">15</h1>
+                            <p className="mt-2 text-sm sm:text-base">15 Partner Branches</p>
+                        </div>
 
-      {/* Box 3 */}
-      <div className="w-72 sm:w-80 h-48 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center text-center shadow-md">
-        <h1 className="text-4xl font-bold">100</h1>
-        <p className="mt-2 text-sm sm:text-base">
-          We are present in 100+ markets
-        </p>
-      </div>
-    </div>
-  </div>
+                        {/* Box 3 */}
+                        <div className="w-72 sm:w-80 h-48 bg-green-900 p-6 rounded-lg text-white flex flex-col items-center justify-center text-center shadow-md">
+                            <h1 className="text-4xl font-bold">100</h1>
+                            <p className="mt-2 text-sm sm:text-base">
+                                We are present in 100+ markets
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-  {/* Animation Styles */}
-  <style jsx>{`
+                {/* Animation Styles */}
+                <style jsx>{`
     @keyframes slideRight {
       0% {
         transform: translateX(-50px);
@@ -187,24 +188,27 @@ Different`}
       animation-delay: 0.7s;
     }
   `}</style>
-</section>
+            </section>
 
 
             {/* leadership tems */}
             <section className="leadership-area pt-12 pb-12 bg-gray-50 animate-slide-right delay-300">
                 <div className="container mx-auto px-4">
                     {/* Section Title */}
-                    <div className="flex flex-col md:flex-row items-start md:items-end mb-16">
+                    <div className="flex flex-col md:flex-row items-start md:items-end mb-16 px-4 sm:px-6 lg:px-8">
                         <div className="md:w-2/3">
                             <span className="text-green-900 font-semibold uppercase text-sm">Leadership</span>
-                            <h2 className="text-3xl md:text-4xl font-bold mt-2 text-green-900">Meet our leadership team</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold mt-2 text-green-900">
+                                Meet our leadership team
+                            </h2>
                         </div>
                     </div>
+
 
                     {/* Leadership Profiles */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Hiren Sejpal */}
-                        <div className="p-6 bg-white shadow-lg rounded-2xl flex flex-col md:flex-row gap-4">
+                        <div className="p-6 bg-white shadow-lg rounded-2xl flex flex-col md:flex-row gap-4 mx-auto md:mx-0 max-w-3xl">
                             <div className="md:w-1/3">
                                 <div className="overflow-hidden rounded-lg shadow-lg">
                                     <Image
@@ -236,7 +240,7 @@ Different`}
                         </div>
 
                         {/* Mona Sejpal */}
-                        <div className="p-6 bg-white shadow-lg rounded-2xl flex flex-col md:flex-row gap-4">
+                        <div className="p-6 bg-white shadow-lg rounded-2xl flex flex-col md:flex-row gap-4 mx-auto md:mx-0 max-w-3xl">
                             <div className="md:w-1/3">
                                 <div className="overflow-hidden rounded-lg shadow-lg">
                                     <Image
@@ -268,6 +272,7 @@ Different`}
                         </div>
                     </div>
                 </div>
+
                 <style jsx>{`
     @keyframes slideRight {
       0% {
