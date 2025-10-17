@@ -318,7 +318,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
- function ContactPage() {
+function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     number: "",
@@ -376,42 +376,42 @@ import toast, { Toaster } from "react-hot-toast";
 
   return (
     <div>
-      <section className="relative w-full bg-gradient-to-r from-green-900 to-green-900 min-h-[25vh] flex items-center justify-center my-24">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative z-10 text-center px-4">
+      <section className="relative w-full bg-gradient-to-r from-green-900 to-green-900 min-h-[25vh] flex items-center justify-center my-20">
+        <div className="absolute inset-0 bg-black/10 "></div>
+        <div className="relative z-10 text-center px-4 ">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
             Contact
           </h1>
         </div>
       </section>
 
-      <div className="bg-gray-50 min-h-screen py-16">
+      <div className="bg-gray-50 min-h-screen">
         <Toaster position="top-right" />
         <div className="container mx-auto px-4 lg:flex lg:gap-16">
           {/* Contact Info */}
           <div className="lg:w-5/12 mb-12 lg:mb-0 px-4 sm:px-6 lg:px-8">
-  <h2 className="text-3xl font-bold mb-8 text-green-900">
-    Get in touch with us.
-  </h2>
-  <p className="text-gray-600 mb-8">
-    We’d love to hear from you. Here’s how you can reach us.
-  </p>
+            <h2 className="text-3xl font-bold mb-8 text-green-900">
+              Get in touch with us.
+            </h2>
+            <p className="text-gray-600 mb-8">
+              We’d love to hear from you. Here’s how you can reach us.
+            </p>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-    <InfoBox icon={<Phone />} title="Call the helpline:" value="+91-9624459515" />
-    <InfoBox icon={<Mail />} title="Email us:" value="bj@theloancompass.in" />
-    <InfoBox
-      icon={<MapPin />}
-      title="Location"
-      value="201, Balaji Enclave, Nr Nanpura old Police Chowki, Nanpura, Surat, Gujarat - 395009"
-    />
-    <InfoBox
-      icon={<Clock />}
-      title="Work Hours"
-      value="Mon - Sat: 9am - 7pm | Sun: 12pm - 6pm"
-    />
-  </div>
-</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <InfoBox icon={<Phone />} title="Call the helpline:" value="+91-9624459515" />
+              <InfoBox icon={<Mail />} title="Email us:" value="bj@theloancompass.in" />
+              <InfoBox
+                icon={<MapPin />}
+                title="Location"
+                value="201, Balaji Enclave, Nr Nanpura old Police Chowki, Nanpura, Surat, Gujarat - 395009"
+              />
+              <InfoBox
+                icon={<Clock />}
+                title="Work Hours"
+                value="Mon - Sat: 9am - 7pm | Sun: 12pm - 6pm"
+              />
+            </div>
+          </div>
 
           {/* Contact Form */}
           <div className="lg:w-7/12">

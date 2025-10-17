@@ -230,7 +230,7 @@ import Head from "next/head";
           `}</style>
         </section>
 <section className="bg-white pt-4 pb-32">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 mx-4 sm:mx-6 lg:mx-8">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 mx-4 sm:mx-6 lg:mx-8 my-[-32]">
     <div className="description-widget">
       <div className="flex flex-col">
         <div className="desc-text lg:pl-10 text-gray-700 leading-relaxed">

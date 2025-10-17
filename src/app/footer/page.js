@@ -146,13 +146,13 @@ export default function Footer() {
           financial growth with trust, simplicity, and excellence.
         </p>
         <div className="flex justify-center md:justify-start space-x-4">
-          <Link href="https://www.facebook.com/secureedgesolution/" target="_blank">
+          <Link href="#" target="_blank">
             <FaFacebookF className="text-white hover:text-blue-500 text-lg transition-colors duration-300" />
           </Link>
-          <Link href="https://www.instagram.com/secureedgesolution.pvt.ltd/" target="_blank">
+          <Link href="#" target="_blank">
             <FaInstagram className="text-white hover:text-pink-500 text-lg transition-colors duration-300" />
           </Link>
-          <Link href="https://www.linkedin.com/company/secure-edge-solution-pvt-ltd/?originalSubdomain=in" target="_blank">
+          <Link href="#" target="_blank">
             <FaLinkedinIn className="text-white hover:text-blue-400 text-lg transition-colors duration-300" />
           </Link>
         </div>
@@ -177,7 +177,7 @@ export default function Footer() {
         <h5 className="text-lg font-semibold mb-4">Company</h5>
         <ul className="space-y-2 text-gray-300">
           <li><Link href="/about" className="hover:text-white">About Us</Link></li>
-          <li><Link href="/propertie" className="hover:text-white">Properties</Link></li>
+          {/* <li><Link href="/propertie" className="hover:text-white">Properties</Link></li> */}
           <li><Link href="/careers" className="hover:text-white">Careers</Link></li>
           <li><Link href="/privacy-police" className="hover:text-white">Privacy Policy</Link></li>
           <li><Link href="/Tems&condistion" className="hover:text-white">Terms &amp; Conditions</Link></li>

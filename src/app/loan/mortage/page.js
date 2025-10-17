@@ -37,7 +37,7 @@ export default function MortgageLoanSection() {
     }
   `}</style>
       </section>
-      <section className="py-[135px] my-[-100] animate-slide-right delay-300">
+      <section className="py-[-80] my-[50] animate-slide-right delay-300">
   <div className="container mx-auto px-4 sm:px-6 lg:px-8 mx-4 sm:mx-6 lg:mx-8 flex flex-col lg:flex-row items-center lg:items-start gap-8">
     {/* Left Image */}
     <div className="lg:w-1/3 w-full">
