@@ -312,11 +312,13 @@
 //         </div>
 //     );
 // }
+
 "use client";
 
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -335,7 +337,6 @@ function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!/^[A-Za-z\s]+$/.test(formData.name)) {
       toast.error("Full Name should contain only letters.");
       return;
@@ -374,25 +375,29 @@ function ContactPage() {
     }
   };
 
+  // Framer Motion variants
+  const container = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.2 } },
+  };
+  const itemLeft = { hidden: { x: -50, opacity: 0 }, show: { x: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } };
+  const itemRight = { hidden: { x: 50, opacity: 0 }, show: { x: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } } };
+
   return (
-    <div>
+    <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={container}>
       <section className="relative w-full bg-gradient-to-r from-green-900 to-green-900 min-h-[25vh] flex items-center justify-center my-20">
         <div className="absolute inset-0 bg-black/10 "></div>
-        <div className="relative z-10 text-center px-4 ">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
-            Contact
-          </h1>
-        </div>
+        <motion.div className="relative z-10 text-center px-4" variants={itemLeft}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">Contact</h1>
+        </motion.div>
       </section>
 
       <div className="bg-gray-50 min-h-screen">
         <Toaster position="top-right" />
         <div className="container mx-auto px-4 lg:flex lg:gap-16">
           {/* Contact Info */}
-          <div className="lg:w-5/12 mb-12 lg:mb-0 px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-8 text-green-900">
-              Get in touch with us.
-            </h2>
+          <motion.div className="lg:w-5/12 mb-12 lg:mb-0 px-4 sm:px-6 lg:px-8" variants={itemLeft}>
+            <h2 className="text-3xl font-bold mb-8 text-green-900">Get in touch with us.</h2>
             <p className="text-gray-600 mb-8">
               We’d love to hear from you. Here’s how you can reach us.
             </p>
@@ -411,36 +416,38 @@ function ContactPage() {
                 value="Mon - Sat: 9am - 7pm | Sun: 12pm - 6pm"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact Form */}
-          <div className="lg:w-7/12">
-            <div className="p-8 rounded-xl bg-white shadow">
-              <h3 className="text-2xl font-bold mb-6 text-center text-green-900">
+          <motion.div className="lg:w-7/12" variants={itemRight}>
+            <motion.div className="p-8 rounded-xl bg-white shadow" variants={container}>
+              <motion.h3 className="text-2xl font-bold mb-6 text-center text-green-900" variants={itemRight}>
                 Send a Message
-              </h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <InputField
-                    label="Full Name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your Name"
-                  />
-                  <InputField
-                    label="Number"
-                    name="number"
-                    value={formData.number}
-                    onChange={handleChange}
-                    placeholder="91xxxxxxxxxx"
-                  />
-                </div>
+              </motion.h3>
+              <motion.form onSubmit={handleSubmit} className="space-y-4" variants={container}>
+                <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6" variants={container}>
+                  <motion.div variants={itemRight}>
+                    <InputField
+                      label="Full Name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your Name"
+                    />
+                  </motion.div>
+                  <motion.div variants={itemRight}>
+                    <InputField
+                      label="Number"
+                      name="number"
+                      value={formData.number}
+                      onChange={handleChange}
+                      placeholder="91xxxxxxxxxx"
+                    />
+                  </motion.div>
+                </motion.div>
 
-                <div>
-                  <label className="font-bold text-blue-900 block mb-1">
-                    Select Loan Type
-                  </label>
+                <motion.div variants={itemRight}>
+                  <label className="font-bold text-blue-900 block mb-1">Select Loan Type</label>
                   <select
                     name="loan_type"
                     value={formData.loan_type}
@@ -456,38 +463,42 @@ function ContactPage() {
                     <option value="transfer">Balance Transfer</option>
                     <option value="car">Car Loan</option>
                   </select>
-                </div>
+                </motion.div>
 
-                <InputField
-                  label="Subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Subject"
-                />
-                <InputField
-                  label="Message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Your message..."
-                  isTextarea
-                />
+                <motion.div variants={itemRight}>
+                  <InputField
+                    label="Subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Subject"
+                  />
+                </motion.div>
+                <motion.div variants={itemRight}>
+                  <InputField
+                    label="Message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Your message..."
+                    isTextarea
+                  />
+                </motion.div>
 
-                <button
+                <motion.button
                   type="submit"
                   disabled={loading}
-                  className={`w-full bg-green-900 text-white font-semibold py-3 rounded hover:bg-green-700 transition ${loading ? "opacity-70 cursor-not-allowed" : ""
-                    }`}
+                  className={`w-full bg-green-900 text-white font-semibold py-3 rounded hover:bg-green-700 transition ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+                  variants={itemRight}
                 >
                   {loading ? "Submitting..." : "Submit Now"}
-                </button>
-              </form>
-            </div>
-          </div>
+                </motion.button>
+              </motion.form>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -532,4 +543,4 @@ function InputField({ label, name, value, onChange, placeholder, isTextarea }) {
   );
 }
 
-export default ContactPage
+export default ContactPage;

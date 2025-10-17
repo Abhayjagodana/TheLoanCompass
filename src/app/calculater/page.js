@@ -1008,6 +1008,16 @@
 // export default EMICalculatorPage;
 "use client";
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const slideInLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 2, ease: "easeOut" },
+    },
+};
 
 function EMICalculatorPage() {
     // Loan Type Configs
@@ -1089,202 +1099,266 @@ function EMICalculatorPage() {
     const principalDash = donutCircumference - interestDash;
 
     return (
-        <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-            <h2 className="text-2xl font-semibold mb-6 text-center lg:text-center text-green-900">
-                EMI CALCULATOR  
-            </h2>
+        <section className="py-16 px-4">
+            <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+                <motion.div
+                    variants={slideInLeft}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="bg-transparent"
+                >
+                    <h2 className="text-2xl font-semibold mb-6 text-center text-green-900 my-[-20]">
+                        EMI CALCULATOR
+                    </h2>
 
-            <div className="bg-white shadow rounded-lg p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Left Controls */}
-                <div className="lg:col-span-2 space-y-6">
-
-                    {/* Loan Type Dropdown */}
-                    <div className="space-y-2">
-                        <label className="font-medium">Loan Type</label>
-                        <select
-                            value={loanProduct}
-                            onChange={(e) => {
-                                const type = e.target.value;
-                                setLoanProduct(type);
-                                setLoanAmount(loanConfigs[type].amount);
-                                setInterestRate(loanConfigs[type].rate);
-                                setTermValue(loanConfigs[type].tenure);
-                                setTermUnit("years");
-                            }}
-                            className="w-full border rounded px-3 py-2"
-                        >
-                            <option value="home-loan">Home Loan</option>
-                            <option value="personal-loan">Personal Loan</option>
-                            <option value="car-loan">New Car Loan</option>
-                            <option value="used-car-loan">Used Car Loan</option>
-                            <option value="mortgage-loan">Mortgage Loan</option>
-                            <option value="unsecured-business-loan">Unsecured Business Loan</option>
-                        </select>
-                    </div>
-
-                    {/* Loan Amount */}
-                    <div className="space-y-2">
-                        <label className="font-medium">Loan Amount</label>
-                        <div className="flex flex-col sm:flex-row items-center gap-3">
-                            <input
-                                type="text"
-                                value={formatCurrency(loanAmount)}
-                                onChange={(e) => {
-                                    const digits = e.target.value.replace(/[^0-9]/g, "");
-                                    const val = Number(digits || 0);
-                                    const rounded = Math.round(val / 10000) * 10000;
-                                    setLoanAmount(Math.min(Math.max(rounded, loanMin), loanMax));
-                                }}
-                                className="w-full sm:flex-1 border rounded px-3 py-2"
-                            />
-                            <div className="sm:w-40 text-sm text-right font-semibold">
-                                {formatCurrencyWithSymbol(loanAmount)}
-                            </div>
-                        </div>
-                        <input
-                            type="range"
-                            min={loanMin}
-                            max={loanMax}
-                            step={10000}
-                            value={loanAmount}
-                            onChange={(e) => setLoanAmount(Number(e.target.value))}
-                            className="w-full"
-                        />
-                    </div>
-
-                    {/* Interest Rate */}
-                    <div className="space-y-2">
-                        <label className="font-medium">Interest Rate (Annual %)</label>
-                        <div className="text-sm sm:w-16 text-right font-semibold">
-                            {interestRate}%
-                        </div>
-                    </div>
-
-                    {/* Tenure */}
-                    <div className="space-y-2">
-                        <label className="font-medium">Loan Tenure</label>
-                        <div className="flex flex-col sm:flex-row items-center gap-3">
-                            <input
-                                type="number"
-                                value={termValue}
-                                min={termUnit === "years" ? termMinYears : 1}
-                                max={termUnit === "years" ? termMaxYears : termMaxMonths}
-                                onChange={(e) => setTermValue(Number(e.target.value))}
-                                className="w-full sm:w-24 border rounded px-3 py-2"
-                            />
-
-                            {/* Unit Toggle */}
-                            <div className="inline-flex border rounded overflow-hidden">
-                                <button
-                                    onClick={() => {
-                                        if (termUnit === "months") setTermValue(Math.round(termValue / 12));
+                    <div className="bg-white shadow rounded-lg p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        {/* Left Controls */}
+                        <div className="lg:col-span-2 space-y-6">
+                            {/* Loan Type Dropdown */}
+                            <div className="space-y-2">
+                                <label className="font-medium">Loan Type</label>
+                                <select
+                                    value={loanProduct}
+                                    onChange={(e) => {
+                                        const type = e.target.value;
+                                        setLoanProduct(type);
+                                        setLoanAmount(loanConfigs[type].amount);
+                                        setInterestRate(loanConfigs[type].rate);
+                                        setTermValue(loanConfigs[type].tenure);
                                         setTermUnit("years");
                                     }}
-                                    className={`px-3 py-1 ${termUnit === "years" ? "bg-indigo-600 text-white" : "bg-white"}`}
+                                    className="w-full border rounded px-3 py-2"
                                 >
-                                    Yr
-                                </button>
-                                <button
-                                    onClick={() => {
-                                        if (termUnit === "years") setTermValue(Math.round(termValue * 12));
-                                        setTermUnit("months");
-                                    }}
-                                    className={`px-3 py-1 ${termUnit === "months" ? "bg-indigo-600 text-white" : "bg-white"}`}
-                                >
-                                    Mo
-                                </button>
+                                    <option value="home-loan">Home Loan</option>
+                                    <option value="personal-loan">Personal Loan</option>
+                                    <option value="car-loan">New Car Loan</option>
+                                    <option value="used-car-loan">Used Car Loan</option>
+                                    <option value="mortgage-loan">Mortgage Loan</option>
+                                    <option value="unsecured-business-loan">
+                                        Unsecured Business Loan
+                                    </option>
+                                </select>
                             </div>
 
-                            <input
-                                type="range"
-                                min={termUnit === "years" ? termMinYears : 1}
-                                max={termUnit === "years" ? termMaxYears : termMaxMonths}
-                                step={1}
-                                value={termValue}
-                                onChange={(e) => setTermValue(Number(e.target.value))}
-                                className="flex-1"
-                            />
-
-                            <div className="text-sm sm:w-24 text-right">
-                                {termUnit === "years" ? `${termValue} yr` : `${termValue} mo`}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* EMI Scheme */}
-                    <div className="space-y-2">
-                        <label className="font-medium">EMI Scheme</label>
-                        <div className="flex flex-wrap gap-2">
-                            {["advance", "arrears"].map((scheme) => (
-                                <button
-                                    key={scheme}
-                                    onClick={() => setEmiScheme(scheme)}
-                                    className={`px-3 py-1 rounded-md text-sm font-medium transition ${emiScheme === scheme ? "bg-indigo-600 text-white" : "bg-gray-100 hover:bg-gray-200"
-                                        }`}
-                                >
-                                    {scheme === "advance" ? "EMI in Advance" : "EMI in Arrears"}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                {/* Right Summary */}
-                <div className="bg-gray-50 p-6 rounded-lg flex flex-col items-center gap-6">
-                    <div className="text-center">
-                        <h4 className="text-sm text-green-900">Loan EMI</h4>
-                        <p className="text-2xl font-bold text-green-900">₹{formatCurrency(emi)}</p>
-                    </div>
-
-                    <div className="w-full grid grid-cols-2 gap-4 text-sm">
-                        <div className="bg-white p-3 rounded shadow-sm">
-                            <div className="text-xs text-gray-500">Total Interest Payable</div>
-                            <div className="font-semibold text-green-900">{formatCurrencyWithSymbol(totalInterest)}</div>
-                        </div>
-                        <div className="bg-white p-3 rounded shadow-sm">
-                            <div className="text-xs text-gray-500">Total Payment (P + I)</div>
-                            <div className="font-semibold text-green-900">{formatCurrencyWithSymbol(totalPayment)}</div>
-                        </div>
-                    </div>
-
-                    {/* Donut Chart */}
-                    <div className="flex flex-col sm:flex-row items-center gap-6">
-                        <svg width="120" height="120" viewBox="0 0 120 120">
-                            <g transform="translate(60,60)">
-                                <circle r="50" cx="0" cy="0" fill="transparent" strokeWidth="20" stroke="#E6E6E6" />
-                                <circle
-                                    r="50"
-                                    cx="0"
-                                    cy="0"
-                                    fill="transparent"
-                                    stroke="#ED8C2B"
-                                    strokeWidth="20"
-                                    strokeDasharray={`${interestDash} ${principalDash}`}
-                                    transform="rotate(-90)"
+                            {/* Loan Amount */}
+                            <div className="space-y-2">
+                                <label className="font-medium">Loan Amount</label>
+                                <div className="flex flex-col sm:flex-row items-center gap-3">
+                                    <input
+                                        type="text"
+                                        value={formatCurrency(loanAmount)}
+                                        onChange={(e) => {
+                                            const digits = e.target.value.replace(/[^0-9]/g, "");
+                                            const val = Number(digits || 0);
+                                            const rounded = Math.round(val / 10000) * 10000;
+                                            setLoanAmount(Math.min(Math.max(rounded, loanMin), loanMax));
+                                        }}
+                                        className="w-full sm:flex-1 border rounded px-3 py-2"
+                                    />
+                                    <div className="sm:w-40 text-sm text-right font-semibold">
+                                        {formatCurrencyWithSymbol(loanAmount)}
+                                    </div>
+                                </div>
+                                <input
+                                    type="range"
+                                    min={loanMin}
+                                    max={loanMax}
+                                    step={10000}
+                                    value={loanAmount}
+                                    onChange={(e) => setLoanAmount(Number(e.target.value))}
+                                    className="w-full"
                                 />
-                                <text x="0" y="4" textAnchor="middle" fontSize="12" fontWeight="700">{interestPct}%</text>
-                                <text x="0" y="20" textAnchor="middle" fontSize="10" fill="#666">Interest</text>
-                            </g>
-                        </svg>
-
-                        <div className="text-sm space-y-2">
-                            <div className="flex items-center gap-2">
-                                <span className="w-3 h-3 bg-[#88A825] rounded-full inline-block" />
-                                <span>Principal:</span>
-                                <strong>{formatCurrencyWithSymbol(principalPart)}</strong>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <span className="w-3 h-3 bg-[#ED8C2B] rounded-full inline-block" />
-                                <span>Interest:</span>
-                                <strong>{formatCurrencyWithSymbol(interestPart)}</strong>
+
+                            {/* Interest Rate */}
+                            <div className="space-y-2">
+                                <label className="font-medium">Interest Rate (Annual %)</label>
+                                <div className="text-sm sm:w-16 text-right font-semibold">
+                                    {interestRate}%
+                                </div>
+                            </div>
+
+                            {/* Tenure */}
+                            <div className="space-y-2">
+                                <label className="font-medium">Loan Tenure</label>
+                                <div className="flex flex-col sm:flex-row items-center gap-3">
+                                    <input
+                                        type="number"
+                                        value={termValue}
+                                        min={termUnit === "years" ? termMinYears : 1}
+                                        max={termUnit === "years" ? termMaxYears : termMaxMonths}
+                                        onChange={(e) => setTermValue(Number(e.target.value))}
+                                        className="w-full sm:w-24 border rounded px-3 py-2"
+                                    />
+
+                                    {/* Unit Toggle */}
+                                    <div className="inline-flex border rounded overflow-hidden">
+                                        <button
+                                            onClick={() => {
+                                                if (termUnit === "months")
+                                                    setTermValue(Math.round(termValue / 12));
+                                                setTermUnit("years");
+                                            }}
+                                            className={`px-3 py-1 ${termUnit === "years"
+                                                    ? "bg-indigo-600 text-white"
+                                                    : "bg-white"
+                                                }`}
+                                        >
+                                            Yr
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                if (termUnit === "years")
+                                                    setTermValue(Math.round(termValue * 12));
+                                                setTermUnit("months");
+                                            }}
+                                            className={`px-3 py-1 ${termUnit === "months"
+                                                    ? "bg-indigo-600 text-white"
+                                                    : "bg-white"
+                                                }`}
+                                        >
+                                            Mo
+                                        </button>
+                                    </div>
+
+                                    <input
+                                        type="range"
+                                        min={termUnit === "years" ? termMinYears : 1}
+                                        max={termUnit === "years" ? termMaxYears : termMaxMonths}
+                                        step={1}
+                                        value={termValue}
+                                        onChange={(e) => setTermValue(Number(e.target.value))}
+                                        className="flex-1"
+                                    />
+
+                                    <div className="text-sm sm:w-24 text-right">
+                                        {termUnit === "years"
+                                            ? `${termValue} yr`
+                                            : `${termValue} mo`}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* EMI Scheme */}
+                            <div className="space-y-2">
+                                <label className="font-medium">EMI Scheme</label>
+                                <div className="flex flex-wrap gap-2">
+                                    {["advance", "arrears"].map((scheme) => (
+                                        <button
+                                            key={scheme}
+                                            onClick={() => setEmiScheme(scheme)}
+                                            className={`px-3 py-1 rounded-md text-sm font-medium transition ${emiScheme === scheme
+                                                    ? "bg-indigo-600 text-white"
+                                                    : "bg-gray-100 hover:bg-gray-200"
+                                                }`}
+                                        >
+                                            {scheme === "advance"
+                                                ? "EMI in Advance"
+                                                : "EMI in Arrears"}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Summary */}
+                        <div className="bg-gray-50 p-6 rounded-lg flex flex-col items-center gap-6">
+                            <div className="text-center">
+                                <h4 className="text-sm text-green-900">Loan EMI</h4>
+                                <p className="text-2xl font-bold text-green-900">
+                                    ₹{formatCurrency(emi)}
+                                </p>
+                            </div>
+
+                            <div className="w-full grid grid-cols-2 gap-4 text-sm">
+                                <div className="bg-white p-3 rounded shadow-sm">
+                                    <div className="text-xs text-gray-500">
+                                        Total Interest Payable
+                                    </div>
+                                    <div className="font-semibold text-green-900">
+                                        {formatCurrencyWithSymbol(totalInterest)}
+                                    </div>
+                                </div>
+                                <div className="bg-white p-3 rounded shadow-sm">
+                                    <div className="text-xs text-gray-500">
+                                        Total Payment (P + I)
+                                    </div>
+                                    <div className="font-semibold text-green-900">
+                                        {formatCurrencyWithSymbol(totalPayment)}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Donut Chart */}
+                            <div className="flex flex-col sm:flex-row items-center gap-6">
+                                <svg width="120" height="120" viewBox="0 0 120 120">
+                                    <g transform="translate(60,60)">
+                                        <circle
+                                            r="50"
+                                            cx="0"
+                                            cy="0"
+                                            fill="transparent"
+                                            strokeWidth="20"
+                                            stroke="#E6E6E6"
+                                        />
+                                        <circle
+                                            r="50"
+                                            cx="0"
+                                            cy="0"
+                                            fill="transparent"
+                                            stroke="#ED8C2B"
+                                            strokeWidth="20"
+                                            strokeDasharray={`${interestDash} ${principalDash}`}
+                                            transform="rotate(-90)"
+                                        />
+                                        <text
+                                            x="0"
+                                            y="4"
+                                            textAnchor="middle"
+                                            fontSize="12"
+                                            fontWeight="700"
+                                        >
+                                            {interestPct}%
+                                        </text>
+                                        <text
+                                            x="0"
+                                            y="20"
+                                            textAnchor="middle"
+                                            fontSize="10"
+                                            fill="#666"
+                                        >
+                                            Interest
+                                        </text>
+                                    </g>
+                                </svg>
+
+                                <div className="text-sm space-y-2">
+                                    <div className="flex items-center gap-2">
+                                        <span className="w-3 h-3 bg-[#88A825] rounded-full inline-block" />
+                                        <span>Principal:</span>
+                                        <strong>
+                                            {formatCurrencyWithSymbol(principalPart)}
+                                        </strong>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="w-3 h-3 bg-[#ED8C2B] rounded-full inline-block" />
+                                        <span>Interest:</span>
+                                        <strong>
+                                            {formatCurrencyWithSymbol(interestPart)}
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="text-xs text-green-900">
+                                Break-up of total payment
                             </div>
                         </div>
                     </div>
-
-                    <div className="text-xs text-green-900">Break-up of total payment</div>
-                </div>
+                </motion.div>
             </div>
-        </div>
+        </section>
     );
 }
 

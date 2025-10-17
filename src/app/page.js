@@ -542,33 +542,40 @@ export default function Banner() {
         <EMICalculatorPage />
       </div>
 
-      <section className="py-20 overflow-hidden bg-white animate-slide-right delay-300">
+      <section className="py-20 overflow-hidden bg-white">
         <div className="container mx-auto px-4">
           {/* Title */}
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-green-800 ">
+          <motion.div
+            className="text-center mb-10"
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-green-800">
               We have helped more than 5000 users!
             </h2>
-          </div>
+          </motion.div>
 
           {/* Content */}
           <div className="flex flex-col lg:flex-row items-center gap-10">
-            {/* Left Side Image */}
-            {/* <div className="w-full">
-            <Image
-              src="/logo-1.png"
-              alt="Help Banner"
-              width={800}
-              height={500}
-              className="w-full h-auto rounded-lg shadow-md"
-            />
-          </div> */}
-
             {/* Right Side Content */}
-            <div className="px-4 sm:px-6 md:px-8 lg:px-12 my-8">
+            <motion.div
+              className="px-4 sm:px-6 md:px-8 lg:px-12 my-8 w-full"
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <div className="flex flex-col lg:flex-row w-full gap-10 mx-auto">
                 {/* Offers List */}
-                <div className="lg:w-3/12 w-full bg-gray-50 rounded-lg shadow-md p-6 relative mx-auto">
+                <motion.div
+                  className="lg:w-3/12 w-full bg-gray-50 rounded-lg shadow-md p-6 relative mx-auto"
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
                   <ul className="space-y-4 text-gray-700">
                     <li className="flex items-center">
                       <span className="text-blue-600 mr-3">✔</span>
@@ -587,7 +594,6 @@ export default function Banner() {
                       Offer within a few hours
                     </li>
                   </ul>
-                  {/* Decorative Shape */}
                   <Image
                     src="/shap.png"
                     alt="Shape"
@@ -595,55 +601,43 @@ export default function Banner() {
                     height={150}
                     className="absolute -bottom-6 -right-6 w-24 h-24 opacity-20"
                   />
-                </div>
+                </motion.div>
 
                 {/* Description */}
-                <div className="lg:w-7/12 w-full text-gray-700 leading-relaxed">
+                <motion.div
+                  className="lg:w-7/12 w-full text-gray-700 leading-relaxed"
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                >
                   <p className="mb-4">
-                    Compare multiple banks with just one non-binding application. We save
-                    you the hassle of checking the cost of a loan at each bank.
+                    Compare multiple banks with just one non-binding application. We
+                    save you the hassle of checking the cost of a loan at each bank.
                   </p>
                   <p className="mb-4">
-                    It takes 2 minutes to fill out the application, you immediately get
-                    quotes from banks and can choose the best quote!
+                    It takes 2 minutes to fill out the application, you immediately
+                    get quotes from banks and can choose the best quote!
                   </p>
-                  <p>
-                    We save you not only time but also get you the best deal!
-                  </p>
-                </div>
+                  <p>We save you not only time but also get you the best deal!</p>
+                </motion.div>
               </div>
-            </div>
-
+            </motion.div>
           </div>
         </div>
-        <style jsx>{`
-    @keyframes slideRight {
-      0% {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    .animate-slide-right {
-      animation: slideRight 1s ease-out forwards;
-    }
-    .delay-300 {
-      animation-delay: 0.3s;
-    }
-    .delay-700 {
-      animation-delay: 0.7s;
-    }
-  `}</style>
       </section>
 
       {/* //banking name  */}
-      <section className="bg-white py-20 animate-slide-right delay-300">
+      <section className="bg-white py-20">
         <div className="container mx-auto px-4">
           {/* Section Title */}
-          <div className="text-center mb-10 max-w-3xl mx-auto">
+          <motion.div
+            className="text-center mb-10 max-w-3xl mx-auto"
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-green-800">
               Secure Edge Partners With
             </h2>
@@ -652,63 +646,72 @@ export default function Banner() {
               Edge strategic partnership with banks enables financial accessibility
               <span className="font-semibold"> for customers</span>.
             </p>
-          </div>
+          </motion.div>
 
           {/* Logos Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center">
-            {logos.map((logos, index) => (
-              <a
+          <motion.div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.1, // each logo animates with 0.1s delay
+                },
+              },
+            }}
+          >
+            {logos.map((logo, index) => (
+              <motion.a
                 key={index}
                 href="#"
                 className="transition transform hover:scale-105 duration-300"
+                variants={{
+                  hidden: { x: -50, opacity: 0 },
+                  visible: { x: 0, opacity: 1 },
+                }}
+                transition={{ duration: 0.6 }}
               >
                 <Image
-                  src={logos}
+                  src={logo}
                   alt={`Partner Logo ${index + 1}`}
                   width={150}
                   height={80}
                   className="object-contain"
                 />
-              </a>
+              </motion.a>
             ))}
-          </div>
+          </motion.div>
         </div>
-        <style jsx>{`
-    @keyframes slideRight {
-      0% {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    .animate-slide-right {
-      animation: slideRight 1s ease-out forwards;
-    }
-    .delay-300 {
-      animation-delay: 0.3s;
-    }
-    .delay-700 {
-      animation-delay: 0.7s;
-    }
-  `}</style>
       </section>
 
-
       {/* //Client review */}
-      <section className="bg-gray-50 py-16 px-4 animate-slide-right delay-300">
+      <section className="bg-gray-50 py-16 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
+          {/* Section Title */}
+          <motion.div
+            className="text-center mb-12"
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-green-800">
               What Our Customers Are Saying
             </h2>
-          </div>
+          </motion.div>
 
           <div className="flex flex-col md:flex-row gap-8">
             {/* Left side - Testimonial Carousel */}
-            <div className="md:w-1/2 w-full mx-4 sm:mx-6 md:mx-8 lg:mx-12">
+            <motion.div
+              className="md:w-1/2 w-full mx-4 sm:mx-6 md:mx-8 lg:mx-12"
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <Swiper
                 modules={[Pagination, Autoplay]}
                 spaceBetween={20}
@@ -735,13 +738,16 @@ export default function Banner() {
                   </SwiperSlide>
                 ))}
               </Swiper>
-            </div>
+            </motion.div>
 
-
-
-
-            {/* Right side - Highlighted text or another carousel */}
-            <div className="md:w-1/2 flex flex-col justify-center">
+            {/* Right side - Highlighted text */}
+            <motion.div
+              className="md:w-1/2 flex flex-col justify-center"
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               <div className="bg-blue-50 p-6 rounded-xl shadow-md h-full flex flex-col justify-center">
                 <p className="text-xl md:text-2xl font-semibold mb-4">
                   Join over 5000 satisfied customers who have trusted Secure Edge
@@ -753,37 +759,22 @@ export default function Banner() {
                   us.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-        <style jsx>{`
-    @keyframes slideRight {
-      0% {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    .animate-slide-right {
-      animation: slideRight 1s ease-out forwards;
-    }
-    .delay-300 {
-      animation-delay: 0.3s;
-    }
-    .delay-700 {
-      animation-delay: 0.7s;
-    }
-  `}</style>
       </section>
-
       {/* //Help you  */}
-      <section className="py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-white animate-slide-right delay-300">
+      <section className="py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
         <div className="container mx-auto flex flex-col lg:flex-row gap-12">
+
           {/* Left: Advisor Section */}
-          <div className="lg:w-1/2 flex flex-col gap-6">
+          <motion.div
+            className="lg:w-1/2 flex flex-col gap-6"
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-green-900">
               Our advisors are ready to help you!
             </h2>
@@ -820,11 +811,16 @@ export default function Banner() {
                 bj@theloancompass.in
               </a>
             </div>
-
-          </div>
+          </motion.div>
 
           {/* Right: FAQ Section */}
-          <div className="lg:w-1/2 flex flex-col gap-4">
+          <motion.div
+            className="lg:w-1/2 flex flex-col gap-4"
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             {faqs.map((faq, index) => (
               <div
                 key={index}
@@ -846,96 +842,85 @@ export default function Banner() {
                 )}
               </div>
             ))}
-          </div>
+          </motion.div>
+
         </div>
-        <style jsx>{`
-    @keyframes slideRight {
-      0% {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    .animate-slide-right {
-      animation: slideRight 1s ease-out forwards;
-    }
-    .delay-300 {
-      animation-delay: 0.3s;
-    }
-    .delay-700 {
-      animation-delay: 0.7s;
-    }
-  `}</style>
       </section>
 
       {/* //balance transfer */}
 
 
       <section
-        className="help-cta pt-20 mt-9 pb-24 bg-cover bg-center animate-slide-right delay-300"
-        style={{
-          backgroundImage: `url('https://secureedgesolution.com/public/front/img/help-ad/bg-shape.png')`,
-        }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto bg-white/90 backdrop-blur-md shadow-xl rounded-2xl p-10 text-center">
-            <div className="section-title mb-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-green-900">
-                We help with both new loan and balance transfer
-              </h2>
-            </div>
-            <div className="max-w-xl mx-auto">
-              <p className="text-gray-700 text-lg md:text-xl">
-                Whether you need to borrow for buying a home, car, holiday or want to
-                combine your loans into one single loan, we will help you
-              </p>
-              <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                <a
-                  href="/apply"
-                  className="relative inline-block px-6 py-3 rounded-full font-semibold text-white bg-green-900 overflow-hidden group"
-                >
-                  <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
-                  <span className="relative z-10 transition-colors duration-500 group-hover:text-white ">
-                    New Loan
-                  </span>
-                </a>
 
-                <a
-                  href="/apply"
-                  className="relative inline-block px-6 py-3 rounded-full font-semibold text-green-600 border border-green-600 overflow-hidden group"
-                >
-                  <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
-                  <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
-                    Balance Transfer
-                  </span>
-                </a>
+      >
+        <section className="py-16 px-4 help-cta pt-20 mt-9 pb-24 bg-cover bg-center animate-slide-right-slow delay-300"
+          style={{
+            backgroundImage: `url('https://secureedgesolution.com/public/front/img/help-ad/bg-shape.png')`,
+          }}>
+          <div className="container mx-auto">
+            <motion.div
+              className="max-w-6xl mx-auto bg-white/90 backdrop-blur-md shadow-xl rounded-2xl p-10 text-center"
+              initial={{ opacity: 0, x: -100 }}        // starts from left side
+              whileInView={{ opacity: 1, x: 0 }}       // fades in + slides right
+              transition={{ duration: 2, ease: "easeOut" }} // slow smooth animation
+              viewport={{ once: true, amount: 0.3 }}   // triggers once when 30% visible
+            >
+              {/* Title */}
+              <div className="section-title mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-green-900">
+                  We help with both new loan and balance transfer
+                </h2>
               </div>
-            </div>
+
+              {/* Description */}
+              <div className="max-w-xl mx-auto">
+                <p className="text-gray-700 text-lg md:text-lg">
+                  Whether you need to borrow for buying a home, car, holiday or want
+                  to combine your loans into one single loan, we will help you.
+                </p>
+
+                {/* Buttons */}
+                <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                  <a
+                    href="/apply"
+                    className="relative inline-block px-6 py-3 rounded-full font-semibold text-white bg-green-900 overflow-hidden group"
+                  >
+                    <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
+                    <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
+                      New Loan
+                    </span>
+                  </a>
+
+                  <a
+                    href="/apply"
+                    className="relative inline-block px-6 py-3 rounded-full font-semibold text-green-600 border border-green-600 overflow-hidden group"
+                  >
+                    <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
+                    <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
+                      Balance Transfer
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </div>
+        </section>
         <style jsx>{`
-    @keyframes slideRight {
-      0% {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    .animate-slide-right {
-      animation: slideRight 1s ease-out forwards;
-    }
-    .delay-300 {
-      animation-delay: 0.3s;
-    }
-    .delay-700 {
-      animation-delay: 0.7s;
-    }
+    @keyframes slide-right-slow {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-right-slow {
+  animation: slide-right-slow 2s ease-out forwards;
+}
+
   `}</style>
       </section>
       {/* <Footer /> */}

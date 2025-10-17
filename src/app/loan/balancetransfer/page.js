@@ -161,8 +161,14 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 
 export default function WorkingCapitalLoanSection() {
+  const slideIn = {
+    hidden: { x: -50, opacity: 0 },
+    show: { x: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } },
+  };
   return (
     <div>
       <section className="relative w-full bg-gradient-to-r from-green-900 to-green-900 min-h-[25vh] flex items-center justify-center my-24 animate-slide-right delay-300">
@@ -196,109 +202,100 @@ export default function WorkingCapitalLoanSection() {
     }
   `}</style>
       </section>
-      <section className="py-[-80] my-[50] animate-slide-right delay-300">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 mx-4 sm:mx-6 lg:mx-8 flex flex-col lg:flex-row items-center lg:items-start gap-8">
-    {/* Left Image */}
-    <div className="lg:w-1/3 w-full">
-      <div className="services-img">
-        <Image
-          src="https://secureedgesolution.com/public/image/1739873798_8.png"
-          alt="Service Image"
-          width={500}
-          height={500}
-          className="w-full h-auto"
-        />
+      <section className="py-[-80] my-[50]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mx-4 sm:mx-6 lg:mx-8 flex flex-col lg:flex-row items-center lg:items-start gap-8">
+        
+        {/* Left Image */}
+        <motion.div
+          className="lg:w-1/3 w-full"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={slideIn}
+        >
+          <div className="services-img">
+            <Image
+              src="https://secureedgesolution.com/public/image/1739873798_8.png"
+              alt="Service Image"
+              width={500}
+              height={500}
+              className="w-full h-auto"
+            />
+          </div>
+        </motion.div>
+
+        {/* Right Content */}
+        <motion.div
+          className="lg:w-2/3 w-full flex flex-col gap-4"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={slideIn}
+        >
+          <button className="text-green-900 text-start font-bold px-4 py-1 rounded-md mb-2">
+            Balance Transfer
+          </button>
+
+          <h3 className="text-2xl md:text-3xl font-bold">
+            🔄 Transfer Your Balance with Ease – Low- <br />Interest Rates! 💳
+          </h3>
+
+          <div className="text-gray-500 space-y-3">
+            <p>
+              Tired of high-interest rates on your existing loans or credit
+              cards? With our <strong>balance transfer loan</strong><br /> you can
+              easily <strong>transfer your balance</strong> to a{" "}
+              <strong>new loan with lower interest rates</strong> and enjoy{" "}<br />
+              <strong>manageable EMIs</strong>. Whether you want to consolidate
+              debt or reduce the financial burden, our <br /> balance transfer option
+              offers <strong>quick approval</strong>,{" "}
+              <strong>flexible repayment plans</strong>, and{" "}
+              <strong>no collateral <br />required</strong>.
+            </p>
+
+            <p className="text-green-900"> <strong>💳 Why Choose Our Balance Transfer Loans?</strong></p>
+
+            <ul className="list-disc list-inside space-y-1">
+              <li>
+                💸 <strong>Lower Interest Rates</strong> – Save on interest and reduce your monthly burden
+              </li>
+              <li>
+                🔄 <strong>Consolidate Debt</strong> – Combine multiple loans or credit card balances into one easy payment
+              </li>
+              <li>
+                📅 <strong>Flexible Repayment Terms</strong> – Choose a loan term that suits your financial situation
+              </li>
+              <li>
+                ⚡ <strong>Quick and Easy Process</strong> – Fast approval with minimal paperwork
+              </li>
+              <li>
+                🔒 <strong>No Collateral Needed</strong> – Secure the loan without putting assets at risk
+              </li>
+            </ul>
+
+            <p>
+              With <strong>no hidden fees</strong> and{" "}
+              <strong>transparent terms</strong>, our balance transfer option
+              is designed to help you get back on track with your finances and
+              make your debt more manageable.
+            </p>
+
+            <p>
+              💡 Take control of your financial future – Apply today and
+              experience peace of mind with lower rates and easier repayments!
+              🌟
+            </p>
+          </div>
+
+          <a
+            href="/apply"
+            className="inline-block bg-green-900 text-white w-32 text-center rounded-full px-6 py-2 mt-4 hover:bg-green-700 transition"
+          >
+            Apply
+          </a>
+        </motion.div>
       </div>
-    </div>
-
-    {/* Right Content */}
-    <div className="lg:w-2/3 w-full flex flex-col gap-4">
-      <button className=" text-green-900 text-start font-bold px-4 py-1 rounded-md mb-2">
-        Balance Transfer
-      </button>
-
-      <h3 className="text-2xl md:text-3xl font-bold">
-        🔄 Transfer Your Balance with Ease – Low- <br />Interest Rates! 💳
-      </h3>
-
-      <div className="text-gray-500 space-y-3">
-        <p>
-          Tired of high-interest rates on your existing loans or credit
-          cards? With our <strong>balance transfer loan</strong><br /> you can
-          easily <strong>transfer your balance</strong> to a{" "}
-          <strong>new loan with lower interest rates</strong> and enjoy{" "}<br />
-          <strong>manageable EMIs</strong>. Whether you want to consolidate
-          debt or reduce the financial burden, our <br /> balance transfer option
-          offers <strong>quick approval</strong>,{" "}
-          <strong>flexible repayment plans</strong>, and{" "}
-          <strong>no collateral <br />required</strong>.
-        </p>
-
-        <p className="text-green-900"> <strong>  💳 Why Choose Our Balance Transfer Loans?</strong></p>
-
-        <ul className="list-disc list-inside space-y-1">
-          <li>
-            💸 <strong>Lower Interest Rates</strong> – Save on interest and reduce your monthly burden
-          </li>
-          <li>
-            🔄 <strong>Consolidate Debt</strong> – Combine multiple loans or credit card balances into one easy payment
-          </li>
-          <li>
-            📅 <strong>Flexible Repayment Terms</strong> – Choose a loan term that suits your financial situation
-          </li>
-          <li>
-            ⚡ <strong>Quick and Easy Process</strong> – Fast approval with minimal paperwork
-          </li>
-          <li>
-            🔒 <strong>No Collateral Needed</strong> – Secure the loan without putting assets at risk
-          </li>
-        </ul>
-
-        <p>
-          With <strong>no hidden fees</strong> and{" "}
-          <strong>transparent terms</strong>, our balance transfer option
-          is designed to help you get back on track with your finances and
-          make your debt more manageable.
-        </p>
-
-        <p>
-          💡 Take control of your financial future – Apply today and
-          experience peace of mind with lower rates and easier repayments!
-          🌟
-        </p>
-      </div>
-
-      <a
-        href="/apply"
-        className="inline-block bg-green-900 text-white w-32 text-center rounded-full px-6 py-2 mt-4 hover:bg-green-700 transition"
-      >
-        Apply
-      </a>
-    </div>
-  </div>
-
-  <style jsx>{`
-    @keyframes slideRight {
-      0% {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    .animate-slide-right {
-      animation: slideRight 1s ease-out forwards;
-    }
-    .delay-300 {
-      animation-delay: 0.3s;
-    }
-    .delay-700 {
-      animation-delay: 0.7s;
-    }
-  `}</style>
-</section>
+    </section>
 
     </div>
   );
