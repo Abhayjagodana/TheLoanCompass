@@ -283,30 +283,30 @@ export default function Banner() {
   const testimonials = [
     {
       name: "Devika Eaja",
-      role: "Secure Edge Customer",
+      role: "The Loan Compass Customer",
       image: "https://secureedgesolution.com/public/front/img/testimonial/client-1.png",
       caption:
-        "Best service and a smooth process. Keep going, Secure Edge team. Thank you for your immediate response at each stage of the process. Kudos to the whole team.",
+        "Best service and a smooth process. Keep going, The Loan Compass team. Thank you for your immediate response at each stage of the process. Kudos to the whole team.",
     },
     {
       name: "Purushottam Kalwani",
-      role: "Secure Edge Customer",
+      role: "The Loan Compass Customer",
       image: "https://secureedgesolution.com/public/front/img/testimonial/client-2.png",
       caption: "Immediate response and good service. Thank you",
     },
     {
       name: "Kinjal Amani",
-      role: "Secure Edge Customer",
+      role: "The Loan Compass Customer",
       image: "https://secureedgesolution.com/public/front/img/testimonial/client-3.png",
       caption:
-        "I am very happy about how they treated the whole process and made me feel important. Very good teamwork, Secure Edge.",
+        "I am very happy about how they treated the whole process and made me feel important. Very good teamwork, The Loan Compass.",
     },
     {
       name: "Pravin Rakholiya",
-      role: "Secure Edge Customer",
+      role: "The Loan Compass Customer",
       image: "https://secureedgesolution.com/public/front/img/testimonial/client-4.png",
       caption:
-        "I am very happy about how they described the process and made me feel important. Very good teamwork, Secure Edge.",
+        "I am very happy about how they described the process and made me feel important. Very good teamwork, The Loan Compass.",
     },
   ];
 
@@ -328,10 +328,10 @@ export default function Banner() {
     {
       question: "How can I borrow money ASAP?",
       answer:
-        "Choose the Right Bank: Research banks and financial institutions that offer loans quickly. Secure Edge is always there to guide you! Check Eligibility: Ensure you meet the bank's eligibility criteria, which include age, income, and credit score.",
+        "Choose the Right Bank: Research banks and financial institutions that offer loans quickly. The Loan Compass is always there to guide you! Check Eligibility: Ensure you meet the bank's eligibility criteria, which include age, income, and credit score.",
     },
     {
-      question: "What does it cost to use Secure Edge?",
+      question: "What does it cost to use The Loan Compass?",
       answer: "Absolutely Free!",
     },
     {
@@ -362,7 +362,7 @@ export default function Banner() {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 dark:bg-black">
       {/* <Header /> */}
 
       {/* Banner Section */}
@@ -475,7 +475,7 @@ export default function Banner() {
 
 
       {/* Loan Slider Section */}
-      <section className="py-16 bg-white  animate-slide-right delay-300">
+      <section className="py-16 bg-white  dark:bg-black animate-slide-right delay-300">
         <div className="container mx-auto">
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -542,7 +542,7 @@ export default function Banner() {
         <EMICalculatorPage />
       </div>
 
-      <section className="py-20 overflow-hidden bg-white">
+      <section className="py-20 overflow-hidden bg-white dark:bg-black">
         <div className="container mx-auto px-4">
           {/* Title */}
           <motion.div
@@ -605,7 +605,7 @@ export default function Banner() {
 
                 {/* Description */}
                 <motion.div
-                  className="lg:w-7/12 w-full text-gray-700 leading-relaxed"
+                  className="lg:w-7/12 w-full text-gray-700 dark:text-white leading-relaxed"
                   initial={{ x: -50, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
                   viewport={{ once: true, amount: 0.2 }}
@@ -628,7 +628,7 @@ export default function Banner() {
       </section>
 
       {/* //banking name  */}
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-black py-20">
         <div className="container mx-auto px-4">
           {/* Section Title */}
           <motion.div
@@ -639,11 +639,11 @@ export default function Banner() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-green-800">
-              Secure Edge Partners With
+              The Loan Compass Partners With
             </h2>
-            <p className="mt-4 text-gray-600">
-              <span className="font-semibold">100+ Banks & NBFCs</span> – Secure
-              Edge strategic partnership with banks enables financial accessibility
+            <p className="mt-4 text-gray-600 dark:text-gray-400">
+              <span className="font-semibold">100+ Banks & NBFCs</span> – The
+              Loan Compass strategic partnership with banks enables financial accessibility
               <span className="font-semibold"> for customers</span>.
             </p>
           </motion.div>
@@ -688,7 +688,7 @@ export default function Banner() {
       </section>
 
       {/* //Client review */}
-      <section className="bg-gray-50 py-16 px-4">
+      <section className="bg-gray-50 dark:bg-black py-16 px-4">
         <div className="container mx-auto">
           {/* Section Title */}
           <motion.div
@@ -732,8 +732,8 @@ export default function Banner() {
                         />
                       </div>
                       <p className="text-gray-600 mb-4">{t.caption}</p>
-                      <h6 className="font-semibold text-lg">{t.name}</h6>
-                      <span className="text-gray-500 text-sm">{t.role}</span>
+                      <h6 className="font-semibold text-lg text-black">{t.name}</h6>
+                      <span className="text-black text-sm">{t.role}</span>
                     </div>
                   </SwiperSlide>
                 ))}
@@ -748,23 +748,24 @@ export default function Banner() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="bg-blue-50 p-6 rounded-xl shadow-md h-full flex flex-col justify-center">
-                <p className="text-xl md:text-2xl font-semibold mb-4">
-                  Join over 5000 satisfied customers who have trusted Secure Edge
+              <div className="bg-blue-50 dark:bg-blue-50 p-6 rounded-xl shadow-md h-full flex flex-col justify-center">
+                <p className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-black">
+                  Join over 5000 satisfied customers who have trusted The Loan Compass
                   for their financial needs.
                 </p>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-black-300">
                   Quick responses, excellent service, and smooth processing make
                   us stand out. Get started today and see why our customers love
                   us.
                 </p>
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
       {/* //Help you  */}
-      <section className="py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
+      <section className="py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-white dark:bg-black">
         <div className="container mx-auto flex flex-col lg:flex-row gap-12">
 
           {/* Left: Advisor Section */}
@@ -804,7 +805,7 @@ export default function Banner() {
                 +91-9624459515
               </a>
               <a
-                href="mailto:info@secureedgesolution.com"
+                href="mailto:bj@theloancompass.in"
                 className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full bg-gradient-to-r from-green-800 to-green-800 hover:from-green-500 hover:to-green-800 text-white font-semibold transition"
               >
                 <MailMinus className="w-5 h-5 flex-shrink-0" />
@@ -828,13 +829,14 @@ export default function Banner() {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full text-left px-6 py-4 flex justify-between items-center bg-gray-100 font-semibold"
+                  className="w-full text-left px-6 py-4 flex justify-between items-center bg-gray-100 font-semibold text-gray-900 dark:text-black"
                 >
                   {faq.question}
-                  <span className="ml-2 text-xl">
+                  <span className="ml-2 text-xl text-gray-700 font-bold">
                     {openIndex === index ? "-" : "+"}
                   </span>
                 </button>
+
                 {openIndex === index && (
                   <div className="px-6 py-4 bg-white text-gray-700 whitespace-pre-line">
                     {faq.answer}

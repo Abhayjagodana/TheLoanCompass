@@ -240,7 +240,7 @@ export default function WorkingCapitalLoanSection() {
             🔄 Transfer Your Balance with Ease – Low- <br />Interest Rates! 💳
           </h3>
 
-          <div className="text-gray-500 space-y-3">
+          <div className="text-gray-500 dark:text-gray-400 space-y-3">
             <p>
               Tired of high-interest rates on your existing loans or credit
               cards? With our <strong>balance transfer loan</strong><br /> you can

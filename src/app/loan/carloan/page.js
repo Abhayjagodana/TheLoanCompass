@@ -233,7 +233,7 @@ export default function CarLoanSection() {
               🚗 Drive Your Dream Car with Easy Car <br />Loans!
             </h3>
 
-            <div className="text-gray-500 space-y-3">
+            <div className="text-gray-500 dark:text-gray-400 space-y-3">
               <p>
                 Ready to own your dream car but need financial support? Our &apos;
                 <strong>car loan</strong> offers <strong>easy approval</strong>,{" "}

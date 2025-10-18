@@ -386,19 +386,19 @@ function ContactPage() {
   return (
     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={container}>
       <section className="relative w-full bg-gradient-to-r from-green-900 to-green-900 min-h-[25vh] flex items-center justify-center my-20">
-        <div className="absolute inset-0 bg-black/10 "></div>
+        <div className="absolute inset-0 bg-black/10  "></div>
         <motion.div className="relative z-10 text-center px-4" variants={itemLeft}>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">Contact</h1>
         </motion.div>
       </section>
 
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50 dark:bg-black min-h-screen">
         <Toaster position="top-right" />
         <div className="container mx-auto px-4 lg:flex lg:gap-16">
           {/* Contact Info */}
           <motion.div className="lg:w-5/12 mb-12 lg:mb-0 px-4 sm:px-6 lg:px-8" variants={itemLeft}>
-            <h2 className="text-3xl font-bold mb-8 text-green-900">Get in touch with us.</h2>
-            <p className="text-gray-600 mb-8">
+            <h2 className="text-3xl font-bold mb-8 text-green-400">Get in touch with us.</h2>
+            <p className="text-gray-300 mb-8">
               We’d love to hear from you. Here’s how you can reach us.
             </p>
 

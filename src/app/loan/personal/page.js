@@ -181,7 +181,7 @@ function PersonalLoanSection() {
               💰 Get an Instant Personal Loan – Fast &amp; <br /> Hassle-Free! 🚀
             </h3>
 
-            <div className="text-gray-500 space-y-3">
+            <div className="text-gray-500 dark:text-gray-400 space-y-3">
               <p>
                 Need quick funds for your <strong>personal expenses</strong>? Whether it’s for a{" "}
                 <strong>medical emergency</strong>, <strong>travel<br /></strong>,{" "}

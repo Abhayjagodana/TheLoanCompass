@@ -204,11 +204,11 @@ export default function MortgageLoanSection() {
               Mortgage Loan
             </button>
 
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
               🏢 Get the Best Property Loan with Easy Approvals! 📜
             </h3>
 
-            <div className="text-gray-500 space-y-3">
+            <div className="text-gray-500 dark:text-gray-400 space-y-3">
               <p>
                 Looking for a <strong>property loan</strong> to buy, expand, or invest in real estate? We offer <strong>customized loan solutions</strong> with <strong>low interest rates</strong>, <strong>flexible repayment options</strong>, and <strong>quick approvals</strong> to help you achieve your property goals without financial stress.
               </p>

@@ -183,7 +183,7 @@ import { motion } from "framer-motion";
               🌟 Get Your Dream Home with Easy Home Loans 🏡
             </h3>
 
-            <div className="text-gray-500 space-y-3">
+            <div className="text-gray-500 dark:text-gray-400 space-y-3">
               <p className="my-4">
                 Looking for a hassle-free <strong>home loan</strong> to buy your{" "}
                 <strong>dream house</strong>? We offer <strong>flexible home loan <br />options</strong> with <strong>low interest rates</strong>, <strong>easy EMI plans</strong>, and <strong>quick approvals</strong>. Whether you’re a <strong>first-time <br /> homebuyer</strong> or looking to <strong>upgrade</strong>, our <strong>home loan solutions</strong> are designed to meet your financial <br />needs. Enjoy <strong>minimal documentation</strong>, <strong>fast processing</strong>, and <strong>expert guidance</strong> throughout the <br />process. Own your <strong>dream home</strong> without financial stress. <strong>Apply now</strong> and take the first step <br />towards a brighter future! ✨

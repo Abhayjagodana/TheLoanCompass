@@ -312,7 +312,7 @@ export default function AboutBanner() {
 
       {/* About Content */}
       <motion.section
-        className="bg-white py-10"
+        className="bg-white dark:bg-black py-10"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
@@ -337,7 +337,7 @@ Different`}
 
             {/* Right Text */}
             <motion.div
-              className="lg:w-2/3 text-gray-700 font-sans font-normal leading-relaxed space-y-4"
+              className="lg:w-2/3 text-gray-700 dark:text-gray-400 font-sans font-normal leading-relaxed space-y-4"
               variants={itemRight}
             >
               <p>
@@ -359,7 +359,7 @@ Different`}
 
       {/* Counter Section */}
       <motion.section
-        className="bg-gray-100 py-24"
+        className="bg-gray-100 dark:bg-black py-24"
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -430,7 +430,7 @@ Different`}
 
       {/* Leadership Team */}
       <motion.section
-        className="leadership-area pt-12 pb-12 bg-gray-50"
+        className="leadership-area pt-12 pb-12 bg-gray-50 dark:bg-black"
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -440,8 +440,8 @@ Different`}
           {/* Section Title */}
           <div className="flex flex-col md:flex-row items-start md:items-end mb-16 px-4 sm:px-6 lg:px-8">
             <div className="md:w-2/3">
-              <span className="text-green-900 font-semibold uppercase text-sm">Leadership</span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 text-green-900">
+              <span className="text-green-400 font-semibold uppercase text-sm">Leadership</span>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 text-green-600">
                 Meet our leadership team
               </h2>
             </div>
@@ -464,7 +464,7 @@ Different`}
               </div>
               <div className="md:w-2/3 flex flex-col justify-center">
                 <div className="flex items-center justify-between">
-                  <h5 className="text-xl font-semibold">Hiren Sejpal</h5>
+                  <h5 className="text-xl dark:text-black font-semibold">Hiren Sejpal</h5>
                   <a
                     href="https://in.linkedin.com/in/hiren-sejpal"
                     target="_blank"
@@ -474,7 +474,7 @@ Different`}
                     <i className="fab fa-linkedin-in"></i>
                   </a>
                 </div>
-                <p className="font-semibold mt-2 mb-2">Founder & CEO</p>
+                <p className="font-semibold dark:text-black mt-2 mb-2">Founder & CEO</p>
                 <p className="text-gray-600 text-sm">
                   Hiren Sejpal is a visionary entrepreneur and CEO with expertise in startups, lending, loans, and financial services. As a founder and leader, he is dedicated to driving innovation and growth in the finance sector.
                 </p>
@@ -496,7 +496,7 @@ Different`}
               </div>
               <div className="md:w-2/3 flex flex-col justify-center">
                 <div className="flex items-center justify-between">
-                  <h5 className="text-xl font-semibold">Mona Sejpal</h5>
+                  <h5 className="text-xl font-semibold dark:text-black">Mona Sejpal</h5>
                   <a
                     href="https://in.linkedin.com/in/mona-sejpal-9861952b5"
                     target="_blank"
@@ -506,7 +506,7 @@ Different`}
                     <i className="fab fa-linkedin-in"></i>
                   </a>
                 </div>
-                <p className="font-semibold mt-2 mb-2">Co-Founder & CFO</p>
+                <p className="font-semibold mt-2 mb-2 dark:text-black">Co-Founder & CFO</p>
                 <p className="text-gray-600 text-sm">
                   Mona Sejpal is a visionary entrepreneur and CFO with expertise in startups, lending, loans, and financial services. As a Co-founder and leader, she is dedicated to driving innovation and growth in the finance sector.
                 </p>

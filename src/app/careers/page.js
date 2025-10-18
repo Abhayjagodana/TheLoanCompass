@@ -305,7 +305,7 @@ import { motion } from "framer-motion";
 
   return (
     <motion.div
-      className="min-h-screen bg-gray-50"
+      className="min-h-screen bg-gray-50 dark:bg-black"
       initial="hidden"
       animate="show"
       variants={container}

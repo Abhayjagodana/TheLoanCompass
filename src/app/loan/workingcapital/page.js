@@ -79,7 +79,7 @@ export default function WorkingCapitalLoanSection() {
             Boost Your Business with Working Capital <br /> Loans! 📈
           </h3>
 
-          <div className="text-gray-500 space-y-3">
+          <div className="text-gray-500 space-y-3 dark:text-gray-400">
             <p>
               Running a business requires smooth <strong>cash flow</strong>, and sometimes,
               you need extra funds to keep things running seamlessly. Our{" "}
