@@ -158,112 +158,81 @@ export default function Header() {
   const [loanOpen, setLoanOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-black shadow-md transition-colors duration-500">
       <div className="container mx-auto flex justify-between items-center px-4 py-3">
-        {/* Logo */}
-
-        <Link href="/" className="flex items-center space-x-2">
+        {/* ✅ Logo */}
+        {/* <Link href="/" className="flex items-center space-x-2">
           <Image
             src="/23.jpg"
-            alt="Secure Edge"
+            alt="The Loan Compass"
             width={80}
             height={60}
-            className="object-contain"
+            className="object-contain rounded-md"
           />
-          {/* <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-blue-700">
-            The Loan Compass
-          </span> */}
-        </Link>
+        </Link> */}
+  <Link href="/" className="flex items-center space-x-2">
+      {/* Light mode logo */}
+      <Image
+        src="/23.jpg" // 🟢 replace with your light logo
+        alt="The Loan Compass Logo Light"
+        width={80}
+        height={60}
+        className="object-contain rounded-md block dark:hidden"
+      />
 
-
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 items-center font-medium text-green-900 uppercase text-lg font-sans	">
+      {/* Dark mode logo */}
+      <Image
+        src="/image.png" // 🌙 replace with your dark logo
+        alt="The Loan Compass Logo Dark"
+        width={80}
+        height={60}
+        className="object-contain rounded-md hidden dark:block"
+      />
+    </Link>
+        
+        {/* ✅ Desktop Menu */}
+        <ul className="hidden md:flex space-x-8 items-center font-medium uppercase text-lg font-sans text-green-900 dark:text-green-100 transition-colors duration-500">
           <li>
-            <Link href="/" className="hover:text-green-700">
+            <Link href="/" className="hover:text-green-700 dark:hover:text-green-400">
               Home
             </Link>
           </li>
+
           <li>
-            <Link href="/about" className="hover:text-green-700">
+            <Link href="/about" className="hover:text-green-700 dark:hover:text-green-400">
               About Us
             </Link>
           </li>
-          <li>
-            {/* <Link href="/propertie" className="hover:text-blue-400">
-              Properties
-            </Link> */}
-            {/* <Link href="/calculater" className="hover:text-blue-400">
-              calculater
-            </Link> */}
-          </li>
 
-          {/* Apply Loan Dropdown */}
+          {/* ✅ Apply Loan Dropdown */}
           <li className="relative group">
-            <button className="flex items-center hover:text-green-700 cursor-pointer">
+            <button className="flex items-center hover:text-green-700 dark:hover:text-green-400 cursor-pointer">
               APPLY LOAN <span className="ml-1">▾</span>
             </button>
-            <ul className="absolute left-0 mt-2 w-56 bg-white border rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
-              <li>
-                <Link
-                  href="/loan/Homeloan"
-                  className="block px-4 py-2 hover:bg-green-100"
-                >
-                  Home Loan
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan/mortage"
-                  className="block px-4 py-2 hover:bg-green-100"
-                >
-                  Mortgage Loan
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan/personal"
-                  className="block px-4 py-2 hover:bg-green-100"
-                >
-                  Personal Loan
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan/unsecureloan"
-                  className="block px-4 py-2 hover:bg-green-100"
-                >
-                  Unsecured Business Loan
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan/workingcapital"
-                  className="block px-4 py-2 hover:bg-green-100"
-                >
-                  Working Capital
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan/balancetransfer"
-                  className="block px-4 py-2 hover:bg-green-100"
-                >
-                  Balance Transfer
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan/carloan"
-                  className="block px-4 py-2 hover:bg-green-100"
-                >
-                  Car Loans
-                </Link>
-              </li>
+            <ul className="absolute left-0 mt-2 w-56 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
+              {[
+                ["Home Loan", "/loan/Homeloan"],
+                ["Mortgage Loan", "/loan/mortage"],
+                ["Personal Loan", "/loan/personal"],
+                ["Unsecured Business Loan", "/loan/unsecureloan"],
+                ["Working Capital", "/loan/workingcapital"],
+                ["Balance Transfer", "/loan/balancetransfer"],
+                ["Car Loan", "/loan/carloan"],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-green-900/40 text-green-900 dark:text-green-100"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </li>
 
           <li>
-            <Link href="/careers" className="hover:text-green-900">
+            <Link href="/careers" className="hover:text-green-700 dark:hover:text-green-400">
               Careers
             </Link>
           </li>
@@ -271,16 +240,16 @@ export default function Header() {
           <li>
             <Link
               href="/apply"
-              className="bg-green-800 text-white px-6 py-2 rounded-full hover:bg-green-700 transition text-sm"
+              className="bg-green-800 dark:bg-green-700 text-white px-6 py-2 rounded-full hover:bg-green-700 dark:hover:bg-green-600 transition text-sm"
             >
               Apply
             </Link>
           </li>
         </ul>
 
-        {/* Mobile Menu Button */}
+        {/* ✅ Mobile Menu Button */}
         <button
-          className="md:hidden flex items-center text-green-900"
+          className="md:hidden flex items-center text-green-900 dark:text-green-100"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <svg
@@ -308,88 +277,64 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ✅ Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t shadow-lg">
+        <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg transition-colors duration-500">
           <Link
             href="/"
-            className="block px-4 py-3 hover:bg-green-100 text-green-900 font-medium"
+            className="block px-4 py-3 hover:bg-green-100 dark:hover:bg-green-900/40 text-green-900 dark:text-green-100 font-medium"
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="block px-4 py-3 hover:bg-green-100 text-green-900 font-medium"
+            className="block px-4 py-3 hover:bg-green-100 dark:hover:bg-green-900/40 text-green-900 dark:text-green-100 font-medium"
           >
             About Us
           </Link>
-          {/* <Link
-            href="/propertie"
-            className="block px-4 py-3 hover:bg-green-100 text-green-900 font-medium"
-          >
-            Properties
-          </Link> */}
 
-          {/* Mobile Apply Loan Collapsible */}
-          <div
-            className="relative px-4 py-2"
-            onMouseEnter={() => setLoanOpen(true)}
-            onMouseLeave={() => setLoanOpen(false)}
-          >
-            <button className="w-full flex justify-between items-center text-green-900 text-sm font-medium hover:text-green-700">
+          {/* ✅ Mobile Apply Loan Toggle */}
+          <div className="px-4 py-2">
+            <button
+              onClick={() => setLoanOpen(!loanOpen)}
+              className="w-full flex justify-between items-center text-green-900 dark:text-green-100 text-sm font-medium hover:text-green-700 dark:hover:text-green-400"
+            >
               Apply Loan <span>{loanOpen ? "▴" : "▾"}</span>
             </button>
 
             {loanOpen && (
-              <ul className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg border border-gray-200 w-48 py-2 z-50">
-                <li>
-                  <Link href="/loan/Homeloan" className="block px-4 py-2 hover:bg-green-100 text-green-900">
-                    HOME LOAN
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/loan/mortage" className="block px-4 py-2 hover:bg-green-100 text-green-900">
-                    MORTGAGE LOAN
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/loan/personal" className="block px-4 py-2 hover:bg-green-100 text-green-900">
-                    PERSONAL LOAN
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/loan/unsecureloan" className="block px-4 py-2 hover:bg-green-100 text-green-900">
-                    UNSECURED BUSINESS
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/loan/workingcapital" className="block px-4 py-2 hover:bg-green-100 text-green-900">
-                    WORKING CAPITAL
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/loan/balancetransfer" className="block px-4 py-2 hover:bg-green-100 text-green-900">
-                    BALANCE TRANSFER
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/loan/carloan" className="block px-4 py-2 hover:bg-green-100 text-green-900">
-                    CAR LOAN
-                  </Link>
-                </li>
+              <ul className="mt-2 bg-white dark:bg-gray-800 shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 w-full py-2 z-50">
+                {[
+                  ["Home Loan", "/loan/Homeloan"],
+                  ["Mortgage Loan", "/loan/mortage"],
+                  ["Personal Loan", "/loan/personal"],
+                  ["Unsecured Business", "/loan/unsecureloan"],
+                  ["Working Capital", "/loan/workingcapital"],
+                  ["Balance Transfer", "/loan/balancetransfer"],
+                  ["Car Loan", "/loan/carloan"],
+                ].map(([label, href]) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-green-900/40 text-green-900 dark:text-green-100"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             )}
           </div>
 
           <Link
             href="/careers"
-            className="block px-4 py-3 hover:bg-green-100 text-green-900 font-medium"
+            className="block px-4 py-3 hover:bg-green-100 dark:hover:bg-green-900/40 text-green-900 dark:text-green-100 font-medium"
           >
             Careers
           </Link>
           <Link
             href="/apply"
-            className="block bg-green-900 text-white m-4 px-4 py-2 rounded-full text-center hover:bg-green-700 transition text-sm"
+            className="block bg-green-900 dark:bg-green-700 text-white m-4 px-4 py-2 rounded-full text-center hover:bg-green-700 dark:hover:bg-green-600 transition text-sm"
           >
             Apply
           </Link>
