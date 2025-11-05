@@ -397,8 +397,8 @@ function ContactPage() {
         <div className="container mx-auto px-4 lg:flex lg:gap-16">
           {/* Contact Info */}
           <motion.div className="lg:w-5/12 mb-12 lg:mb-0 px-4 sm:px-6 lg:px-8" variants={itemLeft}>
-            <h2 className="text-3xl font-bold mb-8 text-green-400">Get in touch with us.</h2>
-            <p className="text-gray-300 mb-8">
+            <h2 className="text-3xl font-bold mb-8 text-green-900 dark:text-green-400">Get in touch with us.</h2>
+            <p className="text-gray-700 dark:text-gray-300 mb-8">
               We’d love to hear from you. Here’s how you can reach us.
             </p>
 
@@ -426,33 +426,82 @@ function ContactPage() {
               </motion.h3>
               <motion.form onSubmit={handleSubmit} className="space-y-4" variants={container}>
                 <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6" variants={container}>
-                  <motion.div variants={itemRight}>
+                  {/* <motion.div variants={itemRight}>
                     <InputField
                       label="Full Name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your Name"
+                      className="dark:text-black"
+
                     />
-                  </motion.div>
+                  </motion.div> */}
                   <motion.div variants={itemRight}>
+                    <div className="flex flex-col space-y-2">
+                      <label
+                        htmlFor="name"
+                        className="text-gray-700 dark:text-blue-900 font-bold"
+                      >
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Your Name"
+                        className="w-full rounded-lg border border-blue-900 dark:border-gray-900 bg-white dark:bg-white-800 text-black-900 dark:text-black placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent p-3 transition-colors duration-200"
+                      />
+                    </div>
+                  </motion.div>
+
+                  {/* <motion.div variants={itemRight}>
                     <InputField
                       label="Number"
                       name="number"
                       value={formData.number}
                       onChange={handleChange}
                       placeholder="91xxxxxxxxxx"
+                      className="dark:text-black"
+
                     />
+                  </motion.div> */}
+                  <motion.div variants={itemRight}>
+                    <div className="flex flex-col space-y-2">
+                      <label
+                        htmlFor="number"
+                        className="text-gray-700 dark:text-blue-900 font-bold"
+                      >
+                        Number
+                      </label>
+                      <input
+                        type="text"
+                        id="number"
+                        name="number"
+                        value={formData.number}
+                        onChange={handleChange}
+                        placeholder="91xxxxxxxxxx"
+                        maxLength={10}
+                        className="w-full rounded-lg border border-blue-900 dark:border-gray-600 
+                 bg-white dark:bg-white-900 text-black-900 dark:text-black 
+                 placeholder-gray-500 dark:placeholder-gray-400 
+                 focus:outline-none focus:ring-2 focus:ring-green-600 
+                 focus:border-transparent p-3 transition-colors duration-200"
+                      />
+                    </div>
                   </motion.div>
+
                 </motion.div>
 
                 <motion.div variants={itemRight}>
-                  <label className="font-bold text-blue-900 block mb-1">Select Loan Type</label>
+                  <label className="font-bold text-gray-700 block mb-1">Select Loan Type</label>
                   <select
                     name="loan_type"
                     value={formData.loan_type}
                     onChange={handleChange}
-                    className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-blue-500"
+                    className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-green-600 dark:text-black"
                   >
                     <option value="">Select Loan Type</option>
                     <option value="home">Home Loan</option>
@@ -465,7 +514,7 @@ function ContactPage() {
                   </select>
                 </motion.div>
 
-                <motion.div variants={itemRight}>
+                {/* <motion.div variants={itemRight}>
                   <InputField
                     label="Subject"
                     name="subject"
@@ -473,8 +522,33 @@ function ContactPage() {
                     onChange={handleChange}
                     placeholder="Subject"
                   />
-                </motion.div>
+                </motion.div> */}
+
                 <motion.div variants={itemRight}>
+                  <div className="flex flex-col space-y-2">
+                    <label
+                      htmlFor="subject"
+                      className="text-gray-700 dark:text-blue-900 font-bold"
+                    >
+                      Subject
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="Subject"
+                      className="w-full rounded-lg border border-blue-900 dark:border-gray-600 
+                 bg-white dark:bg-white-900 text-gray-900 dark:text-black 
+                 placeholder-gray-500 dark:placeholder-gray-400 
+                 focus:outline-none focus:ring-2 focus:ring-green-600 
+                 focus:border-transparent p-3 transition-colors duration-200"
+                    />
+                  </div>
+                </motion.div>
+
+                {/* <motion.div variants={itemRight}>
                   <InputField
                     label="Message"
                     name="message"
@@ -483,7 +557,34 @@ function ContactPage() {
                     placeholder="Your message..."
                     isTextarea
                   />
+                </motion.div> */}
+
+                <motion.div variants={itemRight}>
+                  <div className="flex flex-col space-y-2">
+                    <label
+                      htmlFor="message"
+                      className="text-gray-700 dark:text-blue-900 font-bold"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Your message..."
+                      rows="5"
+                      className="w-full rounded-lg border border-blue-900 dark:border-gray-600 
+                 bg-white dark:bg-white-900 text-gray-900 dark:text-black 
+                 placeholder-gray-500 dark:placeholder-gray-400 
+                 focus:outline-none focus:ring-2 focus:ring-green-600 
+                 focus:border-transparent p-3 transition-colors duration-200"
+                    >
+
+                    </textarea>
+                  </div>
                 </motion.div>
+
 
                 <motion.button
                   type="submit"

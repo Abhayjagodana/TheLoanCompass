@@ -366,7 +366,7 @@ import { motion } from "framer-motion";
                 },
               ].map((field) => (
                 <motion.div key={field.name} variants={item}>
-                  <label className="block mb-2 font-semibold text-gray-700">
+                  <label className="block mb-2 font-semibold text-gray-700 ">
                     {field.label}
                   </label>
                   <input
@@ -375,7 +375,7 @@ import { motion } from "framer-motion";
                     value={field.value}
                     onChange={handleChange}
                     required
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700 transition"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700 dark:text-black transition"
                   />
                 </motion.div>
               ))}
@@ -411,7 +411,7 @@ import { motion } from "framer-motion";
                   rows="5"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700 transition"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none dark:text-black focus:ring-2 focus:ring-green-700 transition"
                 />
               </motion.div>
 

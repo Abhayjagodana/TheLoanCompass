@@ -776,7 +776,7 @@ export default function Banner() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 dark:text-green-900">
               Our advisors are ready to help you!
             </h2>
 
@@ -790,7 +790,7 @@ export default function Banner() {
               />
 
               {/* Work time badge */}
-              <div className="absolute top-4 left-4 bg-blue-50 px-4 py-2 rounded-full text-sm font-semibold">
+              <div className="absolute top-4 left-4 bg-blue-50 px-4 py-2 rounded-full text-sm font-semibold dark:bg-blue-50 text-gray-900 shadow-md">
                 All weekdays <span className="font-bold">10.00 - 18.30</span>
               </div>
             </div>
