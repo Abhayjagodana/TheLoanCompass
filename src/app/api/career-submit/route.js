@@ -90,18 +90,60 @@
 import connectToDB from "../../../utils/dbconfig";
 import JobApplication from "../../../model/jobapply";
 import nodemailer from "nodemailer";
+import { promises as fs } from "fs";
+import path from "path";
 
 export async function POST(req) {
   try {
     await connectToDB();
-    const data = await req.json();
 
-    if (!data.name || !data.number || !data.email) {
+    const form = await req.formData();
+    const name = form.get("name");
+    const number = form.get("number");
+    const email = form.get("email");
+    const message = form.get("message") || "";
+    const jobType = form.getAll("job_type");
+    const resume = form.get("resume");
+
+    if (!name || !number || !email) {
       return new Response(
         JSON.stringify({ message: "Missing required fields" }),
         { status: 400, headers: { "Content-Type": "application/json" } }
       );
     }
+    if (!resume || typeof resume === "string") {
+      return new Response(
+        JSON.stringify({ message: "Resume file is required" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    // Save resume to uploads directory
+    const uploadsDir = path.join(process.cwd(), "uploads");
+    try {
+      await fs.mkdir(uploadsDir, { recursive: true });
+    } catch {}
+
+    const originalName = resume.name || "resume";
+    const safeOriginal = originalName.replace(/[^a-zA-Z0-9._-]/g, "_");
+    const filename = `${Date.now()}_${safeOriginal}`;
+    const filePath = path.join(uploadsDir, filename);
+    const arrayBuffer = await resume.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    await fs.writeFile(filePath, buffer);
+
+    const data = {
+      name,
+      number,
+      email,
+      job_type: Array.isArray(jobType) ? jobType : [jobType].filter(Boolean),
+      message,
+      resume: {
+        filename,
+        originalName: originalName,
+        path: filePath,
+      },
+    };
 
     // Save to DB
     const newApplication = new JobApplication(data);
@@ -109,29 +151,35 @@ export async function POST(req) {
 
     // SMTP transport
     const transporter = nodemailer.createTransport({
-      host: "smtp.zoho.in", // or smtp.zoho.com if US
+      host: "smtp.zoho.in",
       port: 465,
       secure: true,
       auth: {
-        user: process.env.SMTP_USER, // must be a Zoho email (e.g. info@theloancompass.in)
-        pass: process.env.SMTP_PASS, // Zoho app password
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
-    // Mail options
+    // Mail with attachment
     const mailOptions = {
-      from: `"Career Portal" <${process.env.SMTP_USER}>`, // ✅ Must be Zoho email
-      to: "bj@theloancompass.in", // where to receive applications
-      replyTo: data.email, // applicant’s email (so admin can reply directly)
+      from: `"Career Portal" <${process.env.SMTP_USER}>`,
+      to: "bj@theloancompass.in",
+      replyTo: email,
       subject: "New Career Application",
       html: `
         <h2>New Job Application</h2>
-        <p><strong>Name:</strong> ${data.name}</p>
-        <p><strong>Number:</strong> ${data.number}</p>
-        <p><strong>Email:</strong> ${data.email}</p>
-        <p><strong>Job Types:</strong> ${data.job_type?.join(", ") || "N/A"}</p>
-        <p><strong>Message:</strong> ${data.message}</p>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Number:</strong> ${number}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Job Types:</strong> ${(data.job_type || []).join(", ") || "N/A"}</p>
+        <p><strong>Message:</strong> ${message || ""}</p>
       `,
+      attachments: [
+        {
+          filename: data.resume.originalName,
+          path: data.resume.path,
+        },
+      ],
     };
 
     await transporter.sendMail(mailOptions);
@@ -140,7 +188,6 @@ export async function POST(req) {
       JSON.stringify({ message: "Form submitted & email sent!" }),
       { status: 200, headers: { "Content-Type": "application/json" } }
     );
-
   } catch (error) {
     console.error("Career Submit Error:", error);
     return new Response(

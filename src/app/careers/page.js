@@ -231,6 +231,7 @@ import { motion } from "framer-motion";
     job_type: [],
     message: "",
   });
+  const [resumeFile, setResumeFile] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -261,13 +262,21 @@ import { motion } from "framer-motion";
       return toast.error("Please select at least one Job Type.");
     if (!formData.message || formData.message.length < 5)
       return toast.error("Message must be at least 5 characters.");
+    if (!resumeFile) return toast.error("Please upload your resume (PDF/DOC).");
 
     setLoading(true);
     try {
+      const fd = new FormData();
+      fd.append("name", formData.name);
+      fd.append("number", formData.number);
+      fd.append("email", formData.email);
+      formData.job_type.forEach((j) => fd.append("job_type", j));
+      fd.append("message", formData.message);
+      fd.append("resume", resumeFile);
+
       const res = await fetch("/api/career-submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: fd,
       });
       if (res.ok) {
         toast.success("Form submitted successfully!");
@@ -278,6 +287,7 @@ import { motion } from "framer-motion";
           job_type: [],
           message: "",
         });
+        setResumeFile(null);
       } else toast.error("Failed to submit form.");
     } catch {
       toast.error("An error occurred.");
@@ -402,6 +412,28 @@ import { motion } from "framer-motion";
                   ))}
                 </div>
               </motion.div>
+ {/* Resume Upload */}
+ <motion.div variants={item}>
+                <label className="block mb-2 font-semibold text-gray-700">Upload Resume *</label>
+                <input
+                  type="file"
+                  name="resume"
+                  accept=".pdf,.doc,.docx,.rtf"
+                  onChange={(e) => {
+                    const file = e.target.files && e.target.files[0];
+                    if (!file) return setResumeFile(null);
+                    const maxSize = 5 * 1024 * 1024; // 5MB
+                    if (file.size > maxSize) {
+                      toast.error("File is too large. Max 5MB.");
+                      e.target.value = "";
+                      return setResumeFile(null);
+                    }
+                    setResumeFile(file);
+                  }}
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-green-900 file:text-white file:cursor-pointer"
+                />
+                <p className="text-xs text-gray-500 mt-1">Accepted: PDF, DOC, DOCX, RTF. Max 5MB.</p>
+              </motion.div>
 
               {/* Message */}
               <motion.div variants={item}>
@@ -415,6 +447,7 @@ import { motion } from "framer-motion";
                 />
               </motion.div>
 
+             
               {/* Submit */}
               <motion.button
                 type="submit"

@@ -401,10 +401,10 @@ export default function Banner() {
             >
               <Image
                 src="/zzzzz.png"
-                width={600}
+                width={570}
                 height={150}
                 alt="shape"
-                className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-auto mx-auto"
+                className="rounded-lg w-[70%] sm:w-[70%] md:w-[60%] lg:w-[470px] h-auto mx-auto"
               // className="rounded-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[570px] h-[550px] mx-auto object-cover"
 
               />
@@ -414,10 +414,10 @@ export default function Banner() {
 
         {/* Banner Content */}
         <div className="container mx-auto relative z-10 px-4">
-          <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left">
+          <div className="flex flex-col lg:flex-row items-center lg:items-end text-center lg:text-left lg:mx-64">
             {/* Left Content */}
             <div className="lg:w-1/2 pt-8 lg:pt-12 pb-12 lg:pb-48 text-white">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-semibold leading-snug drop-shadow-lg text-left mx-4 sm:mx-6 md:mx-8 lg:mx-12">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-sans font-semibold leading-snug drop-shadow-lg text-left mx-4 sm:mx-6 md:mx-8 lg:mx-12">
                 Compare loans <br />
                 from several <br />
                 banks and find <br />
@@ -446,7 +446,7 @@ export default function Banner() {
                   <Image
                     src="/1.png"
                     width={600}
-                    height={150}
+                    height={100}
                     alt="shape"
                     className="rounded-lg w-full max-w-[500px] h-auto mx-auto"
                   />

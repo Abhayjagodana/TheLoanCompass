@@ -88,10 +88,10 @@ export async function POST(req) {
   try {
     await connectToDB();
     const data = await req.json();
-    const { name, number, loan_type, subject, message } = data;
+    const { name, number, loan_type, loanAmount, message } = data;
 
     // Validation
-    if (!name || !number || !loan_type || !subject || !message) {
+    if (!name || !number || !loan_type || !loanAmount || !message) {
       return new Response(
         JSON.stringify({ message: "All fields are required." }),
         { status: 400 }
@@ -119,14 +119,14 @@ export async function POST(req) {
     const mailOptions = {
       from: `"The Loan Compass" <${process.env.SMTP_USER}>`,
       to: "bj@theloancompass.in", // where you receive inquiries
-      subject: `📩 New Contact Form Submission - ${subject}`,
+      subject: `📩 New Contact Form Submission`,
       html: `
         <div style="font-family:Arial,sans-serif;line-height:1.6;color:#333">
           <h2>New Contact Form Submission</h2>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Number:</strong> ${number}</p>
           <p><strong>Loan Type:</strong> ${loan_type}</p>
-          <p><strong>Subject:</strong> ${subject}</p>
+          <p><strong>Loan Amount:</strong> ${loanAmount}</p>
           <p><strong>Message:</strong><br/>${message}</p>
         </div>
       `,

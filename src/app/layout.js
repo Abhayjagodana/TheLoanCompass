@@ -26,7 +26,7 @@ export const metadata = {
     "loan, theloancompass, apply loan, home loan, mortgage loan, personal loan, unsecured business, working capital, balance transfer, car loan",
   icons: {
     icon: "/23.jpg",
-    
+
   },
 };
 

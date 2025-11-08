@@ -325,7 +325,7 @@ function ContactPage() {
     name: "",
     number: "",
     loan_type: "",
-    subject: "",
+    loanAmount: "",
     message: "",
   });
   const [loading, setLoading] = useState(false);
@@ -523,30 +523,38 @@ function ContactPage() {
                     placeholder="Subject"
                   />
                 </motion.div> */}
-
                 <motion.div variants={itemRight}>
                   <div className="flex flex-col space-y-2">
                     <label
-                      htmlFor="subject"
+                      htmlFor="loanAmount"
                       className="text-gray-700 dark:text-blue-900 font-bold"
                     >
-                      Subject
+                      Loan Amount
                     </label>
                     <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="Subject"
+                      type="number"
+                      id="loanAmount"
+                      name="loanAmount"
+                      value={formData.loanAmount || ""}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        // Prevent negative values
+                        if (value === "" || parseFloat(value) >= 0) {
+                          handleChange(e);
+                        }
+                      }}
+                      placeholder="Enter Loan Amount"
+                      min="0"
+                      step="any"
                       className="w-full rounded-lg border border-blue-900 dark:border-gray-600 
-                 bg-white dark:bg-white-900 text-gray-900 dark:text-black 
-                 placeholder-gray-500 dark:placeholder-gray-400 
-                 focus:outline-none focus:ring-2 focus:ring-green-600 
-                 focus:border-transparent p-3 transition-colors duration-200"
+        bg-white dark:bg-white-900 text-gray-900 dark:text-black 
+        placeholder-gray-500 dark:placeholder-gray-400 
+        focus:outline-none focus:ring-2 focus:ring-green-600 
+        focus:border-transparent p-3 transition-colors duration-200"
                     />
                   </div>
                 </motion.div>
+
 
                 {/* <motion.div variants={itemRight}>
                   <InputField
