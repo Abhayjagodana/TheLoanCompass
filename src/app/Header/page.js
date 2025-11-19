@@ -149,19 +149,33 @@
 // }
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { RainbowButton } from "../../../components/ui/rainbow-button";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loanOpen, setLoanOpen] = useState(false);
 
-  return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-      <div className="container mx-auto flex justify-between items-center px-4 py-3">
-        {/* Logo */}
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [menuOpen]);
 
+  return (
+    <header className="fixed top-0 left-0 w-full z-50 h-20 flex justify-center">
+      <div className="container mx-auto px-4 max-w-7xl flex justify-between items-center py-3 bg-white shadow-md rounded-xl">
+
+        {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
             src="/23.jpg"
@@ -170,43 +184,31 @@ export default function Header() {
             height={60}
             className="object-contain"
           />
-          {/* <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-blue-700">
-            The Loan Compass
-          </span> */}
         </Link>
 
-
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 items-center font-medium text-green-900 uppercase text-lg font-sans	">
+        <ul className="hidden md:flex space-x-6 items-center font-bold text-green-900 text-lg">
           <li>
-            <Link href="/" className="hover:text-green-700">
+            <Link href="/" className="hover:text-green-700 transition-colors">
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className="hover:text-green-700">
+            <Link href="/about" className="hover:text-green-700 transition-colors">
               About Us
             </Link>
-          </li>
-          <li>
-            {/* <Link href="/propertie" className="hover:text-blue-400">
-              Properties
-            </Link> */}
-            {/* <Link href="/calculater" className="hover:text-blue-400">
-              calculater
-            </Link> */}
           </li>
 
           {/* Apply Loan Dropdown */}
           <li className="relative group">
-            <button className="flex items-center hover:text-green-700 cursor-pointer">
-              APPLY LOAN <span className="ml-1">▾</span>
+            <button className="flex items-center hover:text-green-700 cursor-pointer transition-colors">
+             <SparklesText> Apply Loan </SparklesText><span className="ml-1">▾</span>
             </button>
             <ul className="absolute left-0 mt-2 w-56 bg-white border rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
               <li>
                 <Link
                   href="/loan/Homeloan"
-                  className="block px-4 py-2 hover:bg-green-100"
+                  className="block px-4 py-2 hover:bg-green-100 text-base"
                 >
                   Home Loan
                 </Link>
@@ -214,7 +216,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/loan/mortage"
-                  className="block px-4 py-2 hover:bg-green-100"
+                  className="block px-4 py-2 hover:bg-green-100 text-base"
                 >
                   Mortgage Loan
                 </Link>
@@ -222,7 +224,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/loan/personal"
-                  className="block px-4 py-2 hover:bg-green-100"
+                  className="block px-4 py-2 hover:bg-green-100 text-base"
                 >
                   Personal Loan
                 </Link>
@@ -230,7 +232,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/loan/unsecureloan"
-                  className="block px-4 py-2 hover:bg-green-100"
+                  className="block px-4 py-2 hover:bg-green-100 text-base"
                 >
                   Unsecured Business Loan
                 </Link>
@@ -238,7 +240,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/loan/workingcapital"
-                  className="block px-4 py-2 hover:bg-green-100"
+                  className="block px-4 py-2 hover:bg-green-100 text-base"
                 >
                   Working Capital
                 </Link>
@@ -246,7 +248,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/loan/balancetransfer"
-                  className="block px-4 py-2 hover:bg-green-100"
+                  className="block px-4 py-2 hover:bg-green-100 text-base"
                 >
                   Balance Transfer
                 </Link>
@@ -254,7 +256,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/loan/carloan"
-                  className="block px-4 py-2 hover:bg-green-100"
+                  className="block px-4 py-2 hover:bg-green-100 text-base"
                 >
                   Car Loans
                 </Link>
@@ -263,7 +265,7 @@ export default function Header() {
           </li>
 
           <li>
-            <Link href="/careers" className="hover:text-green-900">
+            <Link href="/careers" className="hover:text-green-700 transition-colors">
               Careers
             </Link>
           </li>
@@ -271,9 +273,9 @@ export default function Header() {
           <li>
             <Link
               href="/apply"
-              className="bg-green-800 text-white px-6 py-2 rounded-full hover:bg-green-700 transition text-sm"
+              className="bg-green-800 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors text-base"
             >
-              Apply
+              Contact Us
             </Link>
           </li>
         </ul>
@@ -308,82 +310,138 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-{menuOpen && (
-  <div className="md:hidden bg-white border-t shadow-lg">
-    {/* Main Links */}
-    {[
-      { name: "Home", href: "/" },
-      { name: "About Us", href: "/about" },
-      { name: "Careers", href: "/careers" },
-    ].map((item) => (
-      <Link
-        key={item.href}
-        href={item.href}
-        onClick={() => setMenuOpen(false)} // ✅ Close menu after redirect
-        className="block px-4 py-3 hover:bg-green-100 text-green-900 font-medium"
-      >
-        {item.name}
-      </Link>
-    ))}
+      {/* Mobile Menu Overlay */}
+      {menuOpen && (
+        <>
+          {/* Backdrop Overlay */}
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+            onClick={() => setMenuOpen(false)}
+          ></div>
 
-    {/* ✅ Apply Loan Dropdown (not clickable) */}
-    <div
-  className="relative px-4 py-2 group"
-  onMouseEnter={() => setLoanOpen(true)}
-  onMouseLeave={() => setLoanOpen(false)}
->
-  {/* Toggle button (not clickable link) */}
-  <button
-    type="button"
-    onClick={() => setLoanOpen(!loanOpen)} // mobile tap toggle
-    className="w-full flex justify-between items-center text-green-900 text-sm font-medium hover:text-green-700 focus:outline-none cursor-pointer"
-  >
-    Apply Loan <span>{loanOpen ? "▴" : "▾"}</span>
-  </button>
+          {/* Sidebar Menu */}
+          <div
+            className={`fixed top-0 left-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${menuOpen ? "translate-x-0" : "-translate-x-full"
+              }`}
+          >
+            {/* Sidebar Header */}
+            <div className="flex items-center justify-between p-4 border-b border-gray-200">
+              <Link href="/" className="flex items-center space-x-2" onClick={() => setMenuOpen(false)}>
+                <Image
+                  src="/23.jpg"
+                  alt="Secure Edge"
+                  width={60}
+                  height={45}
+                  className="object-contain"
+                />
+              </Link>
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="text-green-900 hover:text-green-700 p-2"
+                aria-label="Close menu"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
 
-  {/* Submenu */}
-  <ul
-    className={`absolute left-0 mt-2 bg-white shadow-lg rounded-lg border border-gray-200 w-48 py-2 z-50 transition-all duration-300 ease-in-out ${
-      loanOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
-    } group-hover:opacity-100 group-hover:visible group-hover:translate-y-0`}
-  >
-    {[
-      ["Home Loan", "/loan/Homeloan"],
-      ["Mortgage Loan", "/loan/mortage"],
-      ["Personal Loan", "/loan/personal"],
-      ["Unsecured Business", "/loan/unsecureloan"],
-      ["Working Capital", "/loan/workingcapital"],
-      ["Balance Transfer", "/loan/balancetransfer"],
-      ["Car Loan", "/loan/carloan"],
-    ].map(([label, href]) => (
-      <li key={href}>
-        <Link
-          href={href}
-          onClick={() => {
-            setLoanOpen(false);
-            setMenuOpen(false); // ✅ Close menu after navigation
-          }}
-          className="block px-4 py-2 hover:bg-green-100 text-green-900"
-        >
-          {label}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
+            {/* Sidebar Content */}
+            <div className="overflow-y-auto h-[calc(100vh-80px)]">
+              {/* Main Navigation Links */}
+              <div className="py-4">
+                <Link
+                  href="/"
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-6 py-3 text-green-900 font-bold text-lg hover:bg-green-50 hover:text-green-700 transition-colors border-b border-gray-100"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/about"
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-6 py-3 text-green-900 font-bold text-lg hover:bg-green-50 hover:text-green-700 transition-colors border-b border-gray-100"
+                >
+                  About Us
+                </Link>
 
-    {/* Apply Button */}
-    <Link
-      href="/apply"
-      onClick={() => setMenuOpen(false)} // ✅ Close menu on redirect
-      className="block bg-green-900 text-white m-4 px-4 py-2 rounded-full text-center hover:bg-green-700 transition text-sm"
-    >
-      Apply
-    </Link>
-  </div>
-)}
+                {/* Apply Loan Dropdown */}
+                <div
+                  className="border-b border-gray-100 relative"
+                  onMouseLeave={() => setLoanOpen(false)}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setLoanOpen(!loanOpen)}
+                    onMouseEnter={() => setLoanOpen(true)}
+                    className="w-full flex justify-between items-center px-6 py-3 text-green-900 font-bold text-lg hover:bg-green-50 hover:text-green-700 transition-colors focus:outline-none"
+                  >
+                    <SparklesText>Apply Loan</SparklesText>
+                    <span className="text-green-700">{loanOpen ? "▴" : "▾"}</span>
+                  </button>
 
+                  {/* FIXED DROPDOWN — NO GAP WHEN CLOSED */}
+                  <div
+                    className={`bg-green-50 transition-all duration-300 overflow-hidden ${loanOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                  >
+                    {[
+                      ["Home Loan", "/loan/Homeloan"],
+                      ["Mortgage Loan", "/loan/mortage"],
+                      ["Personal Loan", "/loan/personal"],
+                      ["Unsecured Business Loan", "/loan/unsecureloan"],
+                      ["Working Capital", "/loan/workingcapital"],
+                      ["Balance Transfer", "/loan/balancetransfer"],
+                      ["Car Loans", "/loan/carloan"],
+                    ].map(([label, href]) => (
+                      <Link
+                        key={href}
+                        href={href}
+                        onClick={() => {
+                          setLoanOpen(false);
+                          setMenuOpen(false);
+                        }}
+                        className="block px-10 py-2.5 text-green-900 text-base hover:bg-green-100 hover:text-green-700 transition-colors"
+                      >
+                        {label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                <Link
+                  href="/careers"
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-6 py-3 text-green-900 font-bold text-lg hover:bg-green-50 hover:text-green-700 transition-colors border-b border-gray-100"
+                >
+                  Careers
+                </Link>
+              </div>
+
+              {/* Contact Us Button */}
+              <div className="px-6 py-4 border-t border-gray-200">
+                <Link
+                  href="/apply"
+                  onClick={() => setMenuOpen(false)}
+                  className="block w-full bg-green-800 text-white px-6 py-3 rounded-full text-center hover:bg-green-700 transition-colors font-bold text-lg"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </header>
   );
 }

@@ -223,7 +223,7 @@ import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 
- function Career() {
+function Career() {
   const [formData, setFormData] = useState({
     name: "",
     number: "",
@@ -394,7 +394,7 @@ import { motion } from "framer-motion";
               <motion.div variants={item}>
                 <label className="block mb-2 font-semibold text-gray-700">Job Type</label>
                 <div className="flex flex-wrap gap-3">
-                  {["Job channel", "Partnership", "Salesman"].map((job) => (
+                  {["Tele Marketing Executive", "Sales Representative", "Sales manager", "Team Leader"].map((job) => (
                     <label
                       key={job}
                       className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded-lg cursor-pointer hover:bg-green-50 transition"
@@ -412,8 +412,8 @@ import { motion } from "framer-motion";
                   ))}
                 </div>
               </motion.div>
- {/* Resume Upload */}
- <motion.div variants={item}>
+              {/* Resume Upload */}
+              <motion.div variants={item}>
                 <label className="block mb-2 font-semibold text-gray-700">Upload Resume *</label>
                 <input
                   type="file"
@@ -447,15 +447,14 @@ import { motion } from "framer-motion";
                 />
               </motion.div>
 
-             
+
               {/* Submit */}
               <motion.button
                 type="submit"
                 disabled={loading}
                 variants={item}
-                className={`w-full bg-green-900 text-white font-semibold py-3 rounded-lg hover:bg-green-700 transition flex justify-center items-center gap-2 ${
-                  loading ? "opacity-70 cursor-not-allowed" : ""
-                }`}
+                className={`w-full bg-green-900 text-white font-semibold py-3 rounded-lg hover:bg-green-700 transition flex justify-center items-center gap-2 ${loading ? "opacity-70 cursor-not-allowed" : ""
+                  }`}
               >
                 {loading ? "Submitting..." : "Apply Now"}
               </motion.button>

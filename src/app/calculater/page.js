@@ -1009,6 +1009,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { TextAnimate } from "../../../components/ui/text-animate";
+import { SparklesText } from "../../../components/ui/sparkles-text";
 
 const slideInLeft = {
     hidden: { opacity: 0, x: -100 },
@@ -1099,7 +1101,7 @@ function EMICalculatorPage() {
     const principalDash = donutCircumference - interestDash;
 
     return (
-        <section className="py-16 px-4 bg-gray-50 dark:bg-black transition-colors duration-500">
+        <section className="py-16 px-4 bg-white dark:bg-black transition-colors duration-500">
             <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
                 <motion.div
                     variants={slideInLeft}
@@ -1109,10 +1111,15 @@ function EMICalculatorPage() {
                     className="bg-transparent"
                 >
                     <h2 className="text-2xl font-semibold mb-6 text-center text-green-900 dark:text-white my-[-20]">
-                        EMI CALCULATOR
+
+                        <div className="font-bold tracking-wide tetx-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+
+                            <SparklesText >EMI CALCULATOR</SparklesText>
+                        </div>
+
                     </h2>
 
-                    <div className="bg-white dark:bg-white shadow rounded-lg p-6 grid grid-cols-1 lg:grid-cols-3 gap-8 transition-colors duration-500">
+                    <div className="bg-white dark:bg-white shadow-lg rounded-lg p-6 grid grid-cols-1 lg:grid-cols-3 gap-8 transition-colors duration-500">
                         {/* Left Controls */}
                         <div className="lg:col-span-2 space-y-6">
                             {/* Loan Type Dropdown */}
